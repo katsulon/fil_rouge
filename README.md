@@ -4,7 +4,7 @@
 Mini project to apply concepts seen in class to an RPG written in C++.
 
 ## Project status
-- [ ] General setup
+- [x] General setup
 - [ ] V1
 - [ ] V2
 - [ ] V3
