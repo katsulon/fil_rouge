@@ -1,4 +1,6 @@
-#include "Hero.cpp"
+#include "src/Hero.cpp"
+
+using namespace He_ARC::rpg;
 
 int main()
 {
@@ -7,7 +9,7 @@ int main()
     Hero h2(3,7,10,100,"Gimli");
     h2.show();
     
-    h1.interact(h2);
+    h2.interact(h1);
     
     return 0;
 }

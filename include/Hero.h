@@ -1,17 +1,23 @@
 #include <string>
+#include "../src/Sword.cpp"
 
 using namespace std;
 
-class Hero {
+namespace He_ARC::rpg
+{
+    class Hero 
+    {
     private:
         int strength;
         int agility;
         int intelligence;
         double hp;
         string name;
+        Sword sword;
     public:
         Hero();
         Hero(int,int,int,double,string);
         void interact(const Hero&);
         void show();
-};
+    };
+}
