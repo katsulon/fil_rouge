@@ -2,26 +2,25 @@
 
 #include <iostream>
 
+Hero::Hero()
+{ 
+    strength = 3; 
+    agility=7; 
+    intelligence=10; 
+    hp=100; 
+    name="Gimli"; 
+}
+
 void Hero::interact(const Hero& autre) {
-    cout << "Greetings, valiant " << autre.name << "! My name is " << this->name << "." << endl;
+    cout << "Greetings, valiant " << autre.name << "! My name is " << name << "." << endl;
 }
 void Hero::show() {
     cout << "==========================" << endl;
-    cout << "HERO: " << this->name << endl;
+    cout << "HERO: " << name << endl;
     cout << "==========================" << endl;
-    cout << "strength: " << this->strength << endl;
-    cout << "agility: " << this->agility << endl;
-    cout << "intelligence: " << this->intelligence << endl;
-    cout << "HP: " << this->hp << endl;
+    cout << "strength: " << strength << endl;
+    cout << "agility: " << agility << endl;
+    cout << "intelligence: " << intelligence << endl;
+    cout << "HP: " << hp << endl;
     cout <<  endl;
-}
-
-int main()
-{
-    Hero h1;
-    Hero h2;
-    h1.show();
-    h1.interact(h2);
-    
-    return 0;
 }

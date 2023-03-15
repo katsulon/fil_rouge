@@ -10,7 +10,7 @@ class Hero {
         double hp;
         string name;
     public:
-        Hero() { strength = 3; agility=7; intelligence=10; hp=100; name="Gimli"; };
+        Hero();
         void interact(const Hero&);
         void show();
 };
