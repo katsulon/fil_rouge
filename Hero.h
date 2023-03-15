@@ -11,6 +11,7 @@ class Hero {
         string name;
     public:
         Hero();
+        Hero(int,int,int,double,string);
         void interact(const Hero&);
         void show();
 };

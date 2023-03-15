@@ -4,12 +4,15 @@
 
 Hero::Hero()
 { 
-    strength = 3; 
-    agility=7; 
-    intelligence=10; 
-    hp=100; 
-    name="Gimli"; 
+    strength = 0; 
+    agility = 0; 
+    intelligence = 0; 
+    hp = 0; 
+    name = "no_name"; 
 }
+Hero::Hero(int _strength, int _agility, int _intelligence, double _hp, string _name) : 
+strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name)
+{}
 
 void Hero::interact(const Hero& autre) {
     cout << "Greetings, valiant " << autre.name << "! My name is " << name << "." << endl;
