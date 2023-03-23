@@ -4,7 +4,7 @@ namespace He_ARC::rpg
 {
     Sword::Sword()
     {
-        damage=1;
+        damage=10;
     }
     Sword::Sword(int _damage): damage(_damage) {}
 

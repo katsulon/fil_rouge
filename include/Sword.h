@@ -1,3 +1,5 @@
+using namespace std;
+
 namespace He_ARC::rpg
 {
     class Sword

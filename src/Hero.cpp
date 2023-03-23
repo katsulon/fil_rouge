@@ -12,14 +12,16 @@ namespace He_ARC::rpg
         hp = 0; 
         name = "no_name"; 
     }
-    Hero::Hero(int _strength, int _agility, int _intelligence, double _hp, string _name) : 
-    strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name)
-    {}
 
-    void Hero::interact(const Hero& autre) {
-        cout << "Greetings, valiant " << autre.name << "! My name is " << name << "." << endl;
+    Hero::Hero(int _strength, int _agility, int _intelligence, double _hp, string _name) : 
+    strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name) {}
+
+
+    void Hero::interact(const Hero& otherHero) {
+        cout << "Greetings, valiant " << otherHero.name << "! My name is " << name << "." << endl;
     }
-    void Hero::show() {
+
+    void Hero::show() const {
         cout << "==========================" << endl;
         cout << "HERO: " << name << endl;
         cout << "==========================" << endl;

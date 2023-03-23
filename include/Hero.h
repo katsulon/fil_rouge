@@ -17,7 +17,8 @@ namespace He_ARC::rpg
     public:
         Hero();
         Hero(int,int,int,double,string);
+        //Hero(const Hero&); //not necessary
         void interact(const Hero&);
-        void show();
+        void show() const;
     };
 }
