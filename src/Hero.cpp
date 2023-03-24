@@ -11,10 +11,11 @@ namespace He_ARC::rpg
         intelligence = 0; 
         hp = 0; 
         name = "no_name"; 
+        weapon = new Weapon();
     }
 
-    Hero::Hero(int _strength, int _agility, int _intelligence, double _hp, string _name) : 
-    strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name) {}
+    Hero::Hero(int _strength, int _agility, int _intelligence, double _hp, string _name, Weapon *_weapon) : 
+    strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name), weapon(_weapon) {}
 
 
     void Hero::interact(const Hero& otherHero) {
@@ -30,5 +31,19 @@ namespace He_ARC::rpg
         cout << "intelligence: " << intelligence << endl;
         cout << "HP: " << hp << endl;
         cout <<  endl;
+    }
+
+
+    ostream& operator<<(ostream& s, const Hero& hero)
+    {
+        return s
+        << "==========================" << endl
+        << "HERO: " << hero.name << endl
+        << "==========================" << endl
+        << "strength: " << hero.strength << endl
+        << "agility: " << hero.agility << endl
+        << "intelligence: " << hero.intelligence << endl
+        << "HP: " << hero.hp << endl
+        <<  endl;
     }
 }

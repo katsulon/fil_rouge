@@ -1,5 +1,5 @@
 #include <string>
-#include "../src/Sword.cpp"
+#include "../src/Weapon.cpp"
 
 using namespace std;
 
@@ -13,12 +13,13 @@ namespace He_ARC::rpg
         int intelligence;
         double hp;
         string name;
-        Sword sword;
+        Weapon *weapon = nullptr;
     public:
         Hero();
-        Hero(int,int,int,double,string);
+        Hero(int,int,int,double,string, Weapon *weapon);
         //Hero(const Hero&); //not necessary
         void interact(const Hero&);
         void show() const;
+        friend ostream& operator<<(ostream&, const Hero&);
     };
 }
