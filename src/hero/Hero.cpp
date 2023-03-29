@@ -1,6 +1,4 @@
-#include "../include/Hero.h"
-
-#include <iostream>
+#include "../../include/hero/Hero.h"
 
 namespace He_ARC::rpg
 {

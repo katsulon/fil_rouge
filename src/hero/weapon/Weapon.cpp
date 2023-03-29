@@ -1,4 +1,4 @@
-#include "../include/Weapon.h"
+#include "../../../include/hero/weapon/Weapon.h"
 
 namespace He_ARC::rpg
 {

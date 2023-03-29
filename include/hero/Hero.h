@@ -1,5 +1,7 @@
-#include <string>
-#include "../src/Weapon.cpp"
+#pragma once
+
+#include <iostream>
+#include "../../src/hero/weapon/Weapon.cpp"
 
 using namespace std;
 
@@ -7,7 +9,7 @@ namespace He_ARC::rpg
 {
     class Hero 
     {
-    private:
+    protected:
         int strength;
         int agility;
         int intelligence;
@@ -18,8 +20,9 @@ namespace He_ARC::rpg
         Hero();
         Hero(int,int,int,double,string, Weapon *weapon);
         //Hero(const Hero&); //not necessary
-        void interact(const Hero&);
+        virtual void interact(const Hero&);
         void show() const;
         friend ostream& operator<<(ostream&, const Hero&);
+        //virtual ~Hero();
     };
 }

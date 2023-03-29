@@ -1,4 +1,6 @@
-#include "src/Hero.cpp"
+#include "src/hero/Hero.cpp"
+#include "src/hero/class/Wizard.cpp"
+#include "src/hero/class/wizard/Necromancer.cpp"
 
 using namespace He_ARC::rpg;
 
@@ -12,6 +14,14 @@ int main()
     h2.interact(h1);
 
     cout << h2;
+
+    Necromancer test(3,7,10,100,"Seiga",new Weapon(100),1);
+
+    cout << test;
+
+    test.interact(h2);
+
+    test.raiseUndeads();
     
     return 0;
 }
