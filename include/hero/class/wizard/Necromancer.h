@@ -1,3 +1,5 @@
+#pragma once
+
 #include "class/Wizard.h"
 
 namespace He_ARC::rpg
