@@ -1,4 +1,4 @@
-#include "../../../../include/hero/class/wizard/Necromancer.h"
+#include "class/wizard/Necromancer.h"
 
 namespace He_ARC::rpg
 {

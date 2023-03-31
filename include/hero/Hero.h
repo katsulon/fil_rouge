@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "../../src/hero/weapon/Weapon.cpp"
+#include "weapon/Weapon.h"
 
 using namespace std;
 

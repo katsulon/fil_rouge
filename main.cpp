@@ -1,6 +1,6 @@
-#include "src/hero/Hero.cpp"
-#include "src/hero/class/Wizard.cpp"
-#include "src/hero/class/wizard/Necromancer.cpp"
+#include "Hero.h"
+#include "class/Wizard.h"
+#include "class/wizard/Necromancer.h"
 
 using namespace He_ARC::rpg;
 
@@ -15,7 +15,7 @@ int main()
 
     cout << h2;
 
-    Necromancer test(3,7,10,100,"Seiga",new Weapon(100),1);
+    Necromancer test(3,7,10,100,"Seiga",new Weapon(100),2);
 
     cout << test;
 
