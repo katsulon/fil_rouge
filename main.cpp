@@ -1,6 +1,5 @@
 #include "Hero.h"
-#include "class/Wizard.h"
-#include "class/wizard/Necromancer.h"
+#include "class/ClassImpl.h"
 
 using namespace He_ARC::rpg;
 
