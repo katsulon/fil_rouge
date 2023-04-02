@@ -7,9 +7,6 @@ namespace He_ARC::rpg {
         this->name = weapon.name;
     }
 
-    int Weapon::getDamage() const {
-        return damage;
-    }
 
     void Weapon::setDamage(int damage) {
         if (damage > -1)
