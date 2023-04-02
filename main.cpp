@@ -1,5 +1,4 @@
 #include <list>
-#include <algorithm>
 #include "Hero.h"
 #include "class/ClassImpl.h"
 
@@ -29,7 +28,7 @@ int main() {
     ncm1->raiseUndeads();
 
     for(Hero *member : party) {
-        delete[] member;
+        delete member;
     }
     return 0;
 }
