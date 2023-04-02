@@ -8,7 +8,7 @@ Mini project to apply concepts seen in class to an RPG written in C++.
 - [x] V1
 - [x] V2
 - [x] V3
-- [ ] V4
+- [x] V4
 - [ ] V5
 - [ ] Additional features?
 

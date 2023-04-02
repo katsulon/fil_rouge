@@ -12,7 +12,7 @@ namespace He_ARC::rpg {
     public:
         Weapon(int=10, string="Rusty Sword");
         Weapon(const Weapon&);
-        int getDamage() const;
+        int getDamage() const { return damage; };
         void setDamage(int);
         void setName(string);
         Weapon& operator=(const Weapon&);
