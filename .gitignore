@@ -54,4 +54,7 @@
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode
+### CMake ###
+/build
+
+# End of https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode,cmake
