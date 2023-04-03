@@ -14,3 +14,4 @@ Mini project to apply concepts seen in class to an RPG written in C++.
 
 ## Tools used
 - **CMake**: for building the project
+- **SDL2**: graphic interface
