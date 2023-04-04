@@ -12,6 +12,12 @@ Mini project to apply concepts seen in class to an RPG written in C++.
 - [ ] V5
 - [ ] Additional features?
 
-## Tools used
+## Dependencies
 - **CMake**: for building the project
-- **SFML**: multimedia API
+- **SFML**: multimedia API, mostly used for graphics right now
+
+## Possible future plan
+- Sprite Movement
+- Game Map
+- Dialogue Tree/Interaction (Trading/combat system?)
+- ImGui ?

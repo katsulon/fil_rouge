@@ -10,8 +10,8 @@ find_package(SFML 2.5.1 COMPONENTS graphics REQUIRED)
 include_directories(goloviatinski_fil_rouge ${SFML_INCLUDE_DIRS})
 
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
-add_executable(goloviatinski_fil_rouge main.cpp ${SRC_FILES})
+add_executable(goloviatinski_fil_rouge main.cpp ${SRC_FILES} res/icon.rc)
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "main")
 
-target_include_directories(goloviatinski_fil_rouge PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/hero)
+target_include_directories(goloviatinski_fil_rouge PUBLIC include/hero)
 target_link_libraries(goloviatinski_fil_rouge sfml-graphics)
