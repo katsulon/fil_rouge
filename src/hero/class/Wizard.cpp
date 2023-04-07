@@ -4,6 +4,48 @@ namespace He_ARC::rpg {
     Wizard::Wizard(int _strength, int _agility, int _intelligence, int _hp, int _mana, Weapon *_weapon, string _name) : 
     Hero(_strength, _agility, _intelligence, _hp, _weapon, _name), mana(_mana) {}
 
+    void Wizard::loadTexture(state currentState, int frameRate) {
+        int frameSize = 32;
+        string srcTexture;
+        switch (currentState) {
+            case immobile:
+                srcTexture = "res/sprites/character/wizard/wizard.png";
+                break;
+            /*case idle:
+                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_idle.png";
+                break;
+            case move:
+                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_walk.png";
+                break;
+            case attack:
+                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_attack.png";
+                break;
+            case gethurt:
+                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_gethurt.png";
+                break;
+            case knockout:
+                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_knockout.png";
+                break;*/
+        }
+        texture.loadFromFile(srcTexture);
+        animFrame++;
+        animFrame%=frameRate;
+        // Create a sprite
+        int maxX=texture.getSize().x;
+        int maxY=texture.getSize().y;
+        xPos+=(animFrame%(frameRate/10)==0)*frameSize;    
+        xPos%=maxX;
+        if (xPos%maxX==0)
+        {
+            yPos+=(animFrame%(frameRate/10)==0)*frameSize;    
+            yPos%=maxY;
+        }
+        
+        sprite.setTexture(texture);
+        sprite.setTextureRect(sf::IntRect(xPos, 0, frameSize, frameSize));
+        //sprite.setColor(sf::Color(255, 255, 255, 200)); set sprite color
+        sprite.setScale(5,5);
+    }
 
     void Wizard::castSpell() {
         if (mana > 1)

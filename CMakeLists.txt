@@ -7,11 +7,11 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 project(goloviatinski_fil_rouge)
 
 find_package(SFML 2.5.1 COMPONENTS graphics REQUIRED)
-include_directories(goloviatinski_fil_rouge ${SFML_INCLUDE_DIRS})
+include_directories(${PROJECT_NAME} ${SFML_INCLUDE_DIRS})
 
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
-add_executable(goloviatinski_fil_rouge main.cpp ${SRC_FILES} res/icon.rc)
+add_executable(${PROJECT_NAME} main.cpp ${SRC_FILES} res/icon.rc)
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "main")
 
-target_include_directories(goloviatinski_fil_rouge PUBLIC include/hero)
-target_link_libraries(goloviatinski_fil_rouge sfml-graphics)
+target_include_directories(${PROJECT_NAME} PUBLIC include/hero)
+target_link_libraries(${PROJECT_NAME} sfml-graphics)

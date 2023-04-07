@@ -11,6 +11,10 @@ void update();
 void clean();
 
 sf::RenderWindow window(sf::VideoMode(1280, 720), "Goloviatinski Fil Rouge");
+
+//string const SPRITE_DIR = "res/sprites/"; currently useless
+int const frameRate = 60;
+//var to check whether a key has already been pressed
 bool keyDown = false;
 
 list<Hero*> party;
@@ -25,18 +29,24 @@ int main() {
         event();
         update();
     }
+    clean();
     return 0;
 }
 
 void init() {
+    window.setFramerateLimit(frameRate);
     sf::Image icon;
     icon.loadFromFile("res/icon.png"); 
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-    
+
     party.push_back(war1);
     party.push_back(rog1);
     party.push_back(wzd1);
     party.push_back(ncm1);
+
+    for(Hero *member : party) {
+        member->loadTexture(Hero::immobile, frameRate);
+    }
 }
 
 void terminal()
@@ -51,7 +61,7 @@ void terminal()
 
     wzd1->castSpell();
     ncm1->castSpell();
-    ncm1->raiseUndeads();   
+    ncm1->raiseUndeads();
 }
 
 void event()
@@ -63,7 +73,6 @@ void event()
         switch (e.type)
         {
             case sf::Event::Closed:
-                clean();
                 window.close();
                 break;
             case sf::Event::Resized:
@@ -89,11 +98,18 @@ void event()
 
 void update()
 {
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-    
-    window.clear();
-    window.draw(shape);
+    war1->loadTexture(Hero::attack, frameRate);
+    rog1->loadTexture(Hero::attack, frameRate);
+
+    war1->setPos(0, 20);
+    rog1->setPos(100,0);
+    wzd1->setPos(0,0);
+    ncm1->setPos(130,100);
+
+    window.clear(sf::Color::White);
+    for(Hero *member : party) {
+        window.draw(member->getSprite());
+    }
     window.display();
 }
 
