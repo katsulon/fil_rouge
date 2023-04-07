@@ -38,10 +38,13 @@ namespace He_ARC::rpg {
         this->weapon = weapon;
     }
 
-
-    void Hero::interact(const Hero& otherHero) {
-        cout << "Greetings, valiant " << otherHero.name << "! My name is " << name << "." << endl;
+    void Hero::setPos(int x, int y) {
+        sprite.setPosition(x, y);
     }
+
+    /*void Hero::interact(const Hero& otherHero) { -> method  virtual pure, therefore not necessary
+        cout << "Greetings, valiant " << otherHero.name << "! My name is " << name << "." << endl;
+    }*/
 
     void Hero::show() const {
         cout << "==========================" << endl;
@@ -69,5 +72,9 @@ namespace He_ARC::rpg {
     ostream& operator<<(ostream& s, const Hero& hero) {
         hero.print(s);
         return s;
+    }
+
+    Hero::~Hero() {
+        delete weapon;
     }
 }
