@@ -43,7 +43,7 @@ namespace He_ARC::rpg {
         sprite.setTexture(texture);
         sprite.setTextureRect(sf::IntRect(xPos, yPos, frameSize, frameSize));
         //sprite.setColor(sf::Color(255, 255, 255, 200)); set sprite color
-        sprite.setScale(5,5);
+        sprite.setScale(4,4);
     }
 
     void Rogue::interact(const Hero& otherHero)

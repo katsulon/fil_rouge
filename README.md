@@ -13,8 +13,12 @@ Mini project to apply concepts seen in class to an RPG written in C++.
 - [ ] Additional features?
 
 ## Dependencies
-- **CMake**: for building the project. Minimum version 3.1 required.
-- **SFML 2.5.1**: multimedia API, mostly used for graphics right now
+- **CMake**: for building the project. Minimum version 3.12 required.
+- **ImGui-SFML v2.5**: Binds Dear ImGui to SFML. It therefore itself has the following dependencies:
+    - **SFML >= 2.5.0**: multimedia API, used for graphics
+    - **Dear ImGui >= 1.80**: GUI library
+
+CMakeLists have been configured to directly fetch the git repository of dependencies with FetchContent so normally dependencies should be integrated into build automatically.
 
 ## Possible future plan
 - Sprite Movement
