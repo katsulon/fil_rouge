@@ -1,5 +1,3 @@
-#include "imgui.h"
-#include "imgui-SFML.h"
 #include <SFML/Graphics.hpp>
 #include <list>
 #include "Hero.h"
@@ -14,7 +12,9 @@ void clean();
 
 sf::RenderWindow window(sf::VideoMode(1280, 720), "Goloviatinski Fil Rouge");
 
-sf::Clock deltaClock;
+sf::Clock deltaClock; //elapsed time since the last frame was drawn
+
+
 
 //string const SPRITE_DIR = "res/sprites/"; currently useless
 int const frameRate = 60;
@@ -34,7 +34,6 @@ int main() {
         update();
     }
     clean();
-    ImGui::SFML::Shutdown();
     return 0;
 }
 
@@ -43,7 +42,8 @@ void init() {
     sf::Image icon;
     icon.loadFromFile("res/icon.png"); 
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-    ImGui::SFML::Init(window);
+
+    constexpr auto scale_factor = 2.0;
 
     party.push_back(war1);
     party.push_back(rog1);
@@ -75,7 +75,6 @@ void event()
     sf::Event e;
     while (window.pollEvent(e))
     {
-        ImGui::SFML::ProcessEvent(e);
         sf::FloatRect visibleArea(0, 0, e.size.width, e.size.height);
         switch (e.type)
         {
@@ -83,7 +82,7 @@ void event()
                 window.close();
                 break;
             case sf::Event::Resized:
-                // update the view to the new size of the window
+                // updates the view to the new size of the window
                 window.setView(sf::View(visibleArea));
                 break;
             case sf::Event::KeyPressed:
@@ -105,10 +104,6 @@ void event()
 
 void update()
 {
-    ImGui::SFML::Update(window, deltaClock.restart());
-    
-    ImGui::ShowDemoWindow();
-
     war1->loadTexture(Hero::attack, frameRate);
     rog1->loadTexture(Hero::idle, frameRate);
 
@@ -117,15 +112,10 @@ void update()
     wzd1->setPos(0,0);
     ncm1->setPos(130,100);
 
-    ImGui::Begin("Hello, world!");
-    ImGui::Button("Look at this pretty button");
-    ImGui::End();
-
     window.clear(sf::Color::White);
     for(Hero *member : party) {
         window.draw(member->getSprite());
     }
-    ImGui::SFML::Render(window);
     window.display();
 }
 

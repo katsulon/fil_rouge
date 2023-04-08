@@ -6,6 +6,8 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 project(goloviatinski_fil_rouge)
 
+find_package(SFML 2.5.1 COMPONENTS graphics REQUIRED)
+
 add_subdirectory(lib)
 
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
@@ -23,4 +25,4 @@ if(WIN32)
 endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC include/hero)
-target_link_libraries(${PROJECT_NAME} PRIVATE ImGui-SFML::ImGui-SFML)
+target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics)

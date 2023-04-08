@@ -9,8 +9,8 @@ using namespace std;
 namespace He_ARC::rpg {
     /**
     * Base class for playable characters and combat NPC
-    *
     * @author Elisa Goloviatinski
+    * @version 4.0
     */
     class Hero {
     protected:

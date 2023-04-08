@@ -13,18 +13,15 @@ Mini project to apply concepts seen in class to an RPG written in C++.
 - [ ] Additional features?
 
 ## Dependencies
-- **CMake**: for building the project. Minimum version 3.12 required.
-- **ImGui-SFML v2.5**: Binds Dear ImGui to SFML. It therefore itself has the following dependencies:
-    - **SFML >= 2.5.0**: multimedia API, used for graphics
-    - **Dear ImGui >= 1.80**: GUI library
+- **CMake**: for building the project. Minimum version 3.14 required.
+- **SFML 2.5.1**: multimedia API, used for graphics
 
-CMakeLists have been configured to directly fetch the git repository of dependencies with FetchContent so normally dependencies should be integrated into build automatically.
+CMakeLists have been configured to directly fetch the git repository of dependencies with FetchContent if the required built library was not found locally so normally dependencies should be integrated into build automatically.
 
 ## Possible future plan
 - Sprite Movement
 - Game Map
 - Dialogue Tree/Interaction (Trading/combat system?)
-- ImGui for menus
 
 ## Credits
 ### Additional art
