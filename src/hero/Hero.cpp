@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Hero.h"
+#include "hero/Hero.h"
 
 namespace He_ARC::rpg {
     Hero::Hero(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, string _name) : 

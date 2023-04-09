@@ -1,4 +1,4 @@
-#include "class/Warrior.h"
+#include "hero/class/Warrior.h"
 
 namespace He_ARC::rpg {
     Warrior::Warrior(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, string _name) : 

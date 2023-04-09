@@ -24,5 +24,5 @@ if(WIN32)
             $<TARGET_FILE_DIR:${PROJECT_NAME}>)
 endif()
 
-target_include_directories(${PROJECT_NAME} PUBLIC include/hero)
+target_include_directories(${PROJECT_NAME} PUBLIC include)
 target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics)

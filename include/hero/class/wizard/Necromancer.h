@@ -1,6 +1,6 @@
 #pragma once
 
-#include "class/Wizard.h"
+#include "hero/class/Wizard.h"
 
 namespace He_ARC::rpg {
     class Necromancer : public Wizard {

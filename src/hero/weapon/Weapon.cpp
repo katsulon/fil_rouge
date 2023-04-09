@@ -1,4 +1,4 @@
-#include "weapon/Weapon.h"
+#include "hero/weapon/Weapon.h"
 
 namespace He_ARC::rpg {
     Weapon::Weapon(int _damage, string _name): damage(_damage), name(_name) {}

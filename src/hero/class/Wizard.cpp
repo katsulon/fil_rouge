@@ -1,4 +1,4 @@
-#include "class/Wizard.h"
+#include "hero/class/Wizard.h"
 
 namespace He_ARC::rpg {
     Wizard::Wizard(int _strength, int _agility, int _intelligence, int _hp, int _mana, Weapon *_weapon, string _name) : 

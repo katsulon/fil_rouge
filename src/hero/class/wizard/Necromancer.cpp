@@ -1,4 +1,4 @@
-#include "class/wizard/Necromancer.h"
+#include "hero/class/wizard/Necromancer.h"
 
 namespace He_ARC::rpg {
     Necromancer::Necromancer(int _strength, int _agility, int _intelligence, int _hp, int _mana, Weapon *_weapon, string _name) : 

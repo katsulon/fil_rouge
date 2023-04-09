@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "weapon/Weapon.h"
+#include "hero/weapon/Weapon.h"
 
 using namespace std;
 

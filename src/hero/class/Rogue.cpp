@@ -1,4 +1,4 @@
-#include "class/Rogue.h"
+#include "hero/class/Rogue.h"
 
 namespace He_ARC::rpg {
     Rogue::Rogue(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, string _name) : 
