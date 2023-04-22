@@ -6,7 +6,7 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 project(goloviatinski_fil_rouge)
 
-find_package(SFML 2.5.1 COMPONENTS graphics REQUIRED)
+find_package(SFML 2.5.1 COMPONENTS graphics)
 
 add_subdirectory(lib)
 

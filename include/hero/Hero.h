@@ -23,9 +23,12 @@ namespace He_ARC::rpg {
         //SFML variables
         sf::Texture texture;
         sf::Sprite sprite;
+        bool flipped = false;
+        int counter = 1;
         int animFrame = 0;
         int xPos = 0;
         int yPos = 0;
+        float speed = 300.f;
     public:
         Hero() = default;
         Hero(int, int, int, int, Weapon*, string);
@@ -40,7 +43,9 @@ namespace He_ARC::rpg {
         Weapon getWeapon() const { return *weapon; }
         //SFML getters
         sf::Texture& getTexture() { return texture; }
-        sf::Sprite getSprite() const { return sprite; } 
+        sf::Sprite getSprite() const { return sprite; }
+        float getSpeed() const { return speed; } 
+        bool getSpriteState() const { return flipped; }
 
         //setters
         void setStrength(int);
@@ -49,11 +54,15 @@ namespace He_ARC::rpg {
         void setHealth(int);
         void setName(string);
         void setWeapon(Weapon*);
+        void setSpeed(float);
+        void setCounter(int counter) { this->counter = counter; }
 
         //SFML methods
         enum state { immobile, idle, move, attack, gethurt, knockout };
-        virtual void loadTexture(state, int) = 0;
+        state currentState = immobile;
+        virtual void loadTexture(int, bool) = 0;
         void setPos(int, int);
+        void walk(const float &, const float, const float, int);
         //methods
         virtual void interact(const Hero&) = 0;
         virtual void show() const;

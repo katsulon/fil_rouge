@@ -4,7 +4,7 @@ namespace He_ARC::rpg {
     Rogue::Rogue(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, string _name) : 
     Hero(_strength, _agility, _intelligence, _hp, _weapon, _name) {}
 
-    void Rogue::loadTexture(state currentState, int frameRate) {
+    void Rogue::loadTexture(int frameRate, bool flipped) {
         int frameSize = 32;
         string srcTexture;
         switch (currentState) {
@@ -43,7 +43,16 @@ namespace He_ARC::rpg {
         sprite.setTexture(texture);
         sprite.setTextureRect(sf::IntRect(xPos, yPos, frameSize, frameSize));
         //sprite.setColor(sf::Color(255, 255, 255, 200)); set sprite color
-        sprite.setScale(4,4);
+        if ((flipped == true) && (counter == 0)) {
+            sprite.move(frameSize*4,0);
+            sprite.setScale(-4,4);
+            counter=1;
+        } 
+        else if((flipped == false) && (counter == 1)) {
+            sprite.move(-frameSize*4,0);
+            sprite.setScale(4,4);
+            counter=0;
+        }
     }
 
     void Rogue::interact(const Hero& otherHero)

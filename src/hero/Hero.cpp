@@ -33,13 +33,32 @@ namespace He_ARC::rpg {
     void Hero::setName(string name) {
         this->name = name;
     }
-    void Hero::setWeapon(Weapon *weapon)
-    {
+    void Hero::setWeapon(Weapon *weapon) {
         this->weapon = weapon;
     }
+    void Hero::setSpeed(float speed) {
+        this->speed = speed;
+    }
+
 
     void Hero::setPos(int x, int y) {
         sprite.setPosition(x, y);
+    }
+
+    void Hero::walk(float const& dt, const float dir_x, const float dir_y, int frameRate) {
+        float currentX = sprite.getPosition().x;
+        float currentY = sprite.getPosition().y;
+        setPos(currentX+=speed*dir_x*dt, currentY+=speed*dir_y*dt);
+        currentState=move;
+        if ((dir_x < 0) && (flipped == false)) {
+            flipped = true;
+            loadTexture(frameRate, flipped);
+        }
+        else if ((dir_x > 0) && (flipped == true)) {
+            flipped = false;
+            loadTexture(frameRate, flipped);
+        }
+        
     }
 
     /*void Hero::interact(const Hero& otherHero) { -> method  virtual pure, therefore not necessary

@@ -18,8 +18,11 @@ namespace He_ARC::rpg {
         party.push_back(ncm1);
 
         for(Hero *member : party) {
-            member->loadTexture(Hero::immobile, frameRate);
+            member->currentState=Hero::immobile;
+            member->loadTexture(frameRate, member->getSpriteState());
         }
+
+        war1->setPos(0, 20);
     }
 
     // Constructors
@@ -42,6 +45,19 @@ namespace He_ARC::rpg {
     }
 
     void Game::updateSFMLEvents() {
+        sf::Time deltaTime = deltaClock.restart();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+                    war1->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+                    war1->walk(deltaTime.asSeconds(),-1.f, 0.f, frameRate);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+                    war1->walk(deltaTime.asSeconds(),0.f, -1.f, frameRate);
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+                    war1->walk(deltaTime.asSeconds(),0.f, 1.f, frameRate);
+        }
         while (window.pollEvent(sfEvent)) {
             sf::FloatRect visibleArea(0, 0, sfEvent.size.width, sfEvent.size.height);
             switch (sfEvent.type) {
@@ -64,6 +80,7 @@ namespace He_ARC::rpg {
                     break;
                 case sf::Event::KeyReleased:
                     keyDown = false;
+                    war1->currentState=Hero::immobile;
                     break;
             }
         }
@@ -72,10 +89,10 @@ namespace He_ARC::rpg {
     void Game::update() {
         updateSFMLEvents();
 
-        war1->loadTexture(Hero::attack, frameRate);
-        rog1->loadTexture(Hero::idle, frameRate);
+        war1->loadTexture(frameRate, war1->getSpriteState());
+        rog1->loadTexture(frameRate, rog1->getSpriteState());
 
-        war1->setPos(0, 20);
+        //war1->setPos(0, 20);
         rog1->setPos(100,0);
         wzd1->setPos(0,0);
         ncm1->setPos(130,100);
