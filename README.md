@@ -26,10 +26,11 @@ CMakeLists have been configured to directly fetch the git repository of dependen
     sudo apt-get install libsfml-dev
 
 ## Possible future plan
-- Sprite Movement
-- Game Map
-- Dialogue Tree/Interaction (Trading/combat system?)
+- [x] Sprite Movement
+- [x] Game Map
+- [ ] Dialogue Tree/Interaction (Trading/combat system?)
 
 ## Credits
 ### Additional art
-- Warrior and Rogue: Clumsy Medieval Dangerous 16x16 asset pack by kevenece
+- Warrior and Rogue: [Clumsy Medieval Dangerous 16x16](https://kevenece.itch.io/free-16x-pixel-art-fighters) asset pack by kevenece
+- Map Tiles: [Forest Tileset](https://pixivan.itch.io/top-down-forest-tileset) by PixiVan

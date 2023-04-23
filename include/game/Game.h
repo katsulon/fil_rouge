@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Tilemap.h"
 #include <iostream>
 #include <list>
 #include "hero/Hero.h"
@@ -20,6 +21,11 @@ namespace He_ARC::rpg {
             sf::Event sfEvent;
             sf::Clock deltaClock; //Elapsed time since the last frame was drawn
             sf::Image icon;
+
+            //create the tilemaps from the level definitions
+            TileMap map;
+            TileMap mapCliff;
+            TileMap mapWater;
             
             //string const SPRITE_DIR = "res/sprites/"; currently useless
 
@@ -27,6 +33,7 @@ namespace He_ARC::rpg {
             //Var to check whether a key has already been pressed
             bool keyDown = false;
             
+            //Initialization of party
             list<Hero*> party;
             Warrior *war1 = new Warrior;
             Rogue *rog1 = new Rogue;
