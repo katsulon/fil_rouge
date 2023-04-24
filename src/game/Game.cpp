@@ -7,7 +7,7 @@ namespace He_ARC::rpg {
     // define the level with an array of tile indices
     const int level[] =
     {
-        28,10,10,288,145,177,177,56,57,58,177,155,180,56,57,57,57,57,57,58,
+        28,10,10,288,145,137,138,56,57,58,137,155,138,56,57,57,57,57,57,58,
         50,10,10,144,170,171,170,155,155,155,171,223,154,122,122,122,122,122,122,122,
         222,144,144,289,144,144,144,286,287,288,144,144,144,144,144,0,1,1,1,1,
         266,144,0,1,1,1,2,144,144,144,144,144,144,144,0,28,12,12,12,12,
@@ -68,7 +68,7 @@ namespace He_ARC::rpg {
             member->loadTexture(frameRate, member->getSpriteState());
         }
 
-        war1->setPos(0, 20);
+        currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
     }
 
     // Constructors
@@ -92,18 +92,19 @@ namespace He_ARC::rpg {
 
     void Game::updateSFMLEvents() {
         sf::Time deltaTime = deltaClock.restart();
+        currentHeroFlipped = currentHero->getSpriteState();
         // Player movement
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-                    war1->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
+                    currentHero->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-                    war1->walk(deltaTime.asSeconds(),-1.f, 0.f, frameRate);
+                    currentHero->walk(deltaTime.asSeconds(),-1.f, 0.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-                    war1->walk(deltaTime.asSeconds(),0.f, -1.f, frameRate);
+                    currentHero->walk(deltaTime.asSeconds(),0.f, -1.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-                    war1->walk(deltaTime.asSeconds(),0.f, 1.f, frameRate);
+                    currentHero->walk(deltaTime.asSeconds(),0.f, 1.f, frameRate);
         }
         while (window.pollEvent(sfEvent)) {
             sf::FloatRect visibleArea(0, 0, sfEvent.size.width, sfEvent.size.height);
@@ -123,11 +124,59 @@ namespace He_ARC::rpg {
                             terminal();
                             keyDown = true;
                         }
+                        if (sfEvent.key.code == sf::Keyboard::Num1)
+                        {
+                            currentHeroFlipped = currentHero->getSpriteState();
+                            currentHeroPos = sf::Vector2f(currentHero->getPos());
+                            currentHero=war1;
+                            if (currentHeroFlipped!=currentHero->getSpriteState()) {
+                                currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+                            }
+                            else {
+                                currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+                            }
+                            currentHero->setSpriteState(currentHeroFlipped);
+                            keyDown = true;
+                        }
+                        if (sfEvent.key.code == sf::Keyboard::Num2)
+                        {
+                            currentHeroFlipped = currentHero->getSpriteState();
+                            currentHeroPos = sf::Vector2f(currentHero->getPos());
+                            currentHero=rog1;
+                            if (currentHeroFlipped!=currentHero->getSpriteState()) {
+                                if (currentHeroFlipped) {
+                                    currentHero->setPos(currentHeroPos.x-128, currentHeroPos.y);
+                                }
+                            }
+                            else {
+                                currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+                            }
+                            currentHero->setSpriteState(currentHeroFlipped);
+                            keyDown = true;
+                            
+                        }
+                        if (sfEvent.key.code == sf::Keyboard::Num3)
+                        {
+                            currentHeroFlipped = currentHero->getSpriteState();
+                            currentHeroPos = sf::Vector2f(currentHero->getPos());
+                            currentHero=wzd1;
+                            if (currentHeroFlipped!=currentHero->getSpriteState()) {
+                                if (currentHeroFlipped) {
+                                    currentHero->setPos(currentHeroPos.x-128, currentHeroPos.y);
+                                }
+                            }
+                            else {
+                                currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+                            }
+                            currentHero->setSpriteState(currentHeroFlipped);
+                            keyDown = true;
+                        }
+                        
                     }
                     break;
                 case sf::Event::KeyReleased:
                     keyDown = false;
-                    war1->currentState=Hero::immobile;
+                    currentHero->currentState=Hero::immobile;
                     break;
             }
         }
@@ -137,13 +186,14 @@ namespace He_ARC::rpg {
         updateSFMLEvents();
 
         // Loading textures
-        war1->loadTexture(frameRate, war1->getSpriteState());
-        rog1->loadTexture(frameRate, rog1->getSpriteState());
+        
+        
+        currentHero->loadTexture(frameRate, currentHeroFlipped);
 
         //war1->setPos(0, 20);
-        rog1->setPos(100,0);
-        wzd1->setPos(0,0);
-        ncm1->setPos(130,100);
+        //rog1->setPos(100,0);
+        //wzd1->setPos(0,0);
+        //ncm1->setPos(130,100);
     }
 
     void Game::render() {
@@ -152,9 +202,7 @@ namespace He_ARC::rpg {
         window.draw(map);
         window.draw(mapCliff);
         window.draw(mapWater);
-        for(Hero *member : party) {
-            window.draw(member->getSprite());
-        }
+        window.draw(currentHero->getSprite());
         window.display();
     }
 

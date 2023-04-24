@@ -47,13 +47,13 @@ namespace He_ARC::rpg {
         //sprite.setColor(sf::Color(255, 255, 255, 200)); set sprite color
         
         if ((flipped == true) && (counter == 0)) {
-            sprite.move(frameSize*4,0);
-            sprite.setScale(-4,4);
+            sprite.move(frameSize*4.f,0.f);
+            sprite.setScale(-4.f,4.f);
             counter=1;
         } 
         else if((flipped == false) && (counter == 1)) {
-            sprite.move(-frameSize*4,0);
-            sprite.setScale(4,4);
+            sprite.move(-frameSize*4.f,0.f);
+            sprite.setScale(4.f,4.f);
             counter=0;
         }
     }

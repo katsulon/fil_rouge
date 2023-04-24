@@ -30,16 +30,6 @@ namespace He_ARC::rpg {
         else
             this->hp = 0; 
     }
-    void Hero::setName(string name) {
-        this->name = name;
-    }
-    void Hero::setWeapon(Weapon *weapon) {
-        this->weapon = weapon;
-    }
-    void Hero::setSpeed(float speed) {
-        this->speed = speed;
-    }
-
 
     void Hero::setPos(int x, int y) {
         sprite.setPosition(x, y);

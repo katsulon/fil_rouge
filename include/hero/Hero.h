@@ -2,7 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "hero/weapon/Weapon.h"
+#include "hero/object/IObject.h"
+#include "hero/object/weapon/Weapon.h"
 
 using namespace std;
 
@@ -46,15 +47,18 @@ namespace He_ARC::rpg {
         sf::Sprite getSprite() const { return sprite; }
         float getSpeed() const { return speed; } 
         bool getSpriteState() const { return flipped; }
+        sf::Vector2f getPos() const { return sprite.getPosition(); }
 
         //setters
         void setStrength(int);
         void setAgility(int);
         void setIntelligence(int);
         void setHealth(int);
-        void setName(string);
-        void setWeapon(Weapon*);
-        void setSpeed(float);
+        void setName(string name) { this->name = name; }
+        void setWeapon(Weapon *weapon) { this->weapon = weapon; }
+        //SFML setters
+        void setSpeed(float speed) { this->speed = speed; }
+        void setSpriteState(bool flipped) { this->flipped = flipped; }
         void setCounter(int counter) { this->counter = counter; }
 
         //SFML methods

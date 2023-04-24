@@ -1,4 +1,4 @@
-#include "hero/weapon/Weapon.h"
+#include "hero/object/weapon/Weapon.h"
 
 namespace He_ARC::rpg {
     Weapon::Weapon(int _damage, string _name): damage(_damage), name(_name) {}
@@ -8,20 +8,17 @@ namespace He_ARC::rpg {
     }
 
 
-    void Weapon::setDamage(int damage) {
+    void Weapon::setFeature(int damage) {
         if (damage > -1)
             this->damage = damage;
         else
             this->damage = 0;
     }
-    void Weapon::setName(string name) {
-        this->name = name;
-    }
 
 
     Weapon& Weapon::operator=(const Weapon& weapon) {
         if(this != &weapon) {
-            this->setDamage(weapon.damage);
+            this->setFeature(weapon.damage);
             this->setName(weapon.name);
         }
         return *this;
