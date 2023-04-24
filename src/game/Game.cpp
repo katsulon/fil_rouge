@@ -88,6 +88,10 @@ namespace He_ARC::rpg {
         wzd1->castSpell();
         ncm1->castSpell();
         ncm1->raiseUndeads();
+
+        cout << "Staff damage: " << wzd1->getWeapon().getFeature() << endl;
+        cout << wzd1->getLeftHandItem()->getName() << endl;
+        cout << ncm1->getLeftHandItem()->getName() << endl;
     }
 
     void Game::updateSFMLEvents() {

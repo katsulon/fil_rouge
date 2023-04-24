@@ -1,8 +1,8 @@
 #include "hero/class/Warrior.h"
 
 namespace He_ARC::rpg {
-    Warrior::Warrior(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, string _name) : 
-    Hero(_strength, _agility, _intelligence, _hp, _weapon, _name) {}
+    Warrior::Warrior(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, IObject *_pObject, string _name) : 
+    Hero(_strength, _agility, _intelligence, _hp, _weapon, _pObject, _name) {}
 
     void Warrior::loadTexture(int frameRate, bool flipped) {
         int frameSize = 48;

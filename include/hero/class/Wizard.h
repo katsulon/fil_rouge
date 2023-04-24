@@ -7,7 +7,7 @@ namespace He_ARC::rpg {
         protected:
             int mana;
         public:
-            Wizard(int=3, int=7, int=10, int=100, int=2, Weapon *weapon=new Weapon(100, "Old Staff"), string="Gandalf");
+            Wizard(int=3, int=7, int=10, int=100, int=2, Weapon *weapon=new Weapon(100, "Old Staff"), IObject *pObject=new Potion(10), string="Gandalf");
             void loadTexture(int, bool) override;
             int getMana() const { return mana; }
             void castSpell();

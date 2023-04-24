@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "hero/object/IObject.h"
-#include "hero/object/weapon/Weapon.h"
+#include "hero/object/IObjectImpl.h"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ namespace He_ARC::rpg {
     /**
     * Base class for playable characters and combat NPC
     * @author Elisa Goloviatinski
-    * @version 4.0
+    * @version 5.0
     */
     class Hero {
     protected:
@@ -21,6 +21,7 @@ namespace He_ARC::rpg {
         int hp = 0;
         string name = "no_name";
         Weapon *weapon = nullptr;
+        IObject *pObject = nullptr;
         //SFML variables
         sf::Texture texture;
         sf::Sprite sprite;
@@ -32,7 +33,7 @@ namespace He_ARC::rpg {
         float speed = 300.f;
     public:
         Hero() = default;
-        Hero(int, int, int, int, Weapon*, string);
+        Hero(int, int, int, int, Weapon*, IObject*, string);
         //Hero(const Hero&); //not necessary
 
         //getters
@@ -42,6 +43,7 @@ namespace He_ARC::rpg {
         int getHealth() const { return hp; }
         string getName() const { return name; }
         Weapon getWeapon() const { return *weapon; }
+        IObject* getLeftHandItem() const { return pObject; }
         //SFML getters
         sf::Texture& getTexture() { return texture; }
         sf::Sprite getSprite() const { return sprite; }
@@ -56,6 +58,7 @@ namespace He_ARC::rpg {
         void setHealth(int);
         void setName(string name) { this->name = name; }
         void setWeapon(Weapon *weapon) { this->weapon = weapon; }
+        void setLeftHandItem(IObject *pObject) { this->pObject = pObject; }
         //SFML setters
         void setSpeed(float speed) { this->speed = speed; }
         void setSpriteState(bool flipped) { this->flipped = flipped; }

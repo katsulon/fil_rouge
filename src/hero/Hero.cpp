@@ -2,8 +2,8 @@
 #include "hero/Hero.h"
 
 namespace He_ARC::rpg {
-    Hero::Hero(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, string _name) : 
-    strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name), weapon(_weapon) {}
+    Hero::Hero(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, IObject *_pObject, string _name) : 
+    strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name), weapon(_weapon), pObject(_pObject) {}
 
 
     void Hero::setStrength(int strength) {
@@ -85,5 +85,6 @@ namespace He_ARC::rpg {
 
     Hero::~Hero() {
         delete weapon;
+        delete pObject;
     }
 }

@@ -1,8 +1,8 @@
 #include "hero/class/Wizard.h"
 
 namespace He_ARC::rpg {
-    Wizard::Wizard(int _strength, int _agility, int _intelligence, int _hp, int _mana, Weapon *_weapon, string _name) : 
-    Hero(_strength, _agility, _intelligence, _hp, _weapon, _name), mana(_mana) {}
+    Wizard::Wizard(int _strength, int _agility, int _intelligence, int _hp, int _mana, Weapon *_weapon, IObject *_pObject, string _name) : 
+    Hero(_strength, _agility, _intelligence, _hp, _weapon, _pObject, _name), mana(_mana) {}
 
     void Wizard::loadTexture(int frameRate, bool flipped) {
         int frameSize = 32;
