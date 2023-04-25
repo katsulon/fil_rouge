@@ -41,7 +41,7 @@ namespace He_ARC::rpg {
             Necromancer *ncm1 = new Necromancer;
 
             Hero *currentHero = war1;
-            sf::Vector2f currentHeroPos = sf::Vector2f(0,20);
+            sf::Vector2f currentHeroPos = sf::Vector2f(0,100);
             bool currentHeroFlipped = false; 
             // Initialization
             void init();

@@ -5,7 +5,7 @@ namespace He_ARC::rpg {
     Hero(_strength, _agility, _intelligence, _hp, _weapon, _pObject, _name), mana(_mana) {}
 
     void Wizard::loadTexture(int frameRate, bool flipped) {
-        int frameSize = 32;
+        frameSize = 32;
         string srcTexture;
         switch (currentState) {
             case immobile:

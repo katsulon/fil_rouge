@@ -28,6 +28,7 @@ namespace He_ARC::rpg {
         bool flipped = false;
         int counter = 1;
         int animFrame = 0;
+        int frameSize = 0;
         int xPos = 0;
         int yPos = 0;
         float speed = 300.f;
@@ -47,9 +48,10 @@ namespace He_ARC::rpg {
         //SFML getters
         sf::Texture& getTexture() { return texture; }
         sf::Sprite getSprite() const { return sprite; }
+        int getFrameSize() const { return frameSize; }
         float getSpeed() const { return speed; } 
         bool getSpriteState() const { return flipped; }
-        sf::Vector2f getPos() const { return sprite.getPosition(); }
+        sf::Vector2f getPos() const { return sf::Vector2f(sprite.getPosition().x+frameSize, sprite.getPosition().y+4*frameSize); }
 
         //setters
         void setStrength(int);

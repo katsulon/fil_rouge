@@ -45,7 +45,7 @@ namespace He_ARC::rpg {
     // 11 tiles per row
     
     void Game::init() {
-        window.create(sf::VideoMode(1280, 720), "Goloviatinski Fil Rouge");
+        window.create(sf::VideoMode(1280, 768), "Goloviatinski Fil Rouge");
         window.setFramerateLimit(frameRate);
     
         icon.loadFromFile("res/icon.png"); 
@@ -134,7 +134,7 @@ namespace He_ARC::rpg {
                             currentHeroPos = sf::Vector2f(currentHero->getPos());
                             currentHero=war1;
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
-                                currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+                                currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
                             }
                             else {
                                 currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
@@ -149,7 +149,7 @@ namespace He_ARC::rpg {
                             currentHero=rog1;
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
                                 if (currentHeroFlipped) {
-                                    currentHero->setPos(currentHeroPos.x-128, currentHeroPos.y);
+                                    currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
                                 }
                             }
                             else {
@@ -166,7 +166,7 @@ namespace He_ARC::rpg {
                             currentHero=wzd1;
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
                                 if (currentHeroFlipped) {
-                                    currentHero->setPos(currentHeroPos.x-128, currentHeroPos.y);
+                                    currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
                                 }
                             }
                             else {

@@ -1,4 +1,4 @@
-//aggregate header for class implementation for Hero
+//aggregate header for IObject implementation for Hero
 
 #pragma once
 

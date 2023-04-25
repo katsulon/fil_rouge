@@ -5,7 +5,7 @@ namespace He_ARC::rpg {
     Hero(_strength, _agility, _intelligence, _hp, _weapon, _pObject, _name) {}
 
     void Warrior::loadTexture(int frameRate, bool flipped) {
-        int frameSize = 48;
+        frameSize = 48;
         string srcTexture;
         switch (currentState) {
             case immobile:
@@ -27,8 +27,6 @@ namespace He_ARC::rpg {
                 srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_knockout.png";
                 break;
         }
-        float currentX = sprite.getPosition().x;
-        float currentY = sprite.getPosition().y;
         texture.loadFromFile(srcTexture);
         animFrame++;
         animFrame%=frameRate;
