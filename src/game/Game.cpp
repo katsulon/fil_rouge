@@ -134,7 +134,12 @@ namespace He_ARC::rpg {
                             currentHeroPos = sf::Vector2f(currentHero->getPos());
                             currentHero=war1;
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
-                                currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
+                                if (currentHeroFlipped) {
+                                    currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
+                                }
+                                else {
+                                    currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
+                                }
                             }
                             else {
                                 currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
@@ -150,6 +155,9 @@ namespace He_ARC::rpg {
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
                                 if (currentHeroFlipped) {
                                     currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
+                                }
+                                else {
+                                    currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
                                 }
                             }
                             else {
@@ -167,6 +175,9 @@ namespace He_ARC::rpg {
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
                                 if (currentHeroFlipped) {
                                     currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
+                                }
+                                else {
+                                    currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
                                 }
                             }
                             else {
