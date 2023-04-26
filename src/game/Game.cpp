@@ -92,6 +92,25 @@ namespace He_ARC::rpg {
         cout << "Staff damage: " << wzd1->getWeapon().getFeature() << endl;
         cout << wzd1->getLeftHandItem()->getName() << endl;
         cout << ncm1->getLeftHandItem()->getName() << endl;
+
+        Weapon *wpn1 = new Weapon();
+        war1->backpack.pack(wpn1);
+        Weapon *wpn2 = new Weapon(20, "Nice Bass");
+        war1->backpack.pack(wpn2);
+        Weapon *wpn3 = new Weapon(5, "Stick");
+        war1->backpack.pack(wpn3);
+        Shield *shd1 = new Shield();
+        war1->backpack.pack(shd1);
+        Shield *shd2 = new Shield(1000, "Stovetop");
+        war1->backpack.pack(shd2);
+        Potion *pot1 = new Potion();
+        war1->backpack.pack(pot1);
+        Potion *pot2 = new Potion(1000, "Super extra wonderful delicious elixir");
+        war1->backpack.pack(pot2);
+        
+        while (war1->backpack.isNotEmpty()) {
+            war1->backpack.unPack();
+        }
     }
 
     void Game::updateSFMLEvents() {

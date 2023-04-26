@@ -4,6 +4,7 @@
 #include <iostream>
 #include "hero/object/IObject.h"
 #include "hero/object/IObjectImpl.h"
+#include "hero/inventory/Backpack.h"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ namespace He_ARC::rpg {
         Hero() = default;
         Hero(int, int, int, int, Weapon*, IObject*, string);
         //Hero(const Hero&); //not necessary
+        Backpack backpack;
 
         //getters
         int getStrength() const { return strength; }
