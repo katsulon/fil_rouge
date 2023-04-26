@@ -39,6 +39,10 @@ namespace He_ARC::rpg {
             Rogue *rog1 = new Rogue;
             Wizard *wzd1 = new Wizard;
             Necromancer *ncm1 = new Necromancer;
+
+            Hero *currentHero = war1;
+            sf::Vector2f currentHeroPos = sf::Vector2f(0,100);
+            bool currentHeroFlipped = false; 
             // Initialization
             void init();
 

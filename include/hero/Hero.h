@@ -2,7 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "hero/weapon/Weapon.h"
+#include "hero/object/IObject.h"
+#include "hero/object/IObjectImpl.h"
+#include "hero/inventory/Backpack.h"
 
 using namespace std;
 
@@ -10,7 +12,7 @@ namespace He_ARC::rpg {
     /**
     * Base class for playable characters and combat NPC
     * @author Elisa Goloviatinski
-    * @version 4.0
+    * @version 5.0
     */
     class Hero {
     protected:
@@ -20,19 +22,22 @@ namespace He_ARC::rpg {
         int hp = 0;
         string name = "no_name";
         Weapon *weapon = nullptr;
+        IObject *pObject = nullptr;
         //SFML variables
         sf::Texture texture;
         sf::Sprite sprite;
         bool flipped = false;
         int counter = 1;
         int animFrame = 0;
+        int frameSize = 0;
         int xPos = 0;
         int yPos = 0;
         float speed = 300.f;
     public:
         Hero() = default;
-        Hero(int, int, int, int, Weapon*, string);
+        Hero(int, int, int, int, Weapon*, IObject*, string);
         //Hero(const Hero&); //not necessary
+        Backpack backpack;
 
         //getters
         int getStrength() const { return strength; }
@@ -41,20 +46,26 @@ namespace He_ARC::rpg {
         int getHealth() const { return hp; }
         string getName() const { return name; }
         Weapon getWeapon() const { return *weapon; }
+        IObject* getLeftHandItem() const { return pObject; }
         //SFML getters
         sf::Texture& getTexture() { return texture; }
         sf::Sprite getSprite() const { return sprite; }
+        int getFrameSize() const { return frameSize; }
         float getSpeed() const { return speed; } 
         bool getSpriteState() const { return flipped; }
+        sf::Vector2f getPos() const { return sf::Vector2f(sprite.getPosition().x+frameSize, sprite.getPosition().y+4*frameSize); }
 
         //setters
         void setStrength(int);
         void setAgility(int);
         void setIntelligence(int);
         void setHealth(int);
-        void setName(string);
-        void setWeapon(Weapon*);
-        void setSpeed(float);
+        void setName(string name) { this->name = name; }
+        void setWeapon(Weapon *weapon) { this->weapon = weapon; }
+        void setLeftHandItem(IObject *pObject) { this->pObject = pObject; }
+        //SFML setters
+        void setSpeed(float speed) { this->speed = speed; }
+        void setSpriteState(bool flipped) { this->flipped = flipped; }
         void setCounter(int counter) { this->counter = counter; }
 
         //SFML methods

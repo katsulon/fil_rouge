@@ -1,11 +1,11 @@
 #include "hero/class/Wizard.h"
 
 namespace He_ARC::rpg {
-    Wizard::Wizard(int _strength, int _agility, int _intelligence, int _hp, int _mana, Weapon *_weapon, string _name) : 
-    Hero(_strength, _agility, _intelligence, _hp, _weapon, _name), mana(_mana) {}
+    Wizard::Wizard(int _strength, int _agility, int _intelligence, int _hp, int _mana, Weapon *_weapon, IObject *_pObject, string _name) : 
+    Hero(_strength, _agility, _intelligence, _hp, _weapon, _pObject, _name), mana(_mana) {}
 
     void Wizard::loadTexture(int frameRate, bool flipped) {
-        int frameSize = 32;
+        frameSize = 32;
         string srcTexture;
         switch (currentState) {
             case immobile:
@@ -45,13 +45,13 @@ namespace He_ARC::rpg {
         sprite.setTextureRect(sf::IntRect(xPos, 0, frameSize, frameSize));
         //sprite.setColor(sf::Color(255, 255, 255, 200)); set sprite color
         if ((flipped == true) && (counter == 0)) {
-            sprite.move(frameSize*4,0);
-            sprite.setScale(-4,4);
+            sprite.move(frameSize*4.f,0.f);
+            sprite.setScale(-4.f,4.f);
             counter=1;
         } 
         else if((flipped == false) && (counter == 1)) {
-            sprite.move(-frameSize*4,0);
-            sprite.setScale(4,4);
+            sprite.move(-frameSize*4.f,0.f);
+            sprite.setScale(4.f,4.f);
             counter=0;
         }
     }
