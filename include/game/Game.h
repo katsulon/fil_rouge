@@ -20,14 +20,21 @@ namespace He_ARC::rpg {
             sf::RenderWindow window;
             sf::Event sfEvent;
             sf::Clock deltaClock; //Elapsed time since the last frame was drawn
+            sf::Time deltaTime;
             sf::Image icon;
 
             //create the tilemaps from the level definitions
             TileMap map;
             TileMap mapCliff;
             TileMap mapWater;
+
+            int gridSizeX = 20;
+            sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
             
             //string const SPRITE_DIR = "res/sprites/"; currently useless
+
+            //Var to check for collision
+            bool collision = false;
 
             int const frameRate = 60;
             //Var to check whether a key has already been pressed

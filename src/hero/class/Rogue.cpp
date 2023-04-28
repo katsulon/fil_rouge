@@ -8,22 +8,22 @@ namespace He_ARC::rpg {
         frameSize = 32;
         string srcTexture;
         switch (currentState) {
-            case immobile:
+            case Immobile:
                 srcTexture = "res/sprites/character/free_fighters/GLADIUS/gladius.png";
                 break;
-            case idle:
+            case Idle:
                 srcTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_idle.png";
                 break;
-            case move:
+            case Move:
                 srcTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_walk.png";
                 break;
-            case attack:
+            case Attack:
                 srcTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_attack.png";
                 break;
-            case gethurt:
+            case Gethurt:
                 srcTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_gethurt.png";
                 break;
-            case knockout:
+            case Knockout:
                 srcTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_knockout.png";
                 break;
         }

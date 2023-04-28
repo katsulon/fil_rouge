@@ -1,4 +1,5 @@
 #include "game/Game.h"
+#include <cmath>
 
 namespace He_ARC::rpg {
     //Static functions
@@ -64,7 +65,7 @@ namespace He_ARC::rpg {
         party.push_back(ncm1);
 
         for(Hero *member : party) {
-            member->currentState=Hero::immobile;
+            member->currentState=Hero::Immobile;
             member->loadTexture(frameRate, member->getSpriteState());
         }
 
@@ -111,23 +112,37 @@ namespace He_ARC::rpg {
         while (war1->backpack.isNotEmpty()) {
             war1->backpack.unPack();
         }
+
+        delete wpn1;
+        delete wpn2;
+        delete wpn3;
+        delete shd1;
+        delete shd2;
+        delete pot1;
+        delete pot2;
     }
 
     void Game::updateSFMLEvents() {
         sf::Time deltaTime = deltaClock.restart();
         currentHeroFlipped = currentHero->getSpriteState();
         // Player movement
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-                    currentHero->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-                    currentHero->walk(deltaTime.asSeconds(),-1.f, 0.f, frameRate);
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-                    currentHero->walk(deltaTime.asSeconds(),0.f, -1.f, frameRate);
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-                    currentHero->walk(deltaTime.asSeconds(),0.f, 1.f, frameRate);
+        if(!collision) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+                currentHero->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
+                currentHero->currentDirection = Hero::Right;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+                currentHero->walk(deltaTime.asSeconds(),-1.f, 0.f, frameRate);
+                currentHero->currentDirection = Hero::Left;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+                currentHero->walk(deltaTime.asSeconds(),0.f, -1.f, frameRate);
+                currentHero->currentDirection = Hero::Up;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+                currentHero->walk(deltaTime.asSeconds(),0.f, 1.f, frameRate);
+                currentHero->currentDirection = Hero::Down;
+            }
         }
         while (window.pollEvent(sfEvent)) {
             sf::FloatRect visibleArea(0, 0, sfEvent.size.width, sfEvent.size.height);
@@ -210,7 +225,8 @@ namespace He_ARC::rpg {
                     break;
                 case sf::Event::KeyReleased:
                     keyDown = false;
-                    currentHero->currentState=Hero::immobile;
+                    currentHero->currentState=Hero::Immobile;
+                    currentHero->currentDirection = Hero::None;
                     break;
             }
         }
@@ -219,9 +235,30 @@ namespace He_ARC::rpg {
     void Game::update() {
         updateSFMLEvents();
 
+        playerGridPosition.x = (currentHero->getPos().x) / (16*4);
+        playerGridPosition.y = (currentHero->getPos().y - currentHero->getFrameSize()) / (16*4);
+        int tileNumber = (round(playerGridPosition.y) * gridSizeX) + round(playerGridPosition.x);
+        if (levelWater[tileNumber]!=10) {
+            collision = true;
+        }
+        cout << levelWater[tileNumber] << endl;
+        if (collision) {
+            if (currentHero->currentDirection == Hero::Right) {
+                currentHero->setPos((round(playerGridPosition.x)-1) * 64,(round(playerGridPosition.y)+1) * 64);
+            }
+            else if (currentHero->currentDirection == Hero::Left) {
+                currentHero->setPos((round(playerGridPosition.x)+2) * 64,(round(playerGridPosition.y)+1) * 64);
+            }
+            else if (currentHero->currentDirection == Hero::Up) {
+                currentHero->setPos(currentHero->getPos().x,currentHero->getPos().y+currentHero->getFrameSize());
+            }
+            else if (currentHero->currentDirection == Hero::Down) {
+                currentHero->setPos(currentHero->getPos().x,currentHero->getPos().y-currentHero->getFrameSize());
+            }
+        }
+        collision = false;
+
         // Loading textures
-        
-        
         currentHero->loadTexture(frameRate, currentHeroFlipped);
 
         //war1->setPos(0, 20);

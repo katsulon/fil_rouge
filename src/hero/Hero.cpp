@@ -6,6 +6,16 @@ namespace He_ARC::rpg {
     strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name), weapon(_weapon), pObject(_pObject) {}
 
 
+    sf::Vector2f Hero::getPos() const { 
+        int flipOffset = 0;
+        if (flipped) {
+            flipOffset = frameSize*4;
+        }
+        
+        return sf::Vector2f(sprite.getPosition().x+frameSize-flipOffset, sprite.getPosition().y+4*frameSize); 
+    }
+
+
     void Hero::setStrength(int strength) {
         if (strength > -1)
             this->strength = strength;
@@ -39,7 +49,7 @@ namespace He_ARC::rpg {
         float currentX = sprite.getPosition().x;
         float currentY = sprite.getPosition().y;
         setPos(currentX+=(speed*dir_x*dt+frameSize), currentY+=(speed*dir_y*dt+4*frameSize));
-        currentState=move;
+        currentState=Move;
         if ((dir_x < 0) && (flipped == false)) {
             flipped = true;
             loadTexture(frameRate, flipped);

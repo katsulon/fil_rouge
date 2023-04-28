@@ -53,7 +53,7 @@ namespace He_ARC::rpg {
         int getFrameSize() const { return frameSize; }
         float getSpeed() const { return speed; } 
         bool getSpriteState() const { return flipped; }
-        sf::Vector2f getPos() const { return sf::Vector2f(sprite.getPosition().x+frameSize, sprite.getPosition().y+4*frameSize); }
+        sf::Vector2f getPos() const;
 
         //setters
         void setStrength(int);
@@ -69,8 +69,10 @@ namespace He_ARC::rpg {
         void setCounter(int counter) { this->counter = counter; }
 
         //SFML methods
-        enum state { immobile, idle, move, attack, gethurt, knockout };
-        state currentState = immobile;
+        enum state { Immobile, Idle, Move, Attack, Gethurt, Knockout };
+        enum direction { None, Right, Left, Up, Down };
+        state currentState = Immobile;
+        direction currentDirection = None;
         virtual void loadTexture(int, bool) = 0;
         void setPos(int, int);
         void walk(const float &, const float, const float, int);
