@@ -2,10 +2,9 @@
 #include <cmath>
 
 namespace He_ARC::rpg {
-    //Static functions
+    // Initializer functions
 
-    //Initializer functions
-    // define the level with an array of tile indices
+    // Define the level with an array of tile indices
     const int level[] =
     {
         28,10,10,288,145,137,138,56,57,58,137,155,138,56,57,57,57,57,57,58,
@@ -126,7 +125,7 @@ namespace He_ARC::rpg {
         sf::Time deltaTime = deltaClock.restart();
         currentHeroFlipped = currentHero->getSpriteState();
         // Player movement
-        if(!collision) {
+        if (!collision) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
                 currentHero->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
                 currentHero->currentDirection = Hero::Right;
@@ -151,7 +150,7 @@ namespace He_ARC::rpg {
                     window.close();
                     break;
                 case sf::Event::Resized:
-                    // updates the view to the new size of the window
+                    // Updates the view to the new size of the window
                     window.setView(sf::View(visibleArea));
                     break;
                 case sf::Event::KeyPressed:
@@ -162,14 +161,16 @@ namespace He_ARC::rpg {
                             terminal();
                             keyDown = true;
                         }
+                        // Hero selection management
                         if (sfEvent.key.code == sf::Keyboard::Num1)
                         {
                             currentHeroFlipped = currentHero->getSpriteState();
-                            currentHeroPos = sf::Vector2f(currentHero->getPos());
+                            currentHeroPos = currentHero->getPos();
                             currentHero=war1;
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
                                 if (currentHeroFlipped) {
                                     currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
+                                    cout << "test" << endl;
                                 }
                                 else {
                                     currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
@@ -184,7 +185,7 @@ namespace He_ARC::rpg {
                         if (sfEvent.key.code == sf::Keyboard::Num2)
                         {
                             currentHeroFlipped = currentHero->getSpriteState();
-                            currentHeroPos = sf::Vector2f(currentHero->getPos());
+                            currentHeroPos = currentHero->getPos();
                             currentHero=rog1;
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
                                 if (currentHeroFlipped) {
@@ -204,7 +205,7 @@ namespace He_ARC::rpg {
                         if (sfEvent.key.code == sf::Keyboard::Num3)
                         {
                             currentHeroFlipped = currentHero->getSpriteState();
-                            currentHeroPos = sf::Vector2f(currentHero->getPos());
+                            currentHeroPos = currentHero->getPos();
                             currentHero=wzd1;
                             if (currentHeroFlipped!=currentHero->getSpriteState()) {
                                 if (currentHeroFlipped) {
@@ -235,41 +236,45 @@ namespace He_ARC::rpg {
     void Game::update() {
         updateSFMLEvents();
 
+        // Collision management
+        collision = false;
         playerGridPosition.x = (currentHero->getPos().x) / (16*4);
         playerGridPosition.y = (currentHero->getPos().y - currentHero->getFrameSize()) / (16*4);
         int tileNumber = (round(playerGridPosition.y) * gridSizeX) + round(playerGridPosition.x);
         if (levelWater[tileNumber]!=10) {
             collision = true;
         }
-        cout << levelWater[tileNumber] << endl;
+        // Checks for collision on left or right side of window (normally should no longer be necessary after map finished)
+        if ((currentHero->getPos().x+currentHero->getFrameSize()/2 - 8) < 0 || (currentHero->getPos().x+currentHero->getFrameSize()+8) > window.getSize().x){
+            collision = true;
+        }
+        // Checks for collision on top or bottom side of window (normally should no longer be necessary after map finished)
+        if ((currentHero->getPos().y-currentHero->getFrameSize() - 8) < 0 || (currentHero->getPos().y) > window.getSize().y){
+            collision = true;
+        }
+        // Depending on diretion faced, doesn't allow player to continue in the same direction
         if (collision) {
             if (currentHero->currentDirection == Hero::Right) {
-                currentHero->setPos((round(playerGridPosition.x)-1) * 64,(round(playerGridPosition.y)+1) * 64);
+                currentHero->setPos(currentHero->getPos().x-8,currentHero->getPos().y);
             }
             else if (currentHero->currentDirection == Hero::Left) {
-                currentHero->setPos((round(playerGridPosition.x)+2) * 64,(round(playerGridPosition.y)+1) * 64);
+                currentHero->setPos(currentHero->getPos().x+currentHero->getFrameSize()*4+8,currentHero->getPos().y);
             }
             else if (currentHero->currentDirection == Hero::Up) {
-                currentHero->setPos(currentHero->getPos().x,currentHero->getPos().y+currentHero->getFrameSize());
+                currentHero->setPos(currentHero->getPos().x,currentHero->getPos().y+8);
             }
             else if (currentHero->currentDirection == Hero::Down) {
-                currentHero->setPos(currentHero->getPos().x,currentHero->getPos().y-currentHero->getFrameSize());
+                currentHero->setPos(currentHero->getPos().x,currentHero->getPos().y-8);
             }
         }
-        collision = false;
 
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
-
-        //war1->setPos(0, 20);
-        //rog1->setPos(100,0);
-        //wzd1->setPos(0,0);
-        //ncm1->setPos(130,100);
     }
 
     void Game::render() {
         window.clear(sf::Color::White);
-        //Render items
+        // Render items
         window.draw(map);
         window.draw(mapCliff);
         window.draw(mapWater);
@@ -284,7 +289,7 @@ namespace He_ARC::rpg {
         }
     }
 
-    //Destructors
+    // Destructors
     Game::~Game() {
         for(Hero *member : party) {
             delete member;
