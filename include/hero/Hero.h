@@ -74,7 +74,7 @@ namespace He_ARC::rpg {
         state currentState = Immobile;
         direction currentDirection = None;
         virtual void loadTexture(int, bool) = 0;
-        void setPos(int, int);
+        void setPos(float, float);
         void walk(const float &, const float, const float, int);
         //methods
         virtual void interact(const Hero&) = 0;

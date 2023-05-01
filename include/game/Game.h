@@ -30,6 +30,9 @@ namespace He_ARC::rpg {
 
             int gridSizeX = 20;
             sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
+            sf::Vector2f tilePos = sf::Vector2f(0,0);
+            sf::FloatRect tileBounds = sf::FloatRect(0,0,0,0);
+            sf::RectangleShape test;
 
             // Var to check for collision
             bool collision = false;
@@ -46,8 +49,11 @@ namespace He_ARC::rpg {
             Necromancer *ncm1 = new Necromancer;
 
             Hero *currentHero = war1;
-            sf::Vector2f currentHeroPos = sf::Vector2f(1200,700);
+            sf::Vector2f currentHeroPos = sf::Vector2f(0,0);
             bool currentHeroFlipped = false; 
+            Hero::direction currentHeroDirection = Hero::Right;
+            float currentHeroSpeed = 300.f;
+            int counterDir = 0;
             // Initialization
             void init();
 

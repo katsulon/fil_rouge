@@ -9,10 +9,10 @@ namespace He_ARC::rpg {
     sf::Vector2f Hero::getPos() const { 
         int flipOffset = 0;
         if (flipped) {
-            flipOffset = frameSize*4;
+            flipOffset = frameSize*4-frameSize/2;
         }
         
-        return sf::Vector2f(sprite.getPosition().x+frameSize-flipOffset, sprite.getPosition().y+4*frameSize); 
+        return sf::Vector2f(sprite.getPosition().x+frameSize-flipOffset, sprite.getPosition().y+2*frameSize+(frameSize-16)); 
     }
 
 
@@ -41,14 +41,25 @@ namespace He_ARC::rpg {
             this->hp = 0; 
     }
 
-    void Hero::setPos(int x, int y) {
-        sprite.setPosition(x-frameSize, y-4*frameSize);
+    void Hero::setPos(float x, float y) {
+        if (!flipped) {
+            sprite.setPosition(x-frameSize, y-2*frameSize-(frameSize-16));
+        }
+        else {
+            sprite.setPosition(x-frameSize-frameSize/2+frameSize*4, y-2*frameSize-(frameSize-16));
+        }
     }
 
     void Hero::walk(float const& dt, const float dir_x, const float dir_y, int frameRate) {
         float currentX = sprite.getPosition().x;
         float currentY = sprite.getPosition().y;
-        setPos(currentX+=(speed*dir_x*dt+frameSize), currentY+=(speed*dir_y*dt+4*frameSize));
+
+        if (!flipped) {
+            setPos(currentX+=(speed*dir_x*dt)+frameSize, currentY+=(speed*dir_y*dt)+2*frameSize+(frameSize-16));
+        }
+        else {
+            setPos(currentX+=(speed*dir_x*dt)+frameSize+frameSize/2-frameSize*4, currentY+=(speed*dir_y*dt)+2*frameSize+(frameSize-16));
+        }
         currentState=Move;
         if ((dir_x < 0) && (flipped == false)) {
             flipped = true;
@@ -58,7 +69,6 @@ namespace He_ARC::rpg {
             flipped = false;
             loadTexture(frameRate, flipped);
         }
-        
     }
 
     /*void Hero::interact(const Hero& otherHero) { -> method  virtual pure, therefore not necessary

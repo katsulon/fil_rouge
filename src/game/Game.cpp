@@ -68,7 +68,9 @@ namespace He_ARC::rpg {
             member->loadTexture(frameRate, member->getSpriteState());
         }
 
+        currentHero->setSpriteState(currentHeroFlipped);
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+        currentHeroSpeed = currentHero->getSpeed();
     }
 
     // Constructors
@@ -124,24 +126,22 @@ namespace He_ARC::rpg {
     void Game::updateSFMLEvents() {
         sf::Time deltaTime = deltaClock.restart();
         currentHeroFlipped = currentHero->getSpriteState();
-        // Player movement
-        if (!collision) {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-                currentHero->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
-                currentHero->currentDirection = Hero::Right;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-                currentHero->walk(deltaTime.asSeconds(),-1.f, 0.f, frameRate);
-                currentHero->currentDirection = Hero::Left;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-                currentHero->walk(deltaTime.asSeconds(),0.f, -1.f, frameRate);
-                currentHero->currentDirection = Hero::Up;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-                currentHero->walk(deltaTime.asSeconds(),0.f, 1.f, frameRate);
-                currentHero->currentDirection = Hero::Down;
-            }
+        // Player movement 
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+            currentHero->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
+            currentHero->currentDirection = Hero::Right;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+            currentHero->walk(deltaTime.asSeconds(),-1.f, 0.f, frameRate);
+            currentHero->currentDirection = Hero::Left;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            currentHero->walk(deltaTime.asSeconds(),0.f, -1.f, frameRate);
+            currentHero->currentDirection = Hero::Up;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            currentHero->walk(deltaTime.asSeconds(),0.f, 1.f, frameRate);
+            currentHero->currentDirection = Hero::Down;
         }
         while (window.pollEvent(sfEvent)) {
             sf::FloatRect visibleArea(0, 0, sfEvent.size.width, sfEvent.size.height);
@@ -167,18 +167,7 @@ namespace He_ARC::rpg {
                             currentHeroFlipped = currentHero->getSpriteState();
                             currentHeroPos = currentHero->getPos();
                             currentHero=war1;
-                            if (currentHeroFlipped!=currentHero->getSpriteState()) {
-                                if (currentHeroFlipped) {
-                                    currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
-                                    cout << "test" << endl;
-                                }
-                                else {
-                                    currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
-                                }
-                            }
-                            else {
-                                currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
-                            }
+                            currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
                             currentHero->setSpriteState(currentHeroFlipped);
                             keyDown = true;
                         }
@@ -187,37 +176,16 @@ namespace He_ARC::rpg {
                             currentHeroFlipped = currentHero->getSpriteState();
                             currentHeroPos = currentHero->getPos();
                             currentHero=rog1;
-                            if (currentHeroFlipped!=currentHero->getSpriteState()) {
-                                if (currentHeroFlipped) {
-                                    currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
-                                }
-                                else {
-                                    currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
-                                }
-                            }
-                            else {
-                                currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
-                            }
+                            currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
                             currentHero->setSpriteState(currentHeroFlipped);
                             keyDown = true;
-                            
                         }
                         if (sfEvent.key.code == sf::Keyboard::Num3)
                         {
                             currentHeroFlipped = currentHero->getSpriteState();
                             currentHeroPos = currentHero->getPos();
                             currentHero=wzd1;
-                            if (currentHeroFlipped!=currentHero->getSpriteState()) {
-                                if (currentHeroFlipped) {
-                                    currentHero->setPos(currentHeroPos.x-currentHero->getFrameSize()*4, currentHeroPos.y);
-                                }
-                                else {
-                                    currentHero->setPos(currentHeroPos.x+currentHero->getFrameSize()*4, currentHeroPos.y);
-                                }
-                            }
-                            else {
-                                currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
-                            }
+                            currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
                             currentHero->setSpriteState(currentHeroFlipped);
                             keyDown = true;
                         }
@@ -235,50 +203,66 @@ namespace He_ARC::rpg {
 
     void Game::update() {
         updateSFMLEvents();
-
         // Collision management
-        collision = false;
-        playerGridPosition.x = (currentHero->getPos().x) / (16*4);
-        playerGridPosition.y = (currentHero->getPos().y - currentHero->getFrameSize()) / (16*4);
-        int tileNumber = (round(playerGridPosition.y) * gridSizeX) + round(playerGridPosition.x);
+        sf::FloatRect playerBounds = sf::FloatRect(currentHero->getPos().x,currentHero->getPos().y,16*4,16*4);
+        playerGridPosition.x = round(playerBounds.left / (16*4));
+        playerGridPosition.y = round(playerBounds.top / (16*4));
+        int tileNumber = (playerGridPosition.y * gridSizeX + playerGridPosition.x);
         if (levelWater[tileNumber]!=10) {
             collision = true;
+            tileBounds = sf::FloatRect((playerGridPosition.x-1)*16*4,(playerGridPosition.y)*16*4,16*4,16*4);
+            //tilePos = sf::Vector2f(round((playerGridPosition.x-1)*16*4),round(playerGridPosition.y*16*4));
         }
+        //cout << tileBounds.top << endl;
         // Checks for collision on left or right side of window (normally should no longer be necessary after map finished)
-        if ((currentHero->getPos().x+currentHero->getFrameSize()/2 - 8) < 0 || (currentHero->getPos().x+currentHero->getFrameSize()+8) > window.getSize().x){
-            collision = true;
+        if (currentHero->getPos().x < 0.f){
+            currentHero->setPos(0.f,currentHero->getPos().y);
+        }
+        if ((currentHero->getPos().x+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > window.getSize().x) {
+            currentHero->setPos(window.getSize().x-currentHero->getFrameSize()-currentHero->getFrameSize()/2, currentHero->getPos().y);
         }
         // Checks for collision on top or bottom side of window (normally should no longer be necessary after map finished)
-        if ((currentHero->getPos().y-currentHero->getFrameSize() - 8) < 0 || (currentHero->getPos().y) > window.getSize().y){
-            collision = true;
+        if (currentHero->getPos().y < 0.f) {
+            currentHero->setPos(currentHero->getPos().x,0.f);
+        }
+        if ((currentHero->getPos().y+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > window.getSize().y) {
+            currentHero->setPos(currentHero->getPos().x,window.getSize().y - currentHero->getFrameSize()-currentHero->getFrameSize()/2);
         }
         // Depending on diretion faced, doesn't allow player to continue in the same direction
-        if (collision) {
-            if (currentHero->currentDirection == Hero::Right) {
-                currentHero->setPos(currentHero->getPos().x-8,currentHero->getPos().y);
+        /*if (collision) {
+            if (currentHero->getPos().x > tileBounds.left) {
+                currentHero->setPos(tileBounds.left+currentHero->getFrameSize()+11, currentHero->getPos().y);
             }
-            else if (currentHero->currentDirection == Hero::Left) {
-                currentHero->setPos(currentHero->getPos().x+currentHero->getFrameSize()*4+8,currentHero->getPos().y);
+            else if ((tileBounds.left+16) > currentHero->getPos().x) {
+                //currentHero->setPos((tilePos.x+64)+200, currentHero->getPos().y);
+                cout << "test" << endl;
             }
-            else if (currentHero->currentDirection == Hero::Up) {
-                currentHero->setPos(currentHero->getPos().x,currentHero->getPos().y+8);
-            }
-            else if (currentHero->currentDirection == Hero::Down) {
-                currentHero->setPos(currentHero->getPos().x,currentHero->getPos().y-8);
-            }
+        }*/
+        if (tileBounds.intersects(playerBounds))
+        {
+            cout << "test" << endl;
         }
-
+        
+        collision = false;
+        //currentHero->setSpeed(currentHeroSpeed);
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
     }
 
     void Game::render() {
         window.clear(sf::Color::White);
+        sf::RectangleShape test;
+            test.setSize(sf::Vector2f(16*4,16*4));
+            test.setPosition(currentHero->getPos().x,currentHero->getPos().y);
+            test.setFillColor(sf::Color::Transparent);
+            test.setOutlineColor(sf::Color::White);
+            test.setOutlineThickness(1.f);
         // Render items
         window.draw(map);
         window.draw(mapCliff);
         window.draw(mapWater);
         window.draw(currentHero->getSprite());
+        window.draw(test);
         window.display();
     }
 
