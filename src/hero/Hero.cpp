@@ -4,7 +4,7 @@
 namespace He_ARC::rpg {
     // Constructors
 
-    /// @brief Hero simple constructor
+    /// @brief Hero standard parameterized constructor
     /// @param _strength Value of hero's strength
     /// @param _agility Value of hero's agility
     /// @param _intelligence Value of hero's intelligence
@@ -22,10 +22,10 @@ namespace He_ARC::rpg {
     sf::Vector2f Hero::getPos() const { 
         int flipOffset = 0;
         if (flipped) {
-            flipOffset = frameSize*4-frameSize/2;
+            flipOffset = (frameSize-16/2+16/2/4)*4;
         }
         
-        return sf::Vector2f(sprite.getPosition().x+frameSize-flipOffset, sprite.getPosition().y+2*frameSize+(frameSize-16)); 
+        return sf::Vector2f(sprite.getPosition().x-(-frameSize/2+16/4*3)*4-flipOffset, sprite.getPosition().y-(-frameSize+16)*4); 
     }
 
     // Setters
@@ -69,10 +69,10 @@ namespace He_ARC::rpg {
     /// @param y Y coordinate of the new position
     void Hero::setPos(float x, float y) {
         if (!flipped) {
-            sprite.setPosition(x-frameSize, y-2*frameSize-(frameSize-16));
+            sprite.setPosition(x+(-frameSize/2+16/4*3)*4, y+(-frameSize+16)*4);
         }
         else {
-            sprite.setPosition(x-frameSize-frameSize/2+frameSize*4, y-2*frameSize-(frameSize-16));
+            sprite.setPosition(x+(-frameSize/2+16/4*3)*4+(frameSize-16/2+16/2/4)*4, y+(-frameSize+16)*4);
         }
     }
 

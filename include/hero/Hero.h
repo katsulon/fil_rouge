@@ -35,7 +35,7 @@ namespace He_ARC::rpg {
         float speed = 300.f;
         int flipOffset;
     public:
-        /// @brief Base constructor
+        /// @brief Default constructor
         Hero() = default;
         Hero(int, int, int, int, Weapon*, IObject*, string);
         //Hero(const Hero&); //constructor by copy, not necessary

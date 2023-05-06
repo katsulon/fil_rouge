@@ -36,6 +36,7 @@ namespace He_ARC::rpg {
             bool keyDown = false;
             
             // Initialization of party
+
             list<Hero*> party;
             Warrior *war1 = new Warrior;
             Rogue *rog1 = new Rogue;
@@ -48,28 +49,31 @@ namespace He_ARC::rpg {
             sf::Sprite currentHeroSprite;
             float currentHeroSpeed = 300.f;
             
-            // Initialization
+            /// @brief Initialization
             void init();
 
         public:
-            /// Constructor of Game class
+            /// @brief Default constructor of Game class. Calls initialization function init().
             Game();
 
             // Methods
-            /// Shows character interactions as well as events on terminal
+
+            /// @brief Shows character interactions as well as events on terminal
             void terminal();
+            /// @brief Changes current hero
+            void changeCurrentHero(Hero *newHero);
             /// SFML event handling
             void updateSFMLEvents();
-            /// Checks and resolves tile collisions
+            /// @brief Checks and resolves tile collisions
             sf::Vector2f tileCollision(const int tiles[], int tileNumber, int tileCollision, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds);
-            /// General updates
+            /// @brief General updates
             void update();
-            /// Game render
+            /// @brief Game render
             void render();
-            /// Runs game loop
+            /// @brief Runs game loop
             void run();
 
-            /// Deconstructor of Game class
+            /// @brief Deconstructor of Game class. Deletes all heros.
             virtual ~Game();
     };
 }

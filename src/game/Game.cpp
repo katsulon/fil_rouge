@@ -85,6 +85,7 @@ namespace He_ARC::rpg {
     }
 
     // Constructors
+
     Game::Game() {
         init();
     }
@@ -134,6 +135,14 @@ namespace He_ARC::rpg {
         delete pot2;
     }
 
+    void Game::changeCurrentHero(Hero *newHero) {
+        currentHeroFlipped = currentHero->getSpriteState();
+        currentHeroPos = currentHero->getPos();
+        currentHero=newHero;
+        currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+        currentHero->setSpriteState(currentHeroFlipped);
+    }
+
     void Game::updateSFMLEvents() {
         sf::Time deltaTime = deltaClock.restart();
         float time = deltaTime.asSeconds();
@@ -172,29 +181,17 @@ namespace He_ARC::rpg {
                         // Hero selection management
                         if (sfEvent.key.code == sf::Keyboard::Num1)
                         {
-                            currentHeroFlipped = currentHero->getSpriteState();
-                            currentHeroPos = currentHero->getPos();
-                            currentHero=war1;
-                            currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
-                            currentHero->setSpriteState(currentHeroFlipped);
+                            changeCurrentHero(war1);
                             keyDown = true;
                         }
                         if (sfEvent.key.code == sf::Keyboard::Num2)
                         {
-                            currentHeroFlipped = currentHero->getSpriteState();
-                            currentHeroPos = currentHero->getPos();
-                            currentHero=rog1;
-                            currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
-                            currentHero->setSpriteState(currentHeroFlipped);
+                            changeCurrentHero(rog1);
                             keyDown = true;
                         }
                         if (sfEvent.key.code == sf::Keyboard::Num3)
                         {
-                            currentHeroFlipped = currentHero->getSpriteState();
-                            currentHeroPos = currentHero->getPos();
-                            currentHero=wzd1;
-                            currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
-                            currentHero->setSpriteState(currentHeroFlipped);
+                            changeCurrentHero(wzd1);
                             keyDown = true;
                         }
                         
@@ -275,18 +272,20 @@ namespace He_ARC::rpg {
 
     void Game::render() {
         window.clear(sf::Color::White);
-        sf::RectangleShape test;
+
+        // White rectangle for debug
+        /*sf::RectangleShape test;
         test.setSize(sf::Vector2f(16*4,16*4));
         test.setPosition(currentHero->getPos().x,currentHero->getPos().y);
         test.setFillColor(sf::Color::Transparent);
         test.setOutlineColor(sf::Color::White);
         test.setOutlineThickness(1.f);
+        window.draw(test);*/
         // Render items
         window.draw(map);
         window.draw(mapCliff);
         window.draw(mapWater);
         window.draw(currentHero->getSprite());
-        window.draw(test);
         window.display();
     }
 
