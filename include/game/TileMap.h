@@ -2,8 +2,8 @@
 
 namespace He_ARC::rpg {
     /**
-    * Class for game map
-    * @author Elisa Goloviatinski, based on tile map example from SFML tutorial
+    * Class for tile-based game map.
+    * @author SFML tutorial, tile map example
     */
     class TileMap : public sf::Drawable, public sf::Transformable {
     private:

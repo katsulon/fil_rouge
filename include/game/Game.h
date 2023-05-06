@@ -21,24 +21,22 @@ namespace He_ARC::rpg {
             sf::Event sfEvent;
             sf::Clock deltaClock; //Elapsed time since the last frame was drawn
             sf::Time deltaTime;
+            float time;
             sf::Image icon;
 
             // Create the tilemaps from the level definitions
             TileMap map;
             TileMap mapCliff;
             TileMap mapWater;
-
+            // Size of grid on axis X, in number of tiles
             int gridSizeX = 20;
-            sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
-
-            // Var to check for collision
-            bool collision = false;
 
             int const frameRate = 60;
             // Var to check whether a key has already been pressed
             bool keyDown = false;
             
-            // Initialization of party
+            // Initialization of party and hero
+
             list<Hero*> party;
             Warrior *war1 = new Warrior;
             Rogue *rog1 = new Rogue;
@@ -46,28 +44,34 @@ namespace He_ARC::rpg {
             Necromancer *ncm1 = new Necromancer;
 
             Hero *currentHero = war1;
-            sf::Vector2f currentHeroPos = sf::Vector2f(1200,700);
+            sf::Vector2f currentHeroPos = sf::Vector2f(0,0);
             bool currentHeroFlipped = false; 
-            // Initialization
+            
+            /// @brief Initialization
             void init();
 
         public:
-            /// Constructor of Game class
+            /// @brief Default constructor of Game class. Calls initialization function init().
             Game();
 
             // Methods
-            /// Shows character interactions as well as events on terminal
+
+            /// @brief Shows character interactions as well as events on terminal
             void terminal();
+            /// @brief Changes current hero
+            void changeCurrentHero(Hero *newHero);
             /// SFML event handling
             void updateSFMLEvents();
-            /// General updates
+            /// @brief Checks and resolves tile collisions
+            sf::Vector2f tileCollision(const int tiles[], int tileNumber, int tileCollision, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds);
+            /// @brief General updates
             void update();
-            /// Game render
+            /// @brief Game render
             void render();
-            /// Runs game loop
+            /// @brief Runs game loop
             void run();
 
-            /// Deconstructor of Game class
+            /// @brief Deconstructor of Game class. Deletes all heros.
             virtual ~Game();
     };
 }
