@@ -1,4 +1,3 @@
-#include <iostream>
 #include "hero/Hero.h"
 
 namespace He_ARC::rpg {
@@ -81,10 +80,20 @@ namespace He_ARC::rpg {
     void Hero::walk(float const& dt, const float dir_x, const float dir_y, int frameRate) {
         float currentX = getPos().x;
         float currentY = getPos().y;
+        float currentSpeed = speed;
 
-        setPos(currentX+=(speed*dir_x*dt), currentY+=(speed*dir_y*dt));
+        // Normalized diagonal speed. Since only diagonal movement is possible besides horizontal or vertical, 
+        //  sine of pi/4 (45*) is used for both directions as both cosine and sine of 45* have the same value.
+        if ((dir_x != 0) && (dir_y != 0)) {
+            currentSpeed *= sin(M_PI/4);
+        }
         
-        currentState=Move;
+        setPos(currentX+=(currentSpeed*dir_x*dt), currentY+=(currentSpeed*dir_y*dt));
+        
+        if ((dir_x != 0) || (dir_y != 0)) {
+            currentState=Move;
+        }
+        
         if ((dir_x < 0) && (flipped == false)) {
             flipped = true;
             loadTexture(frameRate, flipped);
@@ -125,7 +134,7 @@ namespace He_ARC::rpg {
         cout <<  endl;
     }
 
-    /// @brief Shows hero's stats using "<<" operator.
+    /// @brief Shows hero's stats by overloading the "<<" operator.
     /// @param s Ostream
     /// @param hero Hero whose stats are to be shown
     /// @return Ostream

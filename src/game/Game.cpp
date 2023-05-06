@@ -81,7 +81,6 @@ namespace He_ARC::rpg {
 
         currentHero->setSpriteState(currentHeroFlipped);
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
-        currentHeroSpeed = currentHero->getSpeed();
     }
 
     // Constructors
@@ -144,21 +143,23 @@ namespace He_ARC::rpg {
     }
 
     void Game::updateSFMLEvents() {
-        sf::Time deltaTime = deltaClock.restart();
-        float time = deltaTime.asSeconds();
+        deltaTime = deltaClock.restart();
+        time = deltaTime.asSeconds();
+        sf::Vector2f currentHeroVelocity = sf::Vector2f(0, 0);
         // Player movement 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-            currentHero->walk(time, 1.f, 0.f, frameRate);
+            currentHeroVelocity.x = 1.f;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            currentHero->walk(time, -1.f, 0.f, frameRate);
+            currentHeroVelocity.x = -1.f;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-            currentHero->walk(time, 0.f, -1.f, frameRate);
+            currentHeroVelocity.y = -1.f;
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-            currentHero->walk(time, 0.f, 1.f, frameRate);
+            currentHeroVelocity.y = 1.f;
         }
+        currentHero->walk(time, currentHeroVelocity.x, currentHeroVelocity.y, frameRate);
         currentHeroFlipped = currentHero->getSpriteState();
         while (window.pollEvent(sfEvent)) {
             sf::FloatRect visibleArea(0, 0, sfEvent.size.width, sfEvent.size.height);

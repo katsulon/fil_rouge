@@ -35,7 +35,7 @@ namespace He_ARC::rpg {
             // Var to check whether a key has already been pressed
             bool keyDown = false;
             
-            // Initialization of party
+            // Initialization of party and hero
 
             list<Hero*> party;
             Warrior *war1 = new Warrior;
@@ -46,8 +46,6 @@ namespace He_ARC::rpg {
             Hero *currentHero = war1;
             sf::Vector2f currentHeroPos = sf::Vector2f(0,0);
             bool currentHeroFlipped = false; 
-            sf::Sprite currentHeroSprite;
-            float currentHeroSpeed = 300.f;
             
             /// @brief Initialization
             void init();

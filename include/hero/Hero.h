@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <math.h>
 #include "hero/object/IObject.h"
 #include "hero/object/IObjectImpl.h"
 #include "hero/inventory/Backpack.h"
@@ -32,7 +33,7 @@ namespace He_ARC::rpg {
         int frameSize = 0;
         int xPos = 0;
         int yPos = 0;
-        float speed = 300.f;
+        float speed = 350.f;
         int flipOffset;
     public:
         /// @brief Default constructor
