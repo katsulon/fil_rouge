@@ -21,21 +21,15 @@ namespace He_ARC::rpg {
             sf::Event sfEvent;
             sf::Clock deltaClock; //Elapsed time since the last frame was drawn
             sf::Time deltaTime;
+            float time;
             sf::Image icon;
 
             // Create the tilemaps from the level definitions
             TileMap map;
             TileMap mapCliff;
             TileMap mapWater;
-
+            // Size of grid on axis X, in number of tiles
             int gridSizeX = 20;
-            sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
-            sf::Vector2f tilePos = sf::Vector2f(0,0);
-            sf::FloatRect tileBounds = sf::FloatRect(0,0,0,0);
-            sf::RectangleShape test;
-
-            // Var to check for collision
-            bool collision = false;
 
             int const frameRate = 60;
             // Var to check whether a key has already been pressed
@@ -51,9 +45,9 @@ namespace He_ARC::rpg {
             Hero *currentHero = war1;
             sf::Vector2f currentHeroPos = sf::Vector2f(0,0);
             bool currentHeroFlipped = false; 
-            Hero::direction currentHeroDirection = Hero::Right;
+            sf::Sprite currentHeroSprite;
             float currentHeroSpeed = 300.f;
-            int counterDir = 0;
+            
             // Initialization
             void init();
 
@@ -66,6 +60,8 @@ namespace He_ARC::rpg {
             void terminal();
             /// SFML event handling
             void updateSFMLEvents();
+            /// Checks and resolves tile collisions
+            sf::Vector2f tileCollision(const int tiles[], int tileNumber, int tileCollision, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds);
             /// General updates
             void update();
             /// Game render

@@ -51,15 +51,11 @@ namespace He_ARC::rpg {
     }
 
     void Hero::walk(float const& dt, const float dir_x, const float dir_y, int frameRate) {
-        float currentX = sprite.getPosition().x;
-        float currentY = sprite.getPosition().y;
+        float currentX = getPos().x;
+        float currentY = getPos().y;
 
-        if (!flipped) {
-            setPos(currentX+=(speed*dir_x*dt)+frameSize, currentY+=(speed*dir_y*dt)+2*frameSize+(frameSize-16));
-        }
-        else {
-            setPos(currentX+=(speed*dir_x*dt)+frameSize+frameSize/2-frameSize*4, currentY+=(speed*dir_y*dt)+2*frameSize+(frameSize-16));
-        }
+        setPos(currentX+=(speed*dir_x*dt), currentY+=(speed*dir_y*dt));
+        
         currentState=Move;
         if ((dir_x < 0) && (flipped == false)) {
             flipped = true;

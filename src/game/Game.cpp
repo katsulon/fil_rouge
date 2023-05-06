@@ -25,6 +25,17 @@ namespace He_ARC::rpg {
     const int levelCliff[] =
     {
         72,72,72,72,72,72,72,56,57,58,72,72,72,56,57,57,57,57,57,58,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
     };
     // 14 tiles per row
     const int levelWater[] =
@@ -125,24 +136,21 @@ namespace He_ARC::rpg {
 
     void Game::updateSFMLEvents() {
         sf::Time deltaTime = deltaClock.restart();
-        currentHeroFlipped = currentHero->getSpriteState();
+        float time = deltaTime.asSeconds();
         // Player movement 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-            currentHero->walk(deltaTime.asSeconds(),1.f, 0.f, frameRate);
-            currentHero->currentDirection = Hero::Right;
+            currentHero->walk(time,1.f, 0.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            currentHero->walk(deltaTime.asSeconds(),-1.f, 0.f, frameRate);
-            currentHero->currentDirection = Hero::Left;
+            currentHero->walk(time,-1.f, 0.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-            currentHero->walk(deltaTime.asSeconds(),0.f, -1.f, frameRate);
-            currentHero->currentDirection = Hero::Up;
+            currentHero->walk(time,0.f, -1.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-            currentHero->walk(deltaTime.asSeconds(),0.f, 1.f, frameRate);
-            currentHero->currentDirection = Hero::Down;
+            currentHero->walk(time,0.f, 1.f, frameRate);
         }
+        currentHeroFlipped = currentHero->getSpriteState();
         while (window.pollEvent(sfEvent)) {
             sf::FloatRect visibleArea(0, 0, sfEvent.size.width, sfEvent.size.height);
             switch (sfEvent.type) {
@@ -201,21 +209,53 @@ namespace He_ARC::rpg {
         }
     }
 
+    sf::Vector2f Game::tileCollision(const int levelTiles[], int tileCollision, int tileNumber, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds) {
+        sf::Vector2f currentPos = previousPos;
+        sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
+        if (levelTiles[tileNumber+1] != tileCollision) {
+            if (rectBounds.intersects(tileBounds))
+            {
+                currentPos.x = tileBounds.left-rectBounds.width;  
+            }
+        }
+        tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y+1)*16*4,16*4,16*4);
+        if (levelTiles[tileNumber+gridSizeX] != tileCollision) {
+            if (rectBounds.intersects(tileBounds))
+            {
+                currentPos.y = tileBounds.top-rectBounds.height;
+            }
+        }    
+        tileBounds = sf::FloatRect((gridPosition.x-1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
+        if (levelTiles[tileNumber-1] != tileCollision) {
+            if (rectBounds.intersects(tileBounds))
+            {
+                currentPos.x = tileBounds.left+tileBounds.width;
+            }
+        }        
+        tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y-1)*16*4,16*4,16*4);
+        if (levelTiles[tileNumber-gridSizeX] != tileCollision) {
+            if (rectBounds.intersects(tileBounds))
+            {
+                currentPos.y = tileBounds.top+tileBounds.height;
+            }
+        }
+        return currentPos;       
+    }
+
     void Game::update() {
         updateSFMLEvents();
+        currentHeroPos = currentHero->getPos();
         // Collision management
-        sf::FloatRect playerBounds = sf::FloatRect(currentHero->getPos().x,currentHero->getPos().y,16*4,16*4);
+        sf::FloatRect playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
+        sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
         playerGridPosition.x = round(playerBounds.left / (16*4));
         playerGridPosition.y = round(playerBounds.top / (16*4));
         int tileNumber = (playerGridPosition.y * gridSizeX + playerGridPosition.x);
-        if (levelWater[tileNumber]!=10) {
-            collision = true;
-            tileBounds = sf::FloatRect((playerGridPosition.x-1)*16*4,(playerGridPosition.y)*16*4,16*4,16*4);
-            //tilePos = sf::Vector2f(round((playerGridPosition.x-1)*16*4),round(playerGridPosition.y*16*4));
-        }
-        //cout << tileBounds.top << endl;
+        currentHeroPos = tileCollision(levelWater, 10, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+        currentHeroPos = tileCollision(levelCliff, 72, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+
         // Checks for collision on left or right side of window (normally should no longer be necessary after map finished)
-        if (currentHero->getPos().x < 0.f){
+        /*if (currentHero->getPos().x < 0.f){
             currentHero->setPos(0.f,currentHero->getPos().y);
         }
         if ((currentHero->getPos().x+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > window.getSize().x) {
@@ -227,24 +267,8 @@ namespace He_ARC::rpg {
         }
         if ((currentHero->getPos().y+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > window.getSize().y) {
             currentHero->setPos(currentHero->getPos().x,window.getSize().y - currentHero->getFrameSize()-currentHero->getFrameSize()/2);
-        }
-        // Depending on diretion faced, doesn't allow player to continue in the same direction
-        /*if (collision) {
-            if (currentHero->getPos().x > tileBounds.left) {
-                currentHero->setPos(tileBounds.left+currentHero->getFrameSize()+11, currentHero->getPos().y);
-            }
-            else if ((tileBounds.left+16) > currentHero->getPos().x) {
-                //currentHero->setPos((tilePos.x+64)+200, currentHero->getPos().y);
-                cout << "test" << endl;
-            }
         }*/
-        if (tileBounds.intersects(playerBounds))
-        {
-            cout << "test" << endl;
-        }
-        
-        collision = false;
-        //currentHero->setSpeed(currentHeroSpeed);
+        currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
     }
@@ -252,11 +276,11 @@ namespace He_ARC::rpg {
     void Game::render() {
         window.clear(sf::Color::White);
         sf::RectangleShape test;
-            test.setSize(sf::Vector2f(16*4,16*4));
-            test.setPosition(currentHero->getPos().x,currentHero->getPos().y);
-            test.setFillColor(sf::Color::Transparent);
-            test.setOutlineColor(sf::Color::White);
-            test.setOutlineThickness(1.f);
+        test.setSize(sf::Vector2f(16*4,16*4));
+        test.setPosition(currentHero->getPos().x,currentHero->getPos().y);
+        test.setFillColor(sf::Color::Transparent);
+        test.setOutlineColor(sf::Color::White);
+        test.setOutlineThickness(1.f);
         // Render items
         window.draw(map);
         window.draw(mapCliff);

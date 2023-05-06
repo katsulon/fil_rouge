@@ -33,6 +33,7 @@ namespace He_ARC::rpg {
         int xPos = 0;
         int yPos = 0;
         float speed = 300.f;
+        int flipOffset;
     public:
         Hero() = default;
         Hero(int, int, int, int, Weapon*, IObject*, string);
