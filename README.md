@@ -10,13 +10,17 @@ Mini project to apply concepts seen in class to an RPG written in C++.
 - [x] V3
 - [x] V4
 - [x] V5
-- [ ] Additional features?
+- [x] Player movement
+- [x] Game Map
+- [ ] Map Interaction
 
 ## Dependencies
 - **CMake**: for building the project. Minimum version 3.14 required.
 - **SFML 2.5.1**: multimedia API, used for graphics
 
 ## Building the project
+Inside the build folder, after creating it:
+
     cmake -DCMAKE_CXX_COMPILER=<location of c++ compiler> -DCMAKE_C_COMPILER=<location of c compiler> .. -G "MinGW Makefiles"
 ## Installing packages
 If any of these don't work see [the official SFML tutorials](https://www.sfml-dev.org/tutorials/2.5/)
@@ -26,9 +30,7 @@ CMakeLists have been configured to directly fetch the git repository of dependen
     sudo apt-get install libsfml-dev
 
 ## Possible future plan
-- [x] Sprite Movement
-- [x] Game Map
-- [ ] Dialogue Tree/Interaction (Trading/combat system?)
+- [ ] Dialogue Tree (Trading/combat system?)
 
 ## Credits
 ### Additional art

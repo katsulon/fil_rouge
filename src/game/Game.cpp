@@ -139,16 +139,16 @@ namespace He_ARC::rpg {
         float time = deltaTime.asSeconds();
         // Player movement 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-            currentHero->walk(time,1.f, 0.f, frameRate);
+            currentHero->walk(time, 1.f, 0.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-            currentHero->walk(time,-1.f, 0.f, frameRate);
+            currentHero->walk(time, -1.f, 0.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-            currentHero->walk(time,0.f, -1.f, frameRate);
+            currentHero->walk(time, 0.f, -1.f, frameRate);
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-            currentHero->walk(time,0.f, 1.f, frameRate);
+            currentHero->walk(time, 0.f, 1.f, frameRate);
         }
         currentHeroFlipped = currentHero->getSpriteState();
         while (window.pollEvent(sfEvent)) {
