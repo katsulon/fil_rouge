@@ -18,11 +18,15 @@ namespace He_ARC::rpg {
         private:
             // Variables
             sf::RenderWindow window;
+            sf::Image icon;
+            sf::Vector2f size;
+            sf::View view;
+            float viewHeight;
+            float aspectRatio;
             sf::Event sfEvent;
             sf::Clock deltaClock; //Elapsed time since the last frame was drawn
             sf::Time deltaTime;
             float time;
-            sf::Image icon;
 
             // Create the tilemaps from the level definitions
             TileMap map;
@@ -55,20 +59,38 @@ namespace He_ARC::rpg {
             Game();
 
             // Methods
-
-            /// @brief Shows character interactions as well as events on terminal
+            
+            /// @brief Resizes current view according to aspect ratio.
+            /// @param window Reference to window that's going to be resized as well as according to which the view is going to be resized
+            /// @param view Reference to view that's going to be resized
+            void resizeView(sf::RenderWindow &window, sf::View &view);
+            
+            /// @brief Shows character interactions as well as events on terminal.
             void terminal();
-            /// @brief Changes current hero
+
+            /// @brief Changes current hero.
             void changeCurrentHero(Hero *newHero);
-            /// SFML event handling
+
+            /// @brief SFML event handling
             void updateSFMLEvents();
-            /// @brief Checks and resolves tile collisions
-            sf::Vector2f tileCollision(const int tiles[], int tileNumber, int tileCollision, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds);
-            /// @brief General updates
+
+            /// @brief Checks and resolves tile collisions.
+            /// @param tiles Array with tiles to check collision with
+            /// @param tileNumber Current tilenumber in array according to current grid position
+            /// @param nonColliderTile Tile where collision doesn't happen
+            /// @param gridPosition Current entity grid position
+            /// @param previousPos Previous entity position
+            /// @param rectBounds Entity to check collision with
+            /// @return Updated entity position to avoid collision
+            sf::Vector2f tileCollision(const int tiles[], int tileNumber, int nonColliderTile, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds);
+
+            /// @brief General updates.
             void update();
-            /// @brief Game render
+
+            /// @brief Game render.
             void render();
-            /// @brief Runs game loop
+
+            /// @brief Runs game loop.
             void run();
 
             /// @brief Deconstructor of Game class. Deletes all heros.

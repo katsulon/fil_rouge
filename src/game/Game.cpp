@@ -62,6 +62,9 @@ namespace He_ARC::rpg {
         icon.loadFromFile("res/icon.png"); 
         window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
+        view = sf::View(sf::Vector2f(window.getSize().x/2, window.getSize().y/2), sf::Vector2f(window.getSize().x, window.getSize().y));
+        viewHeight = view.getSize().y;
+
         map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(16, 16), level, 20, 12);
         mapCliff.load("res/sprites/map/forest/Cliff.png", sf::Vector2u(16, 16), levelCliff, 20, 1);
         map.setScale(sf::Vector2f(4.0f, 4.0f));
@@ -87,6 +90,21 @@ namespace He_ARC::rpg {
 
     Game::Game() {
         init();
+    }
+
+    void Game::resizeView(sf::RenderWindow &window, sf::View &view) {
+        size = sf::Vector2f(window.getSize());
+        // Sets min window size
+        if (size.x < 800) {
+            size.x = 800;
+        }
+        if (size.y < 600) {
+            size.y = 600;
+        }
+        window.setSize(sf::Vector2u(size));
+        aspectRatio = size.x/size.y;
+        view.setSize(sf::Vector2f(aspectRatio*viewHeight, viewHeight));
+        window.setView(sf::View(view));
     }
 
     void Game::terminal() {
@@ -162,14 +180,12 @@ namespace He_ARC::rpg {
         currentHero->walk(time, currentHeroVelocity.x, currentHeroVelocity.y, frameRate);
         currentHeroFlipped = currentHero->getSpriteState();
         while (window.pollEvent(sfEvent)) {
-            sf::FloatRect visibleArea(0, 0, sfEvent.size.width, sfEvent.size.height);
             switch (sfEvent.type) {
                 case sf::Event::Closed:
                     window.close();
                     break;
                 case sf::Event::Resized:
-                    // Updates the view to the new size of the window
-                    window.setView(sf::View(visibleArea));
+                    resizeView(window, view);
                     break;
                 case sf::Event::KeyPressed:
                     if(sfEvent.key.code == sf::Keyboard::Escape)
@@ -207,31 +223,31 @@ namespace He_ARC::rpg {
         }
     }
 
-    sf::Vector2f Game::tileCollision(const int levelTiles[], int tileCollision, int tileNumber, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds) {
+    sf::Vector2f Game::tileCollision(const int levelTiles[], int nonColliderTile, int tileNumber, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds) {
         sf::Vector2f currentPos = previousPos;
         sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber+1] != tileCollision) {
+        if (levelTiles[tileNumber+1] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.x = tileBounds.left-rectBounds.width;  
             }
         }
         tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y+1)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber+gridSizeX] != tileCollision) {
+        if (levelTiles[tileNumber+gridSizeX] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.y = tileBounds.top-rectBounds.height;
             }
         }    
         tileBounds = sf::FloatRect((gridPosition.x-1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber-1] != tileCollision) {
+        if (levelTiles[tileNumber-1] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.x = tileBounds.left+tileBounds.width;
             }
         }        
         tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y-1)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber-gridSizeX] != tileCollision) {
+        if (levelTiles[tileNumber-gridSizeX] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.y = tileBounds.top+tileBounds.height;
@@ -242,6 +258,7 @@ namespace He_ARC::rpg {
 
     void Game::update() {
         updateSFMLEvents();
+        view = window.getView();
         currentHeroPos = currentHero->getPos();
         // Collision management
         sf::FloatRect playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
@@ -251,6 +268,18 @@ namespace He_ARC::rpg {
         int tileNumber = (playerGridPosition.y * gridSizeX + playerGridPosition.x);
         currentHeroPos = tileCollision(levelWater, 10, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
         currentHeroPos = tileCollision(levelCliff, 72, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+
+        sf::Vector2f currentHeroPosReal = sf::Vector2f(window.mapCoordsToPixel(currentHeroPos));
+        sf::Vector2f minViewSizeWidth = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(0,0)));
+        sf::Vector2f maxViewSizeWidth = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(gridSizeX*16*4,0)));
+        sf::Vector2f viewMoveSpeed = sf::Vector2f(3.f,3.f);
+        if (((currentHeroPosReal.x-window.getSize().x/2) < 0) && (minViewSizeWidth.x < 0)) {
+            view.move(-viewMoveSpeed.x,0.f);
+        }
+        if (((currentHeroPosReal.x+window.getSize().x/2) > window.getSize().x) && (maxViewSizeWidth.x > window.getSize().x)) {
+            view.move(viewMoveSpeed.y,0.f);
+        }
+        window.setView(view);
 
         // Checks for collision on left or right side of window (normally should no longer be necessary after map finished)
         /*if (currentHero->getPos().x < 0.f){
@@ -272,7 +301,7 @@ namespace He_ARC::rpg {
     }
 
     void Game::render() {
-        window.clear(sf::Color::White);
+        window.clear();
 
         // White rectangle for debug
         /*sf::RectangleShape test;
