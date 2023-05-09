@@ -17,10 +17,12 @@ namespace He_ARC::rpg {
     class Game {
         private:
             // Variables
+            
             sf::RenderWindow window;
             sf::Image icon;
             sf::Vector2f size;
             sf::View view;
+            float viewWidth;
             float viewHeight;
             float aspectRatio;
             sf::Event sfEvent;
@@ -32,7 +34,7 @@ namespace He_ARC::rpg {
             TileMap map;
             TileMap mapCliff;
             TileMap mapWater;
-            // Size of grid on axis X, in number of tiles
+            // Size of grid on axis X, in number of tiles per row
             int gridSizeX = 20;
 
             int const frameRate = 60;

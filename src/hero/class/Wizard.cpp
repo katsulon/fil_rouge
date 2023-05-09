@@ -13,11 +13,11 @@ namespace He_ARC::rpg {
                 break;
             /*case Idle:
                 srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_idle.png";
-                break;
+                break;*/
             case Move:
-                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_walk.png";
+                srcTexture = "res/sprites/character/wizard/wizard_walk.png";
                 break;
-            case Attack:
+            /*case Attack:
                 srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_attack.png";
                 break;
             case Gethurt:

@@ -4,7 +4,7 @@
 namespace He_ARC::rpg {
     // Initializer functions
 
-    // Define the level with an array of tile indices
+    // Define the level with an array of tile indices (20x12)
     const int level[] =
     {
         28,10,10,288,145,137,138,56,57,58,137,155,138,56,57,57,57,57,57,58,
@@ -21,7 +21,7 @@ namespace He_ARC::rpg {
         12,12,12,12,13,144,144,144,144,220,221,292,265,266,144,144,144,144,144,144,
 
     };
-    // 22 tiles per row
+    // 22 tiles per row in texture
     const int levelCliff[] =
     {
         72,72,72,72,72,72,72,56,57,58,72,72,72,56,57,57,57,57,57,58,
@@ -37,7 +37,7 @@ namespace He_ARC::rpg {
         72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
         72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
     };
-    // 14 tiles per row
+    // 14 tiles per row in texture, 72 is transparent
     const int levelWater[] =
     {
         10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
@@ -53,7 +53,7 @@ namespace He_ARC::rpg {
         12,12,12,12,16,23,23,23,24,10,10,10,10,10,10,10,10,10,10,10,
         12,12,12,12,13,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
     };
-    // 11 tiles per row
+    // 11 tiles per row in texture, 10 is transparent
     
     void Game::init() {
         window.create(sf::VideoMode(1280, 768), "Goloviatinski Fil Rouge");
@@ -63,6 +63,7 @@ namespace He_ARC::rpg {
         window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
         view = sf::View(sf::Vector2f(window.getSize().x/2, window.getSize().y/2), sf::Vector2f(window.getSize().x, window.getSize().y));
+        viewWidth = view.getSize().x;
         viewHeight = view.getSize().y;
 
         map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(16, 16), level, 20, 12);
@@ -103,6 +104,7 @@ namespace He_ARC::rpg {
         }
         window.setSize(sf::Vector2u(size));
         aspectRatio = size.x/size.y;
+        view.setCenter(viewWidth/2, viewHeight/2);
         view.setSize(sf::Vector2f(aspectRatio*viewHeight, viewHeight));
         window.setView(sf::View(view));
     }
@@ -269,15 +271,16 @@ namespace He_ARC::rpg {
         currentHeroPos = tileCollision(levelWater, 10, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
         currentHeroPos = tileCollision(levelCliff, 72, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
 
+        // View movement
         sf::Vector2f currentHeroPosReal = sf::Vector2f(window.mapCoordsToPixel(currentHeroPos));
         sf::Vector2f minViewSizeWidth = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(0,0)));
         sf::Vector2f maxViewSizeWidth = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(gridSizeX*16*4,0)));
-        sf::Vector2f viewMoveSpeed = sf::Vector2f(3.f,3.f);
-        if (((currentHeroPosReal.x-window.getSize().x/2) < 0) && (minViewSizeWidth.x < 0)) {
-            view.move(-viewMoveSpeed.x,0.f);
+        sf::Vector2f viewMoveSpeed = sf::Vector2f(currentHero->getSpeed(), currentHero->getSpeed())/100.f;
+        if (((currentHeroPosReal.x+currentHero->getFrameSize()/2-window.getSize().x/2) < 0) && (minViewSizeWidth.x < 0)) {
+            view.move(-viewMoveSpeed.x, 0.f);
         }
-        if (((currentHeroPosReal.x+window.getSize().x/2) > window.getSize().x) && (maxViewSizeWidth.x > window.getSize().x)) {
-            view.move(viewMoveSpeed.y,0.f);
+        if (((currentHeroPosReal.x-currentHero->getFrameSize()/2+window.getSize().x/2) > window.getSize().x) && (maxViewSizeWidth.x > window.getSize().x)) {
+            view.move(viewMoveSpeed.y, 0.f);
         }
         window.setView(view);
 
