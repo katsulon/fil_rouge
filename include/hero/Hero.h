@@ -35,6 +35,12 @@ namespace He_ARC::rpg {
         int yPos = 0;
         float speed = 350.f;
         int flipOffset;
+        string immobileTexture;
+        string idleTexture;
+        string walkTexture;
+        string attackTexture;
+        string gethurtTexture;
+        string knockoutTexture;
     public:
         /// @brief Default constructor
         Hero() = default;
@@ -87,7 +93,7 @@ namespace He_ARC::rpg {
 
         enum state { Immobile, Idle, Move, Attack, Gethurt, Knockout };
         state currentState = Immobile;
-        virtual void loadTexture(int, bool) = 0;
+        void loadTexture(int, bool);
         void setPos(float, float);
         void walk(const float &, const float, const float, int);
         // Methods

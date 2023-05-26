@@ -2,58 +2,10 @@
 
 namespace He_ARC::rpg {
     Wizard::Wizard(int _strength, int _agility, int _intelligence, int _hp, int _mana, Weapon *_weapon, IObject *_pObject, string _name) : 
-    Hero(_strength, _agility, _intelligence, _hp, _weapon, _pObject, _name), mana(_mana) {}
-
-    void Wizard::loadTexture(int frameRate, bool flipped) {
+    Hero(_strength, _agility, _intelligence, _hp, _weapon, _pObject, _name), mana(_mana) {
         frameSize = 32;
-        string srcTexture;
-        switch (currentState) {
-            case Immobile:
-                srcTexture = "res/sprites/character/wizard/wizard.png";
-                break;
-            /*case Idle:
-                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_idle.png";
-                break;*/
-            case Move:
-                srcTexture = "res/sprites/character/wizard/wizard_walk.png";
-                break;
-            /*case Attack:
-                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_attack.png";
-                break;
-            case Gethurt:
-                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_gethurt.png";
-                break;
-            case Knockout:
-                srcTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_knockout.png";
-                break;*/
-        }
-        texture.loadFromFile(srcTexture);
-        animFrame++;
-        animFrame%=frameRate;
-        // Create a sprite
-        int maxX=texture.getSize().x;
-        int maxY=texture.getSize().y;
-        xPos+=(animFrame%(frameRate/10)==0)*frameSize;    
-        xPos%=maxX;
-        if (xPos%maxX==0)
-        {
-            yPos+=(animFrame%(frameRate/10)==0)*frameSize;    
-            yPos%=maxY;
-        }
-        
-        sprite.setTexture(texture);
-        sprite.setTextureRect(sf::IntRect(xPos, 0, frameSize, frameSize));
-        //sprite.setColor(sf::Color(255, 255, 255, 200)); set sprite color
-        if ((flipped == true) && (counter == 0)) {
-            sprite.move((frameSize-16/2+16/2/4)*4.f,0.f);
-            sprite.setScale(-4.f,4.f);
-            counter=1;
-        } 
-        else if((flipped == false) && (counter == 1)) {
-            sprite.move(-(frameSize-16/2+16/2/4)*4.f,0.f);
-            sprite.setScale(4.f,4.f);
-            counter=0;
-        }
+        immobileTexture = "res/sprites/character/wizard/wizard.png";
+        walkTexture = "res/sprites/character/wizard/wizard_walk.png";
     }
 
     void Wizard::castSpell() {

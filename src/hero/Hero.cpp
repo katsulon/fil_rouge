@@ -63,6 +63,60 @@ namespace He_ARC::rpg {
     }
     // SFML setters
 
+    /// @brief Loads, animates and scales hero's texture.
+    /// @param frameRate Game frame rate
+    /// @param flipped Bool variable to check whether to flip texture or not
+    void Hero::loadTexture(int frameRate, bool flipped) {
+        string srcTexture;
+        switch (currentState) {
+            case Immobile:
+                srcTexture = immobileTexture;
+                break;
+            case Idle:
+                srcTexture = idleTexture;
+                break;
+            case Move:
+                srcTexture = walkTexture;
+                break;
+            case Attack:
+                srcTexture = attackTexture;
+                break;
+            case Gethurt:
+                srcTexture = gethurtTexture;
+                break;
+            case Knockout:
+                srcTexture = knockoutTexture;
+                break;
+        }
+        texture.loadFromFile(srcTexture);
+        animFrame++;
+        animFrame%=frameRate;
+        int maxX=texture.getSize().x;
+        int maxY=texture.getSize().y;
+        xPos+=(animFrame%(frameRate/10)==0)*frameSize;    
+        xPos%=maxX;
+        if (xPos%maxX==0)
+        {
+            yPos+=(animFrame%(frameRate/10)==0)*frameSize;    
+            yPos%=maxY;
+        }
+    
+        sprite.setTexture(texture);
+        sprite.setTextureRect(sf::IntRect(xPos, yPos, frameSize, frameSize));
+        //sprite.setColor(sf::Color(255, 255, 255, 200)); set sprite color
+        
+        if ((flipped == true) && (counter == 0)) {
+            sprite.move((frameSize-16/2+16/2/4)*4.f,0.f);
+            sprite.setScale(-4.f,4.f);
+            counter=1;
+        } 
+        else if((flipped == false) && (counter == 1)) {
+            sprite.move(-(frameSize-16/2+16/2/4)*4.f,0.f);
+            sprite.setScale(4.f,4.f);
+            counter=0;
+        }
+    }
+
     /// @brief Sets position of current hero, taking into account frame sizes.
     /// @param x X coordinate of the new position
     /// @param y Y coordinate of the new position
