@@ -86,9 +86,7 @@ namespace He_ARC::rpg {
         // Enums
 
         enum state { Immobile, Idle, Move, Attack, Gethurt, Knockout };
-        enum direction { None, Right, Left, Up, Down };
         state currentState = Immobile;
-        direction currentDirection = None;
         virtual void loadTexture(int, bool) = 0;
         void setPos(float, float);
         void walk(const float &, const float, const float, int);

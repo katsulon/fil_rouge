@@ -34,8 +34,11 @@ namespace He_ARC::rpg {
             TileMap map;
             TileMap mapCliff;
             TileMap mapWater;
-            // Size of grid on axis X, in number of tiles per row
-            int gridSizeX = 20;
+            sf::Vector2i mapSize = sf::Vector2i(39,22);
+
+            sf::Vector2f currentHeroPosReal;
+            sf::Vector2f minViewSize;
+            sf::Vector2f maxViewSize;
 
             int const frameRate = 60;
             // Var to check whether a key has already been pressed
@@ -50,8 +53,9 @@ namespace He_ARC::rpg {
             Necromancer *ncm1 = new Necromancer;
 
             Hero *currentHero = war1;
-            sf::Vector2f currentHeroPos = sf::Vector2f(0,0);
+            sf::Vector2f currentHeroPos = sf::Vector2f(0,7*16*4);
             bool currentHeroFlipped = false; 
+            sf::Vector2f currentHeroVelocity = sf::Vector2f(0, 0);
             
             /// @brief Initialization
             void init();

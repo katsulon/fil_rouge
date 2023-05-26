@@ -7,51 +7,80 @@ namespace He_ARC::rpg {
     // Define the level with an array of tile indices (20x12)
     const int level[] =
     {
-        28,10,10,288,145,137,138,56,57,58,137,155,138,56,57,57,57,57,57,58,
-        50,10,10,144,170,171,170,155,155,155,171,223,154,122,122,122,122,122,122,122,
-        222,144,144,289,144,144,144,286,287,288,144,144,144,144,144,0,1,1,1,1,
-        266,144,0,1,1,1,2,144,144,144,144,144,144,144,0,28,12,12,12,12,
-        144,144,11,12,12,12,27,1,1,1,1,1,1,1,28,12,12,12,12,12,
-        144,144,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
-        144,144,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
-        1,1,28,12,12,12,12,12,12,12,12,12,12,12,12,16,23,23,23,23,
-        12,12,12,12,12,12,12,12,16,23,23,23,23,23,23,24,144,144,144,144,
-        12,12,12,12,12,12,12,12,13,144,144,220,221,222,144,144,144,144,144,144,
-        12,12,12,12,16,23,23,23,24,144,144,242,243,244,144,144,144,144,144,144,
-        12,12,12,12,13,144,144,144,144,220,221,292,265,266,144,144,144,144,144,144,
-
+        120,120,120,134,10,132,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,
+        120,120,120,134,10,132,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,
+        120,120,120,134,10,132,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,38,56,56,39,34,34,34,34,34,34,34,34,120,38,56,56,56,
+        120,120,120,134,10,132,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,35,10,10,55,39,34,34,34,34,34,34,34,38,57,10,10,10,
+        120,120,120,134,10,132,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,35,10,10,10,55,155,155,155,155,155,155,155,57,10,10,10,10,
+        120,120,120,134,10,132,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,35,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        155,155,155,156,10,154,123,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,35,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,10,10,10,10,145,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,35,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,10,10,10,10,145,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,35,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,10,10,10,10,145,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,35,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,27,28,10,10,288,145,137,138,120,120,120,137,155,138,120,120,120,120,120,120,120,35,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,49,50,10,10,144,170,171,170,155,155,155,171,223,154,122,122,122,122,122,122,122,57,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        220,221,222,144,144,289,144,144,144,286,287,288,144,144,144,144,144,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        264,265,266,144,10,10,10,10,10,144,144,144,144,144,144,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,144,144,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,144,144,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,144,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,144,144,144,144,144,144,144,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,10,10,10,10,10,10,10,10,10,10,144,220,221,222,144,144,144,144,144,144,144,144,144,144,144,10,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,10,10,10,10,10,10,10,10,10,144,144,242,243,244,144,144,144,144,144,144,144,144,144,144,144,144,10,10,10,10,10,10,10,10,10,10,10,
+        10,10,10,10,10,10,10,10,144,144,144,220,221,292,265,266,144,144,144,144,144,144,144,144,144,144,144,144,144,10,10,10,10,10,10,10,10,10,10,
     };
     // 22 tiles per row in texture
     const int levelCliff[] =
     {
-        72,72,72,72,72,72,72,56,57,58,72,72,72,56,57,57,57,57,57,58,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
-        72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,72,
+        14,15,16,-1,-1,-1,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,20,35,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,37,
+        14,15,16,-1,-1,-1,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,20,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,
+        14,15,16,-1,-1,-1,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        28,29,30,-1,-1,-1,28,29,15,15,15,15,15,15,15,15,15,15,15,15,15,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        42,43,44,-1,-1,-1,42,43,44,14,15,15,15,15,15,15,15,15,15,15,15,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        56,57,58,-1,-1,-1,56,57,58,14,15,15,15,15,15,15,15,15,15,15,15,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,4,5,15,15,15,15,15,15,15,15,15,15,15,15,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,28,15,15,15,16,42,43,44,14,15,15,15,15,15,20,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,42,44,28,29,30,56,57,58,28,29,29,29,29,29,30,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,56,58,42,43,44,-1,-1,-1,42,43,43,43,43,43,44,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,56,57,58,-1,-1,-1,56,57,57,57,57,57,58,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
     };
     // 14 tiles per row in texture, 72 is transparent
     const int levelWater[] =
     {
-        10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
-        10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
-        10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,0,1,1,1,1,
-        10,10,0,1,1,1,2,10,10,10,10,10,10,10,0,28,12,12,12,12,
-        10,10,11,12,12,12,27,1,1,1,1,1,1,1,28,12,12,12,12,12,
-        10,10,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
-        10,10,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
-        1,1,28,12,12,12,12,12,12,12,12,12,12,12,12,16,23,23,23,23,
-        12,12,12,12,12,12,12,12,16,23,23,23,23,23,23,24,10,10,10,10,
-        12,12,12,12,12,12,12,12,13,10,10,10,10,10,10,10,10,10,10,10,
-        12,12,12,12,16,23,23,23,24,10,10,10,10,10,10,10,10,10,10,10,
-        12,12,12,12,13,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,1,1,1,1,1,1,1,2,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,12,12,12,12,12,12,12,13,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,1,28,12,12,12,12,12,12,12,27,1,2,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,12,12,13,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,1,1,1,1,1,1,28,12,12,12,12,12,12,12,12,12,12,12,27,1,1,
+        -1,-1,-1,-1,0,1,1,1,2,-1,-1,-1,-1,-1,-1,-1,0,28,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
+        -1,-1,-1,-1,11,12,12,12,27,1,1,1,1,1,1,1,28,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
+        -1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
+        -1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,
+        1,1,1,1,28,12,12,12,12,12,12,12,12,12,12,12,12,16,23,23,23,23,23,23,23,23,17,12,12,12,12,12,12,12,12,12,12,12,12,
+        12,12,12,12,12,12,12,12,12,12,16,23,23,23,23,23,23,24,-1,-1,-1,-1,-1,-1,-1,-1,22,23,17,12,12,12,12,12,12,12,12,12,12,
+        12,12,12,12,12,12,12,12,12,12,13,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,22,17,12,12,12,12,12,12,12,12,12,
+        12,12,12,12,12,12,16,23,23,23,24,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,
+        12,12,12,12,12,12,13,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,
     };
     // 11 tiles per row in texture, 10 is transparent
     
@@ -65,12 +94,13 @@ namespace He_ARC::rpg {
         view = sf::View(sf::Vector2f(window.getSize().x/2, window.getSize().y/2), sf::Vector2f(window.getSize().x, window.getSize().y));
         viewWidth = view.getSize().x;
         viewHeight = view.getSize().y;
+        view.setCenter(viewWidth/2, viewHeight/2);
 
-        map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(16, 16), level, 20, 12);
-        mapCliff.load("res/sprites/map/forest/Cliff.png", sf::Vector2u(16, 16), levelCliff, 20, 1);
+        map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(16, 16), level, mapSize.x, mapSize.y);
         map.setScale(sf::Vector2f(4.0f, 4.0f));
+        mapCliff.load("res/sprites/map/forest/Cliff.png", sf::Vector2u(16, 16), levelCliff, mapSize.x, mapSize.y);
         mapCliff.setScale(sf::Vector2f(4.0f, 4.0f));
-        mapWater.load("res/sprites/map/forest/Water_Tileset.png", sf::Vector2u(16, 16), levelWater, 20, 12);
+        mapWater.load("res/sprites/map/forest/Water_Tileset.png", sf::Vector2u(16, 16), levelWater, mapSize.x, mapSize.y);
         mapWater.setScale(sf::Vector2f(4.0f, 4.0f));
 
         party.push_back(war1);
@@ -104,13 +134,25 @@ namespace He_ARC::rpg {
         }
         window.setSize(sf::Vector2u(size));
         aspectRatio = size.x/size.y;
-        view.setCenter(viewWidth/2, viewHeight/2);
+        if (minViewSize.x >= 0) {
+            currentHeroPos.x = aspectRatio*viewHeight/2;
+        }
+        if (currentHeroPos.x-currentHero->getFrameSize()*4-16/2*4 + size.x/2 >= maxViewSize.x) {
+            currentHeroPos.x = mapSize.x*4*16-aspectRatio*viewHeight/2;
+        }
+        if (minViewSize.y >= 0) {
+            currentHeroPos.y = viewHeight/2;
+        }
+        if (currentHeroPos.y-currentHero->getFrameSize()*4-16/2*4 + size.y/2 >= maxViewSize.y) {
+            currentHeroPos.y = mapSize.y*4*16-viewHeight/2;
+        }
+        view.setCenter(currentHeroPos);
         view.setSize(sf::Vector2f(aspectRatio*viewHeight, viewHeight));
         window.setView(sf::View(view));
     }
 
     void Game::terminal() {
-        for(Hero *member : party) {
+        for(const Hero *member : party) {
             cout << *member;
         }
 
@@ -165,7 +207,7 @@ namespace He_ARC::rpg {
     void Game::updateSFMLEvents() {
         deltaTime = deltaClock.restart();
         time = deltaTime.asSeconds();
-        sf::Vector2f currentHeroVelocity = sf::Vector2f(0, 0);
+        currentHeroVelocity = sf::Vector2f(0, 0);
         // Player movement 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
             currentHeroVelocity.x = 1.f;
@@ -219,7 +261,6 @@ namespace He_ARC::rpg {
                 case sf::Event::KeyReleased:
                     keyDown = false;
                     currentHero->currentState=Hero::Immobile;
-                    currentHero->currentDirection = Hero::None;
                     break;
             }
         }
@@ -235,7 +276,7 @@ namespace He_ARC::rpg {
             }
         }
         tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y+1)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber+gridSizeX] != nonColliderTile) {
+        if (levelTiles[tileNumber+mapSize.x] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.y = tileBounds.top-rectBounds.height;
@@ -249,7 +290,7 @@ namespace He_ARC::rpg {
             }
         }        
         tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y-1)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber-gridSizeX] != nonColliderTile) {
+        if (levelTiles[tileNumber-mapSize.x] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.y = tileBounds.top+tileBounds.height;
@@ -267,37 +308,46 @@ namespace He_ARC::rpg {
         sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
         playerGridPosition.x = round(playerBounds.left / (16*4));
         playerGridPosition.y = round(playerBounds.top / (16*4));
-        int tileNumber = (playerGridPosition.y * gridSizeX + playerGridPosition.x);
-        currentHeroPos = tileCollision(levelWater, 10, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
-        currentHeroPos = tileCollision(levelCliff, 72, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+        int tileNumber = (playerGridPosition.y * mapSize.x + playerGridPosition.x);
+        currentHeroPos = tileCollision(levelWater, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+        currentHeroPos = tileCollision(levelCliff, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+
+        // Checks for collision on left or right side of map
+        if (currentHero->getPos().x < 0.f){
+            currentHeroPos.x = 0.f;
+        }
+        if ((currentHero->getPos().x+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.x*16*4) {
+            currentHeroPos.x = mapSize.x*16*4-currentHero->getFrameSize()-currentHero->getFrameSize()/2;
+        }
+        // Checks for collision on top or bottom side of map
+        if (currentHero->getPos().y < 0.f) {
+            currentHeroPos.y = 0.f;
+        }
+        if ((currentHero->getPos().y+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.y*16*4 ) {
+            currentHeroPos.y = mapSize.y*16*4 - currentHero->getFrameSize()-currentHero->getFrameSize()/2;
+        }
 
         // View movement
-        sf::Vector2f currentHeroPosReal = sf::Vector2f(window.mapCoordsToPixel(currentHeroPos));
-        sf::Vector2f minViewSizeWidth = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(0,0)));
-        sf::Vector2f maxViewSizeWidth = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(gridSizeX*16*4,0)));
-        sf::Vector2f viewMoveSpeed = sf::Vector2f(currentHero->getSpeed(), currentHero->getSpeed())/100.f;
-        if (((currentHeroPosReal.x+currentHero->getFrameSize()/2-window.getSize().x/2) < 0) && (minViewSizeWidth.x < 0)) {
-            view.move(-viewMoveSpeed.x, 0.f);
+        currentHeroPosReal = sf::Vector2f(window.mapCoordsToPixel(currentHeroPos));
+        minViewSize = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(0,0)));
+        maxViewSize = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(mapSize.x*16*4,20*16*4)));
+        sf::Vector2f viewMoveSpeed = sf::Vector2f(0.f, 0.f);
+        if (((currentHeroPosReal.x+16/2*4-window.getSize().x/2) < 0) && (minViewSize.x < 0) && currentHeroVelocity.x < 0) {
+            viewMoveSpeed.x = (currentHeroPos.x-view.getCenter().x)*time;
         }
-        if (((currentHeroPosReal.x-currentHero->getFrameSize()/2+window.getSize().x/2) > window.getSize().x) && (maxViewSizeWidth.x > window.getSize().x)) {
-            view.move(viewMoveSpeed.y, 0.f);
+        if (((currentHeroPosReal.x+16/2*4+window.getSize().x/2) > window.getSize().x) && (maxViewSize.x > window.getSize().x) && currentHeroVelocity.x > 0) {
+            viewMoveSpeed.x = ((currentHeroPos.x+16/2*4*2)-view.getCenter().x)*time;
         }
+        if (((currentHeroPosReal.y+16/2*4-window.getSize().y/2) < 0) && (minViewSize.y < 0) && currentHeroVelocity.y < 0) {
+            viewMoveSpeed.y = (currentHeroPos.y-view.getCenter().y)*time;
+        }
+        if (((currentHeroPosReal.y+16/2*4+window.getSize().y/2) > window.getSize().y) && (maxViewSize.y > window.getSize().y) && currentHeroVelocity.y > 0) {
+            viewMoveSpeed.y = ((currentHeroPos.y+16/2*4*2)-view.getCenter().y)*time;
+        }
+        viewMoveSpeed*=currentHero->getSpeed()*2/100;
+        view.move(viewMoveSpeed);
         window.setView(view);
 
-        // Checks for collision on left or right side of window (normally should no longer be necessary after map finished)
-        /*if (currentHero->getPos().x < 0.f){
-            currentHero->setPos(0.f,currentHero->getPos().y);
-        }
-        if ((currentHero->getPos().x+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > window.getSize().x) {
-            currentHero->setPos(window.getSize().x-currentHero->getFrameSize()-currentHero->getFrameSize()/2, currentHero->getPos().y);
-        }
-        // Checks for collision on top or bottom side of window (normally should no longer be necessary after map finished)
-        if (currentHero->getPos().y < 0.f) {
-            currentHero->setPos(currentHero->getPos().x,0.f);
-        }
-        if ((currentHero->getPos().y+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > window.getSize().y) {
-            currentHero->setPos(currentHero->getPos().x,window.getSize().y - currentHero->getFrameSize()-currentHero->getFrameSize()/2);
-        }*/
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
@@ -316,9 +366,9 @@ namespace He_ARC::rpg {
         window.draw(test);*/
         // Render items
         window.draw(map);
-        window.draw(mapCliff);
         window.draw(mapWater);
         window.draw(currentHero->getSprite());
+        window.draw(mapCliff);
         window.display();
     }
 

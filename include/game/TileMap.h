@@ -32,7 +32,7 @@ namespace He_ARC::rpg {
 
             // resize the vertex array to fit the level size
             m_vertices.setPrimitiveType(sf::Quads);
-            m_vertices.resize(width * height * 4);
+            m_vertices.resize(width * height * 4); // multiplication of 4 has been added due to tileset textures being 16 bits and too small otherwise
 
             // populate the vertex array, with one quad per tile
             for (unsigned int i = 0; i < width; ++i)
