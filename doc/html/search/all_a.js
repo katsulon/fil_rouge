@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['terminal_0',['terminal',['../class_he___a_r_c_1_1rpg_1_1_game.html#ad5bf24d24c701f8e609a4e571c0ae952',1,'He_ARC::rpg::Game']]],
-  ['tilecollision_1',['tileCollision',['../class_he___a_r_c_1_1rpg_1_1_game.html#acd57ae6144dfdcdc5014b36f8b5d38b6',1,'He_ARC::rpg::Game']]],
-  ['tilemap_2',['TileMap',['../class_he___a_r_c_1_1rpg_1_1_tile_map.html',1,'He_ARC::rpg']]]
+  ['render_0',['render',['../class_he___a_r_c_1_1rpg_1_1_game.html#a0e4f5e74f4b934809f5306bd81548e42',1,'He_ARC::rpg::Game']]],
+  ['resizeview_1',['resizeView',['../class_he___a_r_c_1_1rpg_1_1_game.html#affeae01240bcc30ec481093d33a611af',1,'He_ARC::rpg::Game']]],
+  ['rogue_2',['Rogue',['../class_he___a_r_c_1_1rpg_1_1_rogue.html',1,'He_ARC::rpg']]],
+  ['run_3',['run',['../class_he___a_r_c_1_1rpg_1_1_game.html#a8797bd5df8bfa9307cef77c0ca10c4fa',1,'He_ARC::rpg::Game']]]
 ];

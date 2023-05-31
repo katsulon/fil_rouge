@@ -237,6 +237,14 @@ namespace He_ARC::rpg {
                     if(sfEvent.key.code == sf::Keyboard::Escape)
                         window.close();
                     if (keyDown == false) {
+                        // Print test interaction
+                        if (bridgeSwitch.canInteract(playerBounds)) {
+                            if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                                cout << "Test" << endl;
+                                keyDown = true;
+                            }
+                        }
+                        // Prints hero methods result on terminal
                         if(sfEvent.key.code == sf::Keyboard::P) {
                             terminal();
                             keyDown = true;
@@ -306,7 +314,7 @@ namespace He_ARC::rpg {
         view = window.getView();
         currentHeroPos = currentHero->getPos();
         // Collision management
-        sf::FloatRect playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
+        playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
         sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
         playerGridPosition.x = round(playerBounds.left / (16*4));
         playerGridPosition.y = round(playerBounds.top / (16*4));
@@ -354,7 +362,6 @@ namespace He_ARC::rpg {
         window.setView(view);
 
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
-        cout << bridgeSwitch.canInteract(playerBounds) << endl;
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
     }

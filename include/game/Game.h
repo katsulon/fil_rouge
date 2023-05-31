@@ -60,6 +60,7 @@ namespace He_ARC::rpg {
             sf::Vector2f currentHeroPos = sf::Vector2f(0,7*16*4);
             bool currentHeroFlipped = false; 
             sf::Vector2f currentHeroVelocity = sf::Vector2f(0, 0);
+            sf::FloatRect playerBounds;
             
             /// @brief Initialization
             void init();

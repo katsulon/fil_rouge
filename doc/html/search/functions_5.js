@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['terminal_0',['terminal',['../class_he___a_r_c_1_1rpg_1_1_game.html#ad5bf24d24c701f8e609a4e571c0ae952',1,'He_ARC::rpg::Game']]],
-  ['tilecollision_1',['tileCollision',['../class_he___a_r_c_1_1rpg_1_1_game.html#acd57ae6144dfdcdc5014b36f8b5d38b6',1,'He_ARC::rpg::Game']]]
+  ['print_0',['print',['../class_he___a_r_c_1_1rpg_1_1_wizard.html#a02bf880562f4859df655dab5cd4b3741',1,'He_ARC::rpg::Wizard::print()'],['../class_he___a_r_c_1_1rpg_1_1_hero.html#a7ac91fcfa66fa7c0cd40cc620de15d03',1,'He_ARC::rpg::Hero::print()']]]
 ];
