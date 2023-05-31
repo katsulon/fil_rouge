@@ -6,6 +6,7 @@
 #include <list>
 #include "hero/Hero.h"
 #include "hero/class/ClassImpl.h"
+#include "Interactable.h"
 
 using namespace std;
 
@@ -43,6 +44,9 @@ namespace He_ARC::rpg {
             int const frameRate = 60;
             // Var to check whether a key has already been pressed
             bool keyDown = false;
+
+            // Initialization of entities
+            Entity bridgeSwitch = Entity(12, 13, 16*4, "res/sprites/map/forest/Rocks.png", true);
             
             // Initialization of party and hero
 

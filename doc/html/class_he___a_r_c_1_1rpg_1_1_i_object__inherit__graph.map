@@ -1,0 +1,9 @@
+<map id="He_ARC::rpg::IObject" name="He_ARC::rpg::IObject">
+<area shape="rect" id="Node000001" title=" " alt="" coords="218,5,366,165"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_potion.html" title=" " alt="" coords="5,213,189,512"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,178,204,215,191,232,187,229,199,212,225,175"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_shield.html" title=" " alt="" coords="214,213,370,512"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="295,179,295,214,289,214,289,179"/>
+<area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html" title=" " alt="" coords="395,213,571,512"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="359,175,385,212,397,229,393,232,380,215,355,178"/>
+</map>

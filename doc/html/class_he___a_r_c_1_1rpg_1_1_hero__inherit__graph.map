@@ -1,0 +1,11 @@
+<map id="He_ARC::rpg::Hero" name="He_ARC::rpg::Hero">
+<area shape="rect" id="Node000001" title=" " alt="" coords="235,5,407,624"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_rogue.html" title=" " alt="" coords="5,723,193,909"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,524,143,724,138,722,226,522"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_warrior.html" title=" " alt="" coords="218,731,423,901"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="323,638,323,731,318,731,318,638"/>
+<area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_wizard.html" title=" " alt="" coords="448,672,652,960"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="415,515,487,671,482,673,410,517"/>
+<area shape="rect" id="Node000005" href="$class_he___a_r_c_1_1rpg_1_1_necromancer.html" title=" " alt="" coords="448,1008,652,1195"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="553,975,553,1008,547,1008,547,975"/>
+</map>

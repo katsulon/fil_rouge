@@ -4,7 +4,7 @@
 namespace He_ARC::rpg {
     // Initializer functions
 
-    // Define the level with an array of tile indices (20x12)
+    // Define the level with an array of tile indices (39x22)
     const int level[] =
     {
         120,120,120,134,10,132,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,120,
@@ -30,7 +30,6 @@ namespace He_ARC::rpg {
         10,10,10,10,10,10,10,10,10,10,10,144,144,242,243,244,144,144,144,144,144,144,144,144,144,144,144,144,10,10,10,10,10,10,10,10,10,10,10,
         10,10,10,10,10,10,10,10,144,144,144,220,221,292,265,266,144,144,144,144,144,144,144,144,144,144,144,144,144,10,10,10,10,10,10,10,10,10,10,
     };
-    // 22 tiles per row in texture
     const int levelCliff[] =
     {
         14,15,16,-1,-1,-1,14,15,15,15,15,15,15,15,15,15,15,15,15,15,15,20,35,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,37,
@@ -56,7 +55,6 @@ namespace He_ARC::rpg {
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
     };
-    // 14 tiles per row in texture, 72 is transparent
     const int levelWater[] =
     {
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
@@ -82,7 +80,6 @@ namespace He_ARC::rpg {
         12,12,12,12,12,12,16,23,23,23,24,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,
         12,12,12,12,12,12,13,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,
     };
-    // 11 tiles per row in texture, 10 is transparent
     
     void Game::init() {
         window.create(sf::VideoMode(1280, 768), "Goloviatinski Fil Rouge");
@@ -96,6 +93,7 @@ namespace He_ARC::rpg {
         viewHeight = view.getSize().y;
         view.setCenter(viewWidth/2, viewHeight/2);
 
+        // loading tiles
         map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(16, 16), level, mapSize.x, mapSize.y);
         map.setScale(sf::Vector2f(4.0f, 4.0f));
         mapCliff.load("res/sprites/map/forest/Cliff.png", sf::Vector2u(16, 16), levelCliff, mapSize.x, mapSize.y);
@@ -103,6 +101,10 @@ namespace He_ARC::rpg {
         mapWater.load("res/sprites/map/forest/Water_Tileset.png", sf::Vector2u(16, 16), levelWater, mapSize.x, mapSize.y);
         mapWater.setScale(sf::Vector2f(4.0f, 4.0f));
 
+        // loading entities
+        bridgeSwitch.setSpriteTexture(sf::IntRect(16, 0, 16, 16));
+
+        // party creation
         party.push_back(war1);
         party.push_back(rog1);
         party.push_back(wzd1);
@@ -311,6 +313,9 @@ namespace He_ARC::rpg {
         int tileNumber = (playerGridPosition.y * mapSize.x + playerGridPosition.x);
         currentHeroPos = tileCollision(levelWater, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
         currentHeroPos = tileCollision(levelCliff, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+        if (bridgeSwitch.getCollision()) {
+            currentHeroPos = bridgeSwitch.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
+        }
 
         // Checks for collision on left or right side of map
         if (currentHero->getPos().x < 0.f){
@@ -349,6 +354,7 @@ namespace He_ARC::rpg {
         window.setView(view);
 
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+        cout << bridgeSwitch.canInteract(playerBounds) << endl;
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
     }
@@ -367,7 +373,10 @@ namespace He_ARC::rpg {
         // Render items
         window.draw(map);
         window.draw(mapWater);
+
+        window.draw(bridgeSwitch.getSprite());
         window.draw(currentHero->getSprite());
+
         window.draw(mapCliff);
         window.display();
     }
