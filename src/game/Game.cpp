@@ -292,34 +292,32 @@ namespace He_ARC::rpg {
 
     sf::Vector2f Game::tileCollision(const int levelTiles[], int nonColliderTile, int tileNumber, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds) {
         sf::Vector2f currentPos = previousPos;
-        if (collisionEnabled) {
-            sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
-            if (levelTiles[tileNumber+1] != nonColliderTile) {
-                if (rectBounds.intersects(tileBounds))
-                {
-                    currentPos.x = tileBounds.left-rectBounds.width;  
-                }
+        sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
+        if (levelTiles[tileNumber+1] != nonColliderTile) {
+            if (rectBounds.intersects(tileBounds))
+            {
+                currentPos.x = tileBounds.left-rectBounds.width;  
             }
-            tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y+1)*16*4,16*4,16*4);
-            if (levelTiles[tileNumber+mapSize.x] != nonColliderTile) {
-                if (rectBounds.intersects(tileBounds))
-                {
-                    currentPos.y = tileBounds.top-rectBounds.height;
-                }
-            }    
-            tileBounds = sf::FloatRect((gridPosition.x-1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
-            if (levelTiles[tileNumber-1] != nonColliderTile) {
-                if (rectBounds.intersects(tileBounds))
-                {
-                    currentPos.x = tileBounds.left+tileBounds.width;
-                }
-            }        
-            tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y-1)*16*4,16*4,16*4);
-            if (levelTiles[tileNumber-mapSize.x] != nonColliderTile) {
-                if (rectBounds.intersects(tileBounds))
-                {
-                    currentPos.y = tileBounds.top+tileBounds.height;
-                }
+        }
+        tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y+1)*16*4,16*4,16*4);
+        if (levelTiles[tileNumber+mapSize.x] != nonColliderTile) {
+            if (rectBounds.intersects(tileBounds))
+            {
+                currentPos.y = tileBounds.top-rectBounds.height;
+            }
+        }    
+        tileBounds = sf::FloatRect((gridPosition.x-1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
+        if (levelTiles[tileNumber-1] != nonColliderTile) {
+            if (rectBounds.intersects(tileBounds))
+            {
+                currentPos.x = tileBounds.left+tileBounds.width;
+            }
+        }        
+        tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y-1)*16*4,16*4,16*4);
+        if (levelTiles[tileNumber-mapSize.x] != nonColliderTile) {
+            if (rectBounds.intersects(tileBounds))
+            {
+                currentPos.y = tileBounds.top+tileBounds.height;
             }
         }
         return currentPos;       
@@ -330,24 +328,32 @@ namespace He_ARC::rpg {
         view = window.getView();
         currentHeroPos = currentHero->getPos();
         // Collision management
+        bool collisionEnabled = true;
         playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
-        sf::FloatRect bridgeBounds = sf::FloatRect(14*16*4, 13*16*4, 16*4, 16*4*7);
         sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
         playerGridPosition.x = round(playerBounds.left / (16*4));
         playerGridPosition.y = round(playerBounds.top / (16*4));
         int tileNumber = (playerGridPosition.y * mapSize.x + playerGridPosition.x);
-
-        collisionEnabled = true;
+        
+        sf::FloatRect bridgeBounds = sf::FloatRect(14*16*4, 14*16*4, 16*4, 16*4*5);
+        sf::FloatRect intersect;
         if (playerBounds.intersects(bridgeBounds) && enableBridge) {
             collisionEnabled = false;
+            if (playerBounds.intersects(bridgeBounds, intersect))
+                {
+                    if (intersect.width < intersect.height) {
+                        currentHeroPos.x = bridgeBounds.left;  
+                    }  
+                }
         }
 
-        currentHeroPos = tileCollision(levelWater, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
-        currentHeroPos = tileCollision(levelCliff, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
-        if (bridgeSwitch.getCollision()) {
-            currentHeroPos = bridgeSwitch.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
+        if (collisionEnabled) {
+            currentHeroPos = tileCollision(levelWater, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+            currentHeroPos = tileCollision(levelCliff, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+            if (bridgeSwitch.getCollision()) {
+                currentHeroPos = bridgeSwitch.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
+            }
         }
-        
 
         // Checks for collision on left or right side of map
         if (currentHero->getPos().x < 0.f){

@@ -38,8 +38,6 @@ namespace He_ARC::rpg {
             TileMap mapBridge;
             sf::Vector2i mapSize = sf::Vector2i(39,22);
 
-            bool collisionEnabled = true;
-
             sf::Vector2f currentHeroPosReal;
             sf::Vector2f minViewSize;
             sf::Vector2f maxViewSize;
