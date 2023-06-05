@@ -80,6 +80,16 @@ namespace He_ARC::rpg {
         12,12,12,12,12,12,16,23,23,23,24,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,
         12,12,12,12,12,12,13,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,12,12,12,12,12,12,12,12,12,
     };
+
+    const int bridge[] = {
+        25,26,27,
+        32,33,34,
+        32,33,34,
+        32,33,34,
+        32,33,34,
+        32,33,34,
+        39,40,41,
+    };
     
     void Game::init() {
         window.create(sf::VideoMode(1280, 768), "Goloviatinski Fil Rouge");
@@ -100,6 +110,9 @@ namespace He_ARC::rpg {
         mapCliff.setScale(sf::Vector2f(4.0f, 4.0f));
         mapWater.load("res/sprites/map/forest/Water_Tileset.png", sf::Vector2u(16, 16), levelWater, mapSize.x, mapSize.y);
         mapWater.setScale(sf::Vector2f(4.0f, 4.0f));
+
+        mapBridge.load("res/sprites/map/forest/Stairs_Bridge.png", sf::Vector2u(16, 16), bridge, 3, 7);
+        mapBridge.setScale(sf::Vector2f(4.0f, 4.0f));
 
         // loading entities
         bridgeSwitch.setSpriteTexture(sf::IntRect(16, 0, 16, 16));
@@ -241,6 +254,7 @@ namespace He_ARC::rpg {
                         if (bridgeSwitch.canInteract(playerBounds)) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
                                 cout << "Test" << endl;
+                                enableBridge = true;
                                 keyDown = true;
                             }
                         }
@@ -278,32 +292,34 @@ namespace He_ARC::rpg {
 
     sf::Vector2f Game::tileCollision(const int levelTiles[], int nonColliderTile, int tileNumber, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds) {
         sf::Vector2f currentPos = previousPos;
-        sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber+1] != nonColliderTile) {
-            if (rectBounds.intersects(tileBounds))
-            {
-                currentPos.x = tileBounds.left-rectBounds.width;  
+        if (collisionEnabled) {
+            sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
+            if (levelTiles[tileNumber+1] != nonColliderTile) {
+                if (rectBounds.intersects(tileBounds))
+                {
+                    currentPos.x = tileBounds.left-rectBounds.width;  
+                }
             }
-        }
-        tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y+1)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber+mapSize.x] != nonColliderTile) {
-            if (rectBounds.intersects(tileBounds))
-            {
-                currentPos.y = tileBounds.top-rectBounds.height;
-            }
-        }    
-        tileBounds = sf::FloatRect((gridPosition.x-1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber-1] != nonColliderTile) {
-            if (rectBounds.intersects(tileBounds))
-            {
-                currentPos.x = tileBounds.left+tileBounds.width;
-            }
-        }        
-        tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y-1)*16*4,16*4,16*4);
-        if (levelTiles[tileNumber-mapSize.x] != nonColliderTile) {
-            if (rectBounds.intersects(tileBounds))
-            {
-                currentPos.y = tileBounds.top+tileBounds.height;
+            tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y+1)*16*4,16*4,16*4);
+            if (levelTiles[tileNumber+mapSize.x] != nonColliderTile) {
+                if (rectBounds.intersects(tileBounds))
+                {
+                    currentPos.y = tileBounds.top-rectBounds.height;
+                }
+            }    
+            tileBounds = sf::FloatRect((gridPosition.x-1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
+            if (levelTiles[tileNumber-1] != nonColliderTile) {
+                if (rectBounds.intersects(tileBounds))
+                {
+                    currentPos.x = tileBounds.left+tileBounds.width;
+                }
+            }        
+            tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y-1)*16*4,16*4,16*4);
+            if (levelTiles[tileNumber-mapSize.x] != nonColliderTile) {
+                if (rectBounds.intersects(tileBounds))
+                {
+                    currentPos.y = tileBounds.top+tileBounds.height;
+                }
             }
         }
         return currentPos;       
@@ -315,15 +331,23 @@ namespace He_ARC::rpg {
         currentHeroPos = currentHero->getPos();
         // Collision management
         playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
+        sf::FloatRect bridgeBounds = sf::FloatRect(14*16*4, 13*16*4, 16*4, 16*4*7);
         sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
         playerGridPosition.x = round(playerBounds.left / (16*4));
         playerGridPosition.y = round(playerBounds.top / (16*4));
         int tileNumber = (playerGridPosition.y * mapSize.x + playerGridPosition.x);
+
+        collisionEnabled = true;
+        if (playerBounds.intersects(bridgeBounds) && enableBridge) {
+            collisionEnabled = false;
+        }
+
         currentHeroPos = tileCollision(levelWater, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
         currentHeroPos = tileCollision(levelCliff, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
         if (bridgeSwitch.getCollision()) {
             currentHeroPos = bridgeSwitch.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
         }
+        
 
         // Checks for collision on left or right side of map
         if (currentHero->getPos().x < 0.f){
@@ -354,9 +378,10 @@ namespace He_ARC::rpg {
         if (((currentHeroPosReal.y+16/2*4-window.getSize().y/2) < 0) && (minViewSize.y < 0) && currentHeroVelocity.y < 0) {
             viewMoveSpeed.y = (currentHeroPos.y-view.getCenter().y)*time;
         }
-        if (((currentHeroPosReal.y+16/2*4+window.getSize().y/2) > window.getSize().y) && (maxViewSize.y > window.getSize().y) && currentHeroVelocity.y > 0) {
+        if (((currentHeroPosReal.y+16/2*4+window.getSize().y/2) > window.getSize().y) && (maxViewSize.y+currentHero->getFrameSize()*4-16*4 > window.getSize().y) && currentHeroVelocity.y > 0) {
             viewMoveSpeed.y = ((currentHeroPos.y+16/2*4*2)-view.getCenter().y)*time;
         }
+        
         viewMoveSpeed*=currentHero->getSpeed()*2/100;
         view.move(viewMoveSpeed);
         window.setView(view);
@@ -382,6 +407,10 @@ namespace He_ARC::rpg {
         window.draw(mapWater);
 
         window.draw(bridgeSwitch.getSprite());
+        if (enableBridge) {
+            mapBridge.setPosition(sf::Vector2f(13*16*4, 13*16*4));
+            window.draw(mapBridge);
+        }
         window.draw(currentHero->getSprite());
 
         window.draw(mapCliff);

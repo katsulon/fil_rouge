@@ -35,7 +35,10 @@ namespace He_ARC::rpg {
             TileMap map;
             TileMap mapCliff;
             TileMap mapWater;
+            TileMap mapBridge;
             sf::Vector2i mapSize = sf::Vector2i(39,22);
+
+            bool collisionEnabled = true;
 
             sf::Vector2f currentHeroPosReal;
             sf::Vector2f minViewSize;
@@ -47,6 +50,7 @@ namespace He_ARC::rpg {
 
             // Initialization of entities
             Entity bridgeSwitch = Entity(12, 13, 16*4, "res/sprites/map/forest/Rocks.png", true);
+            bool enableBridge = false;
             
             // Initialization of party and hero
 
