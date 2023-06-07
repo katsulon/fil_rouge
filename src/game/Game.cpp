@@ -116,12 +116,20 @@ namespace He_ARC::rpg {
 
         // loading entities
         bridgeSwitch.setSpriteTexture(sf::IntRect(16, 0, 16, 16));
+        ladder.setSpriteTexture(sf::IntRect(16*11, 16*5, 16, 16));
 
         // party creation
         party.push_back(war1);
         party.push_back(rog1);
         party.push_back(wzd1);
         party.push_back(ncm1);
+
+        // tunnel bounds creation
+        tunnelBounds.push_back(sf::FloatRect(7*16*4, 6*16*4, 4*16*4, 16*4));
+        tunnelBounds.push_back(sf::FloatRect(10*16*4, 2*16*4, 16*4, 5*16*4));
+        tunnelBounds.push_back(sf::FloatRect(10*16*4, 2*16*4, 5*16*4, 16*4));
+        tunnelBounds.push_back(sf::FloatRect(14*16*4, 0*16*4, 16*4, 3*16*4));
+
 
         for(Hero *member : party) {
             member->currentState=Hero::Immobile;
@@ -253,8 +261,13 @@ namespace He_ARC::rpg {
                         // Print test interaction
                         if (bridgeSwitch.canInteract(playerBounds)) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
-                                cout << "Test" << endl;
                                 enableBridge = true;
+                                keyDown = true;
+                            }
+                        }
+                        if (ladder.canInteract(playerBounds)) {
+                            if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                                onCliff = !onCliff;
                                 keyDown = true;
                             }
                         }
@@ -290,7 +303,7 @@ namespace He_ARC::rpg {
         }
     }
 
-    sf::Vector2f Game::tileCollision(const int levelTiles[], int nonColliderTile, int tileNumber, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds) {
+    sf::Vector2f Game::tileCollision(const int levelTiles[], int nonColliderTile, int tileNumber, sf::Vector2i gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds) {
         sf::Vector2f currentPos = previousPos;
         sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
         if (levelTiles[tileNumber+1] != nonColliderTile) {
@@ -330,7 +343,7 @@ namespace He_ARC::rpg {
         // Collision management
         bool collisionEnabled = true;
         playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
-        sf::Vector2f playerGridPosition = sf::Vector2f(0,0);
+        sf::Vector2i playerGridPosition = sf::Vector2i(0,0);
         playerGridPosition.x = round(playerBounds.left / (16*4));
         playerGridPosition.y = round(playerBounds.top / (16*4));
         int tileNumber = (playerGridPosition.y * mapSize.x + playerGridPosition.x);
@@ -339,12 +352,54 @@ namespace He_ARC::rpg {
         sf::FloatRect intersect;
         if (playerBounds.intersects(bridgeBounds) && enableBridge) {
             collisionEnabled = false;
-            if (playerBounds.intersects(bridgeBounds, intersect))
-                {
-                    if (intersect.width < intersect.height) {
-                        currentHeroPos.x = bridgeBounds.left;  
-                    }  
+            if (playerBounds.intersects(bridgeBounds, intersect)) {
+                if (intersect.width < intersect.height) {
+                    currentHeroPos.x = bridgeBounds.left;  
+                }  
+            }
+        }
+
+        if (!onCliff) {
+            for(sf::FloatRect bounds : tunnelBounds) {
+                if (playerBounds.intersects(bounds)) {
+                    collisionEnabled = false;
+                    if (playerBounds.intersects(bounds, intersect)) {
+                        cout << playerGridPosition.x << endl;
+                        if (playerGridPosition.x < 10 || (playerGridPosition.x < 14 && playerGridPosition.x > 10)) {
+                            if (intersect.height < intersect.width) {
+                                currentHeroPos.y = bounds.top; 
+                            }   
+                        }
+                        else if (playerGridPosition == sf::Vector2i(10,6) || playerGridPosition == sf::Vector2i(14,2)) {
+                            if (playerBounds.left+playerBounds.width > bounds.left + bounds.width) {
+                                currentHeroPos.x = bounds.left+bounds.width-playerBounds.width;  
+                            }
+                            if (playerBounds.top + playerBounds.height > bounds.top + bounds.height) {
+                                currentHeroPos.y  = bounds.top+bounds.height-playerBounds.height; 
+                            }
+
+                        }
+                        else if (playerGridPosition == sf::Vector2i(10,2)) {
+                            if (playerBounds.left < bounds.left) {
+                                currentHeroPos.x = bounds.left;  
+                            }
+                            if (playerBounds.top < bounds.top) {
+                                currentHeroPos.y  = bounds.top; 
+                            }
+
+                        }
+                        else if (playerGridPosition.x == 10 || playerGridPosition.x == 14) {
+                            if (intersect.width < intersect.height) {
+                                currentHeroPos.x = bounds.left;  
+                            }  
+                        }
+                    }
                 }
+            }
+        }
+        else {
+            collisionEnabled = false;
+            currentHeroPos = tileCollision(levelCliff, 15, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
         }
 
         if (collisionEnabled) {
@@ -417,9 +472,17 @@ namespace He_ARC::rpg {
             mapBridge.setPosition(sf::Vector2f(13*16*4, 13*16*4));
             window.draw(mapBridge);
         }
-        window.draw(currentHero->getSprite());
 
-        window.draw(mapCliff);
+        if (onCliff) {
+            window.draw(mapCliff);
+            window.draw(ladder.getSprite());
+            window.draw(currentHero->getSprite());
+        }
+        else {
+            window.draw(currentHero->getSprite());
+            window.draw(mapCliff);
+            window.draw(ladder.getSprite());
+        }
         window.display();
     }
 

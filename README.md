@@ -3,6 +3,12 @@
 ## Description
 Mini project to apply concepts seen in class to an RPG written in C++.
 
+## Commands
+- <kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8594;</kbd>: Movement
+- <kbd>E</kbd> or <kbd>Enter</kbd>: Interaction
+- <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd>: Select Hero
+- <kbd>Esc</kbd>: Exit game
+
 ## Project status
 - [x] General setup
 - [x] V1
@@ -36,3 +42,4 @@ CMakeLists have been configured to directly fetch the git repository of dependen
 ### Additional art
 - Warrior and Rogue: [Clumsy Medieval Dangerous 16x16](https://kevenece.itch.io/free-16x-pixel-art-fighters) asset pack by kevenece
 - Map Tiles: [Forest Tileset](https://pixivan.itch.io/top-down-forest-tileset) by PixiVan
+- Chest: [Chest (16x16) Open and closed](https://skalding.itch.io/chest-16x16-open-and-closed) by SkaldingDelight

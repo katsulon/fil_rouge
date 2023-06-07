@@ -49,6 +49,11 @@ namespace He_ARC::rpg {
             // Initialization of entities
             Entity bridgeSwitch = Entity(12, 13, 16*4, "res/sprites/map/forest/Rocks.png", true);
             bool enableBridge = false;
+            Entity ladder = Entity(14, 0, 16*4, "res/sprites/map/forest/Cliff.png");
+            bool onCliff = false;
+
+            // Special bounds
+            list<sf::FloatRect> tunnelBounds;
             
             // Initialization of party and hero
 
@@ -95,7 +100,7 @@ namespace He_ARC::rpg {
             /// @param previousPos Previous entity position
             /// @param rectBounds Entity to check collision with
             /// @return Updated entity position to avoid collision
-            sf::Vector2f tileCollision(const int tiles[], int tileNumber, int nonColliderTile, sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds);
+            sf::Vector2f tileCollision(const int tiles[], int tileNumber, int nonColliderTile, sf::Vector2i gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds);
 
             /// @brief General updates.
             void update();
