@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include "Tilemap.h"
 #include <iostream>
+#include <fstream>
+#include <cmath>
 #include <list>
 #include "hero/Hero.h"
 #include "hero/class/ClassImpl.h"
@@ -27,6 +29,9 @@ namespace He_ARC::rpg {
             float viewHeight;
             float aspectRatio;
             sf::Event sfEvent;
+            sf::Clock clock;
+            sf::Time deltaTotalTime;
+            float totalTime;
             sf::Clock deltaClock; //Elapsed time since the last frame was drawn
             sf::Time deltaTime;
             float time;
@@ -51,6 +56,8 @@ namespace He_ARC::rpg {
             bool enableBridge = false;
             Entity ladder = Entity(14, 0, 16*4, "res/sprites/map/forest/Cliff.png");
             bool onCliff = false;
+            Entity chest = Entity(13, 5, 16*4, "res/sprites/map/chest/chest_closed.png", true);
+            bool chestOpen = false;
 
             // Special bounds
             list<sf::FloatRect> tunnelBounds;

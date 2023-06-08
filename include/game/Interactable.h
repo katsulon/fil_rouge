@@ -114,6 +114,9 @@ namespace He_ARC::rpg {
 
             // SFML Setters
 
+            /// @brief Sets texture to use for sprite
+            /// @param src Source of texture
+            void setTexture(string src) { texture.loadFromFile(src); }
             /// @brief Sets part of texture to use for sprite.
             /// @param textureRect Size of cut texture.
             void setSpriteTexture(sf::IntRect textureRect) { sprite.setTextureRect(textureRect); }

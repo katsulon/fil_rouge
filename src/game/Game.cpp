@@ -1,5 +1,4 @@
 #include "game/Game.h"
-#include <cmath>
 
 namespace He_ARC::rpg {
     // Initializer functions
@@ -258,7 +257,7 @@ namespace He_ARC::rpg {
                     if(sfEvent.key.code == sf::Keyboard::Escape)
                         window.close();
                     if (keyDown == false) {
-                        // Print test interaction
+                        // Interactions
                         if (bridgeSwitch.canInteract(playerBounds)) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
                                 enableBridge = true;
@@ -268,6 +267,12 @@ namespace He_ARC::rpg {
                         if (ladder.canInteract(playerBounds)) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
                                 onCliff = !onCliff;
+                                keyDown = true;
+                            }
+                        }
+                        if (chest.canInteract(playerBounds)) {
+                            if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                                chestOpen = true;
                                 keyDown = true;
                             }
                         }
@@ -364,7 +369,6 @@ namespace He_ARC::rpg {
                 if (playerBounds.intersects(bounds)) {
                     collisionEnabled = false;
                     if (playerBounds.intersects(bounds, intersect)) {
-                        cout << playerGridPosition.x << endl;
                         if (playerGridPosition.x < 10 || (playerGridPosition.x < 14 && playerGridPosition.x > 10)) {
                             if (intersect.height < intersect.width) {
                                 currentHeroPos.y = bounds.top; 
@@ -400,6 +404,9 @@ namespace He_ARC::rpg {
         else {
             collisionEnabled = false;
             currentHeroPos = tileCollision(levelCliff, 15, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
+            if (chest.getCollision()) {
+                currentHeroPos = chest.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
+            }
         }
 
         if (collisionEnabled) {
@@ -448,8 +455,21 @@ namespace He_ARC::rpg {
         window.setView(view);
 
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+        // Log file
+        deltaTotalTime = clock.getElapsedTime();
+        totalTime = deltaTotalTime.asSeconds();
+        ofstream log("log.txt");
+        log << "Player coordinates: (" << currentHeroPos.x << ", " << currentHeroPos.y << ")\n";
+        log << "Player grid coordinates: (" << playerGridPosition.x << ", " << playerGridPosition.y << ")\n";
+        log << "Screen player coordinates: (" << currentHeroPosReal.x << ", " << currentHeroPosReal.y << ")\n";
+        log << "Elapsed time in seconds: " << totalTime << "\n";
+        log.close();
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
+        if (chestOpen) {
+            chest.setTexture("res/sprites/map/chest/chest_open.png");
+        }
+        
     }
 
     void Game::render() {
@@ -476,12 +496,14 @@ namespace He_ARC::rpg {
         if (onCliff) {
             window.draw(mapCliff);
             window.draw(ladder.getSprite());
+            window.draw(chest.getSprite());
             window.draw(currentHero->getSprite());
         }
         else {
             window.draw(currentHero->getSprite());
             window.draw(mapCliff);
             window.draw(ladder.getSprite());
+            window.draw(chest.getSprite());
         }
         window.display();
     }
