@@ -201,5 +201,8 @@ namespace He_ARC::rpg {
     Hero::~Hero() {
         delete weapon;
         delete pObject;
+        while (backpack.isNotEmpty()) {
+            delete backpack.unPack();
+        }
     }
 }

@@ -115,6 +115,7 @@ namespace He_ARC::rpg {
 
         // loading entities
         bridgeSwitch.setSpriteTexture(sf::IntRect(16, 0, 16, 16));
+        obstacleText.setSpriteTexture(sf::IntRect(0, 16*2, 16*2, 16*2));
         ladder.setSpriteTexture(sf::IntRect(16*11, 16*5, 16, 16));
 
         // party creation
@@ -204,20 +205,10 @@ namespace He_ARC::rpg {
         war1->backpack.pack(pot1);
         Potion *pot2 = new Potion(1000, "Super extra wonderful delicious elixir");
         war1->backpack.pack(pot2);
-
-        cout << war1->backpack.getStackTop() << endl;
         
         while (war1->backpack.isNotEmpty()) {
-            war1->backpack.unPack();
+            delete war1->backpack.unPack();
         }
-
-        delete wpn1;
-        delete wpn2;
-        delete wpn3;
-        delete shd1;
-        delete shd2;
-        delete pot1;
-        delete pot2;
     }
 
     void Game::changeCurrentHero(Hero *newHero) {
@@ -272,9 +263,17 @@ namespace He_ARC::rpg {
                                 keyDown = true;
                             }
                         }
-                        if (chest.canInteract(playerBounds)) {
+                        if (chest.canInteract(playerBounds) && chestOpen == false) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                                war1->backpack.pack(key);
                                 chestOpen = true;
+                                keyDown = true;
+                            }
+                        }
+                        if (obstacle.canInteract(playerBounds)) {
+                            if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E
+                            && war1->backpack.getStackTop() == key) {
+                                obstacleExists = false;
                                 keyDown = true;
                             }
                         }
@@ -417,6 +416,9 @@ namespace He_ARC::rpg {
             if (bridgeSwitch.getCollision()) {
                 currentHeroPos = bridgeSwitch.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
             }
+            if (obstacle.getCollision() && obstacleExists) {
+                currentHeroPos = obstacle.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
+            }
         }
 
         // Checks for collision on left or right side of map
@@ -507,6 +509,11 @@ namespace He_ARC::rpg {
             window.draw(ladder.getSprite());
             window.draw(chest.getSprite());
         }
+
+        if (obstacleExists) {
+            window.draw(obstacleText.getSprite());
+        }
+
         window.display();
     }
 

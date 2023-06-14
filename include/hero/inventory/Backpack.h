@@ -15,7 +15,20 @@ namespace He_ARC::rpg {
         public:
             /// @brief Default constructor
             Backpack() = default;
-            string getStackTop() { return mStack.top()->getName(); }
+            /// @brief Gets top item in backpack
+            /// @return Returns top item in backpack stack
+            IObject* getStackTop() const { 
+                try {
+                    if (isNotEmpty() == false) {
+                        throw "Backpack empty, no item to return";
+                    }
+                    return mStack.top(); 
+                }
+                catch(const char* emptyBackpack) {
+                    cout << emptyBackpack << endl;
+                    return nullptr;
+                } 
+            }
             void pack(IObject*);
             IObject* unPack();
             bool isNotEmpty() const;

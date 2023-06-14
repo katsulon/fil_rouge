@@ -57,7 +57,7 @@
 ### CMake ###
 /build
 
-### ImGui ###
-*.ini
+# Generated files
+*.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode,cmake
