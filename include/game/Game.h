@@ -48,6 +48,9 @@ namespace He_ARC::rpg {
             TileMap mapCliff;
             TileMap mapWater;
             TileMap mapBridge;
+            TileMap mapStoneTilePlatform;
+            TileMap mapStoneWallPlatform;
+            TileMap mapStoneStairsPlatform;
             sf::Vector2i mapSize = sf::Vector2i(39,22);
 
             sf::Vector2f currentHeroPosReal;
