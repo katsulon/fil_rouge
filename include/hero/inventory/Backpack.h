@@ -13,10 +13,13 @@ namespace He_ARC::rpg {
         private:
             stack<IObject*> mStack;
         public:
+            /// @brief Default constructor
             Backpack() = default;
+            string getStackTop() { return mStack.top()->getName(); }
             void pack(IObject*);
             IObject* unPack();
             bool isNotEmpty() const;
+            /// @brief Virtual deconstructor
             virtual ~Backpack() = default;
    };
 }

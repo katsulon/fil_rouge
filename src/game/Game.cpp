@@ -204,6 +204,8 @@ namespace He_ARC::rpg {
         war1->backpack.pack(pot1);
         Potion *pot2 = new Potion(1000, "Super extra wonderful delicious elixir");
         war1->backpack.pack(pot2);
+
+        cout << war1->backpack.getStackTop() << endl;
         
         while (war1->backpack.isNotEmpty()) {
             war1->backpack.unPack();
@@ -435,7 +437,7 @@ namespace He_ARC::rpg {
         // View movement
         currentHeroPosReal = sf::Vector2f(window.mapCoordsToPixel(currentHeroPos));
         minViewSize = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(0,0)));
-        maxViewSize = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(mapSize.x*16*4,20*16*4)));
+        maxViewSize = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(mapSize.x*16*4,mapSize.y*16*4)));
         sf::Vector2f viewMoveSpeed = sf::Vector2f(0.f, 0.f);
         if (((currentHeroPosReal.x+16/2*4-window.getSize().x/2) < 0) && (minViewSize.x < 0) && currentHeroVelocity.x < 0) {
             viewMoveSpeed.x = (currentHeroPos.x-view.getCenter().x)*time;
@@ -446,7 +448,7 @@ namespace He_ARC::rpg {
         if (((currentHeroPosReal.y+16/2*4-window.getSize().y/2) < 0) && (minViewSize.y < 0) && currentHeroVelocity.y < 0) {
             viewMoveSpeed.y = (currentHeroPos.y-view.getCenter().y)*time;
         }
-        if (((currentHeroPosReal.y+16/2*4+window.getSize().y/2) > window.getSize().y) && (maxViewSize.y+currentHero->getFrameSize()*4-16*4 > window.getSize().y) && currentHeroVelocity.y > 0) {
+        if (((currentHeroPosReal.y+16/2*4+window.getSize().y/2) > window.getSize().y) && (maxViewSize.y > window.getSize().y) && currentHeroVelocity.y > 0) {
             viewMoveSpeed.y = ((currentHeroPos.y+16/2*4*2)-view.getCenter().y)*time;
         }
         
@@ -461,8 +463,8 @@ namespace He_ARC::rpg {
         ofstream log("log.txt");
         log << "Player coordinates: (" << currentHeroPos.x << ", " << currentHeroPos.y << ")\n";
         log << "Player grid coordinates: (" << playerGridPosition.x << ", " << playerGridPosition.y << ")\n";
-        log << "Screen player coordinates: (" << currentHeroPosReal.x << ", " << currentHeroPosReal.y << ")\n";
-        log << "Elapsed time in seconds: " << totalTime << "\n";
+        log << "Player screen coordinates: (" << currentHeroPosReal.x << ", " << currentHeroPosReal.y << ")\n";
+        log << "Elapsed time in seconds since execution: " << totalTime << "\n";
         log.close();
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);

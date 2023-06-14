@@ -29,14 +29,21 @@ namespace He_ARC::rpg {
             float viewHeight;
             float aspectRatio;
             sf::Event sfEvent;
+
+            // Total elapsed time since execution
+
             sf::Clock clock;
             sf::Time deltaTotalTime;
             float totalTime;
+
+            // Clock and time for sprite animation and movement
+
             sf::Clock deltaClock; //Elapsed time since the last frame was drawn
             sf::Time deltaTime;
             float time;
 
             // Create the tilemaps from the level definitions
+            
             TileMap map;
             TileMap mapCliff;
             TileMap mapWater;
