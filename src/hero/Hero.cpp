@@ -158,11 +158,6 @@ namespace He_ARC::rpg {
         }
     }
 
-    // Method now virtual pure, therefore no longer necessary
-    /*void Hero::interact(const Hero& otherHero) {
-        cout << "Greetings, valiant " << otherHero.name << "! My name is " << name << "." << endl;
-    }*/
-
     /// @brief Method to show hero's stats.
     void Hero::show() const {
         cout << "==========================" << endl;

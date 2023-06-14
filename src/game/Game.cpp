@@ -115,8 +115,15 @@ namespace He_ARC::rpg {
 
         // loading entities
         bridgeSwitch.setSpriteTexture(sf::IntRect(16, 0, 16, 16));
+        npcDemorden.setSpriteTexture(sf::IntRect(0,16, 16, 16));
         obstacleText.setSpriteTexture(sf::IntRect(0, 16*2, 16*2, 16*2));
         ladder.setSpriteTexture(sf::IntRect(16*11, 16*5, 16, 16));
+
+        // entities list creation
+        interactables.push_back(&bridgeSwitch);
+        interactables.push_back(&chest);
+        interactables.push_back(&npcDemorden);
+        interactables.push_back(&obstacle);
 
         // party creation
         party.push_back(war1);
@@ -214,7 +221,7 @@ namespace He_ARC::rpg {
     void Game::changeCurrentHero(Hero *newHero) {
         currentHeroFlipped = currentHero->getSpriteState();
         currentHeroPos = currentHero->getPos();
-        currentHero=newHero;
+        currentHero = newHero;
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
         currentHero->setSpriteState(currentHeroFlipped);
     }
@@ -265,15 +272,26 @@ namespace He_ARC::rpg {
                         }
                         if (chest.canInteract(playerBounds) && chestOpen == false) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
-                                war1->backpack.pack(key);
+                                war1->backpack.pack(ajaWine);
                                 chestOpen = true;
                                 keyDown = true;
                             }
                         }
+                        if (npcDemorden.canInteract(playerBounds) && transactionDone == false) {
+                            if((sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E)
+                            && war1->backpack.getStackTop() == ajaWine) {
+                                war1->backpack.unPack();
+                                war1->backpack.pack(relicKey);
+                                transactionDone = true;
+                                keyDown = true;
+                            }
+                        }
                         if (obstacle.canInteract(playerBounds)) {
-                            if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E
-                            && war1->backpack.getStackTop() == key) {
+                            if((sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E)
+                            && war1->backpack.getStackTop() == relicKey) {
                                 obstacleExists = false;
+                                war1->backpack.unPack();
+                                interactables.remove(&obstacle);
                                 keyDown = true;
                             }
                         }
@@ -364,7 +382,7 @@ namespace He_ARC::rpg {
                 }  
             }
         }
-
+        // Tunnel collision removal
         if (!onCliff) {
             for(sf::FloatRect bounds : tunnelBounds) {
                 if (playerBounds.intersects(bounds)) {
@@ -402,36 +420,38 @@ namespace He_ARC::rpg {
                 }
             }
         }
-        else {
+        else { // On cliff scene
             collisionEnabled = false;
             currentHeroPos = tileCollision(levelCliff, 15, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
             if (chest.getCollision()) {
                 currentHeroPos = chest.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
             }
         }
-
+        // Default scene
         if (collisionEnabled) {
             currentHeroPos = tileCollision(levelWater, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
             currentHeroPos = tileCollision(levelCliff, -1, tileNumber, playerGridPosition, currentHeroPos, playerBounds);
-            if (bridgeSwitch.getCollision()) {
-                currentHeroPos = bridgeSwitch.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
-            }
-            if (obstacle.getCollision() && obstacleExists) {
-                currentHeroPos = obstacle.tileCollision(playerGridPosition, currentHeroPos, playerBounds);
+
+            for (Interactable *interactable : interactables) {
+                if (interactable->getCollision()) {
+                    currentHeroPos = interactable->tileCollision(playerGridPosition, currentHeroPos, playerBounds);
+                }
             }
         }
 
-        // Checks for collision on left or right side of map
+        // Checks for collision on left side of map
         if (currentHero->getPos().x < 0.f){
             currentHeroPos.x = 0.f;
         }
+        // Checks for collision on right side of map
         if ((currentHero->getPos().x+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.x*16*4) {
             currentHeroPos.x = mapSize.x*16*4-currentHero->getFrameSize()-currentHero->getFrameSize()/2;
         }
-        // Checks for collision on top or bottom side of map
+        // Checks for collision on top of map
         if (currentHero->getPos().y < 0.f) {
             currentHeroPos.y = 0.f;
         }
+        // Checks for collision on bottom of map
         if ((currentHero->getPos().y+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.y*16*4 ) {
             currentHeroPos.y = mapSize.y*16*4 - currentHero->getFrameSize()-currentHero->getFrameSize()/2;
         }
@@ -490,6 +510,7 @@ namespace He_ARC::rpg {
         // Render items
         window.draw(map);
         window.draw(mapWater);
+        window.draw(npcDemorden.getSprite());
 
         window.draw(bridgeSwitch.getSprite());
         if (enableBridge) {

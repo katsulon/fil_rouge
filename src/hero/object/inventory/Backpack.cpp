@@ -8,10 +8,9 @@ namespace He_ARC::rpg {
     }
 
     /// @brief Removes an IObject item from the stack
-    /// @return Pointer to removed item as well as a description of the removed item
+    /// @return Pointer to removed item
     IObject* Backpack::unPack() {
         IObject* pObject = mStack.top();
-        cout << "Item: " << pObject->getName() << ", stat: " << pObject->getFeature() << endl;
         mStack.pop();
         return pObject;
     }

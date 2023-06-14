@@ -59,12 +59,16 @@ namespace He_ARC::rpg {
             bool keyDown = false;
 
             // Initialization of entities
+            list<Interactable*> interactables;
             Entity bridgeSwitch = Entity(12, 13, 16*4, "res/sprites/map/forest/Rocks.png", true);
             bool enableBridge = false;
             Entity obstacleText = Entity(17, 10, 16*4, "res/sprites/map/forest/Rocks.png");
             Interactable obstacle = Interactable(17, 11, 16*4, true);
             bool obstacleExists = true;
-            Weapon *key = new Weapon(9999, "Legendary Relic");
+            Potion *ajaWine = new Potion(9999, "Aja Red Wine");
+            Weapon *relicKey = new Weapon(9999, "Legendary Relic");
+            Entity npcDemorden = Entity(18, 18, 16*4, "res/sprites/character/free_fighters/DEMORDEN/demorden.png", true);
+            bool transactionDone = false;
             Entity ladder = Entity(14, 0, 16*4, "res/sprites/map/forest/Cliff.png");
             bool onCliff = false;
             Entity chest = Entity(13, 5, 16*4, "res/sprites/map/chest/chest_closed.png", true);

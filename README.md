@@ -37,6 +37,7 @@ CMakeLists have been configured to directly fetch the git repository of dependen
 
 ## Possible future plan
 - [ ] Dialogue Tree (Trading/combat system?)
+- [ ] Different game scenes
 
 ## Credits
 ### Additional art
