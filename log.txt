@@ -1,4 +1,0 @@
-Player coordinates: (820.549, 576)
-Player grid coordinates: (13, 9)
-Player screen coordinates: (616, 355)
-Elapsed time in seconds since execution: 560.274
