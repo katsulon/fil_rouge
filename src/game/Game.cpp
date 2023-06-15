@@ -303,6 +303,7 @@ namespace He_ARC::rpg {
                         // Interactions
                         if (bridgeSwitch.canInteract(playerBounds)) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                                bridgeSwitch.playSFX();
                                 enableBridge = true;
                                 keyDown = true;
                             }
@@ -310,12 +311,14 @@ namespace He_ARC::rpg {
                         if (ladder.canInteract(playerBounds)) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
                                 onCliff = !onCliff;
+                                ladder.playSFX();
                                 keyDown = true;
                             }
                         }
                         if (chest.canInteract(playerBounds) && chestOpen == false) {
                             if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
                                 war1->backpack.pack(ajaWine);
+                                chest.playSFX();
                                 chestOpen = true;
                                 keyDown = true;
                             }
@@ -325,6 +328,7 @@ namespace He_ARC::rpg {
                             && war1->backpack.getStackTop() == ajaWine) {
                                 war1->backpack.unPack();
                                 war1->backpack.pack(relicKey);
+                                npcDemorden.playSFX();
                                 transactionDone = true;
                                 keyDown = true;
                             }
@@ -332,6 +336,7 @@ namespace He_ARC::rpg {
                         if (obstacle.canInteract(playerBounds)) {
                             if((sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E)
                             && war1->backpack.getStackTop() == relicKey) {
+                                obstacle.playSFX();
                                 obstacleExists = false;
                                 war1->backpack.unPack();
                                 interactables.remove(&obstacle);

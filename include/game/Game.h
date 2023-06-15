@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "Tilemap.h"
 #include <iostream>
 #include <fstream>
@@ -63,18 +64,18 @@ namespace He_ARC::rpg {
 
             // Initialization of entities
             list<Interactable*> interactables;
-            Entity bridgeSwitch = Entity(12, 13, 16*4, "res/sprites/map/forest/Rocks.png", true);
+            Entity bridgeSwitch = Entity(12, 13, 16*4, "res/sprites/map/forest/Rocks.png", "res/sfx/switch.wav", true);
             bool enableBridge = false;
             Entity obstacleText = Entity(17, 10, 16*4, "res/sprites/map/forest/Rocks.png");
-            Interactable obstacle = Interactable(17, 11, 16*4, true);
+            Interactable obstacle = Interactable(17, 11, 16*4, "res/sfx/destroy.wav", true);
             bool obstacleExists = true;
             Potion *ajaWine = new Potion(9999, "Aja Red Wine");
             Weapon *relicKey = new Weapon(9999, "Legendary Relic");
-            Entity npcDemorden = Entity(18, 18, 16*4, "res/sprites/character/free_fighters/DEMORDEN/demorden.png", true);
+            Entity npcDemorden = Entity(18, 18, 16*4, "res/sprites/character/free_fighters/DEMORDEN/demorden.png", "res/sfx/coin.wav", true);
             bool transactionDone = false;
-            Entity ladder = Entity(14, 0, 16*4, "res/sprites/map/forest/Cliff.png");
+            Entity ladder = Entity(14, 0, 16*4, "res/sprites/map/forest/Cliff.png", "res/sfx/ladder.wav", false);
             bool onCliff = false;
-            Entity chest = Entity(13, 5, 16*4, "res/sprites/map/chest/chest_closed.png", true);
+            Entity chest = Entity(13, 5, 16*4, "res/sprites/map/chest/chest_closed.png", "res/sfx/chest.wav", true);
             bool chestOpen = false;
 
             // Special bounds

@@ -36,11 +36,17 @@ CMakeLists have been configured to directly fetch the git repository of dependen
     sudo apt-get install libsfml-dev
 
 ## Possible future plan
-- [ ] Dialogue Tree (Trading/combat system?)
+- [ ] Dialogue boxes
 - [ ] Different game scenes
+- [ ] Improve code by using keys or functions instead of ifs
 
 ## Credits
 ### Additional art
 - Warrior and Rogue: [Clumsy Medieval Dangerous 16x16](https://kevenece.itch.io/free-16x-pixel-art-fighters) asset pack by kevenece
 - Map Tiles: [Forest Tileset](https://pixivan.itch.io/top-down-forest-tileset) by PixiVan
 - Chest: [Chest (16x16) Open and closed](https://skalding.itch.io/chest-16x16-open-and-closed) by SkaldingDelight
+
+### Additional sounds
+- Open chest sfx: [8-Bit Sound Effects Library » Open_01.wav](https://freesound.org/people/LittleRobotSoundFactory/sounds/270338/) by LittleRobotSoundFactory
+- Destroy obstacle sfx: [Earth Wind Fire Water pack 1 » Earth1.aif](https://freesound.org/people/pushtobreak/sounds/16793/) by pushtobreak
+- NPC transaction sfx: [8-bit Video Game Sounds » Coins 1](https://freesound.org/people/ProjectsU012/sounds/341695/) by ProjectsU012
