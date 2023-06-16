@@ -84,8 +84,8 @@ namespace He_ARC::rpg {
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,10,10,10,10,10,10,8,-1,-1,-1,8,10,10,10,10,10,10,10,
-        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14,-1,-1,-1,14,-1,-1,-1,-1,-1,-1,-1,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,10,10,10,10,10,10,8,-1,-1,-1,8,10,10,10,10,10,10,
+        -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,14,-1,-1,-1,14,-1,-1,-1,-1,-1,-1,
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
         -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
@@ -161,12 +161,29 @@ namespace He_ARC::rpg {
         npcDemorden.setSpriteTexture(sf::IntRect(0,16, 16, 16));
         obstacleText.setSpriteTexture(sf::IntRect(0, 16*2, 16*2, 16*2));
         ladder.setSpriteTexture(sf::IntRect(16*11, 16*5, 16, 16));
+        statueText.setSpriteTexture(sf::IntRect(0, 16*3, 16, 16*3));
+        redNote.setSpriteTexture(sf::IntRect(16, 16*5, 16, 16));
+        blueNoteText.setSpriteTexture(sf::IntRect(16*2, 16*3, 16, 16*2));
+        greenNoteText.setSpriteTexture(sf::IntRect(16*3, 16*3, 16, 16*2));
+        yellowNote.setSpriteTexture(sf::IntRect(16*4, 16*5, 16, 16));
 
         // entities list creation
         interactables.push_back(&bridgeSwitch);
         interactables.push_back(&chest);
         interactables.push_back(&npcDemorden);
         interactables.push_back(&obstacle);
+        interactables.push_back(&statue);
+        interactables.push_back(&redNote);
+        interactables.push_back(&blueNote);
+        interactables.push_back(&greenNote);
+        interactables.push_back(&yellowNote);
+
+        // stone platform entities
+        stonePlatformEntities.push_back(&redNote);
+        stonePlatformEntities.push_back(&blueNoteText);
+        stonePlatformEntities.push_back(&statueText);
+        stonePlatformEntities.push_back(&greenNoteText);
+        stonePlatformEntities.push_back(&yellowNote);
 
         // party creation
         party.push_back(war1);
@@ -535,7 +552,8 @@ namespace He_ARC::rpg {
         log << "Player coordinates: (" << currentHeroPos.x << ", " << currentHeroPos.y << ")\n";
         log << "Player grid coordinates: (" << playerGridPosition.x << ", " << playerGridPosition.y << ")\n";
         log << "Player screen coordinates: (" << currentHeroPosReal.x << ", " << currentHeroPosReal.y << ")\n";
-        log << "Elapsed time in seconds since execution: " << totalTime << "\n";
+        log << "Current top item in backpack: " << (war1->backpack.isNotEmpty()? war1->backpack.getStackTop()->getName() : "None") << endl;
+        log << "Elapsed time in seconds since execution: " << totalTime << endl;
         log.close();
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
@@ -584,6 +602,10 @@ namespace He_ARC::rpg {
 
         if (obstacleExists) {
             window.draw(obstacleText.getSprite());
+        }
+
+        for (Entity *entity : stonePlatformEntities) {
+            window.draw(entity->getSprite());
         }
 
         window.display();

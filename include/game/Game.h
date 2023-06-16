@@ -78,6 +78,16 @@ namespace He_ARC::rpg {
             Entity chest = Entity(13, 5, 16*4, "res/sprites/map/chest/chest_closed.png", "res/sfx/chest.wav", true);
             bool chestOpen = false;
 
+            list<Entity*> stonePlatformEntities;
+            Entity statueText = Entity(30, 0, 16*4, "res/sprites/map/forest/Environment_mod.png");
+            Interactable statue = Interactable(30, 2, 16*4, true);
+            Entity redNote = Entity(28, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", true);
+            Entity blueNoteText = Entity(29, 1, 16*4, "res/sprites/map/forest/Environment_mod.png");
+            Interactable blueNote = Interactable(29, 2, 16*4, true);
+            Entity greenNoteText = Entity(31, 1, 16*4, "res/sprites/map/forest/Environment_mod.png");
+            Interactable greenNote = Interactable(31, 2, 16*4, true);
+            Entity yellowNote = Entity(32, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", true);
+
             // Special bounds
             list<sf::FloatRect> tunnelBounds;
             
