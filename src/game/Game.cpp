@@ -171,7 +171,7 @@ namespace He_ARC::rpg {
         interactables.push_back(&bridgeSwitch);
         interactables.push_back(&chest);
         interactables.push_back(&npcDemorden);
-        interactables.push_back(&obstacle);
+        //interactables.push_back(&obstacle);
         interactables.push_back(&statue);
         interactables.push_back(&redNote);
         interactables.push_back(&blueNote);
@@ -184,6 +184,14 @@ namespace He_ARC::rpg {
         stonePlatformEntities.push_back(&statueText);
         stonePlatformEntities.push_back(&greenNoteText);
         stonePlatformEntities.push_back(&yellowNote);
+
+        musicCredits.openFromFile("res/music/credits.wav");
+
+        // lantern notes
+        noteLanterns.push_back(&redNote);
+        noteLanterns.push_back(&blueNote);
+        noteLanterns.push_back(&greenNote);
+        noteLanterns.push_back(&yellowNote);
 
         // party creation
         party.push_back(war1);
@@ -318,47 +326,46 @@ namespace He_ARC::rpg {
                         window.close();
                     if (keyDown == false) {
                         // Interactions
-                        if (bridgeSwitch.canInteract(playerBounds)) {
-                            if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                        if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                            if (bridgeSwitch.canInteract(playerBounds)) {
                                 bridgeSwitch.playSFX();
                                 enableBridge = true;
-                                keyDown = true;
                             }
-                        }
-                        if (ladder.canInteract(playerBounds)) {
-                            if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                            if (ladder.canInteract(playerBounds)) {
                                 onCliff = !onCliff;
                                 ladder.playSFX();
-                                keyDown = true;
                             }
-                        }
-                        if (chest.canInteract(playerBounds) && chestOpen == false) {
-                            if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
+                            if (chest.canInteract(playerBounds) && chestOpen == false) {
                                 war1->backpack.pack(ajaWine);
                                 chest.playSFX();
                                 chestOpen = true;
-                                keyDown = true;
                             }
+                            if (npcDemorden.canInteract(playerBounds) && transactionDone == false) {
+                                if(war1->backpack.getStackTop() == ajaWine) {
+                                    war1->backpack.unPack();
+                                    war1->backpack.pack(relicKey);
+                                    npcDemorden.playSFX();
+                                    transactionDone = true;
+                                }
+                            }
+                            if (obstacle.canInteract(playerBounds)) {
+                                if(war1->backpack.getStackTop() == relicKey) {
+                                    obstacle.playSFX();
+                                    obstacleExists = false;
+                                    war1->backpack.unPack();
+                                    interactables.remove(&obstacle);
+                                }
+                            }
+                            for (MusicInteractable* noteLantern : noteLanterns) {
+                                if (noteLantern->canInteract(playerBounds)) {
+                                    noteLantern->playSFX();
+                                    inputNote.push_back(noteLantern->getNote());
+                                }
+                            }
+                            keyDown = true;
                         }
-                        if (npcDemorden.canInteract(playerBounds) && transactionDone == false) {
-                            if((sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E)
-                            && war1->backpack.getStackTop() == ajaWine) {
-                                war1->backpack.unPack();
-                                war1->backpack.pack(relicKey);
-                                npcDemorden.playSFX();
-                                transactionDone = true;
-                                keyDown = true;
-                            }
-                        }
-                        if (obstacle.canInteract(playerBounds)) {
-                            if((sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E)
-                            && war1->backpack.getStackTop() == relicKey) {
-                                obstacle.playSFX();
-                                obstacleExists = false;
-                                war1->backpack.unPack();
-                                interactables.remove(&obstacle);
-                                keyDown = true;
-                            }
+                        if (sfEvent.key.code == sf::Keyboard::R) {
+                            inputNote.clear();
                         }
                         // Prints hero methods result on terminal
                         if(sfEvent.key.code == sf::Keyboard::P) {
@@ -449,7 +456,7 @@ namespace He_ARC::rpg {
         }
         // Tunnel cliff collision removal
         if (!onCliff) {
-            for(sf::FloatRect bounds : tunnelBounds) {
+            for(const sf::FloatRect bounds : tunnelBounds) {
                 if (playerBounds.intersects(bounds)) {
                     collisionEnabled = false;
                     if (playerBounds.intersects(bounds, intersect)) {
@@ -544,6 +551,13 @@ namespace He_ARC::rpg {
         view.move(viewMoveSpeed);
         window.setView(view);
 
+        if (inputNote.size() >= 10) {
+            if ((inputNote == noteSequence) && (musicCredits.getStatus() != sf::Music::Status::Playing)) {
+                musicCredits.play();
+            }
+            inputNote.clear();
+        }
+
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
         // Log file
         deltaTotalTime = clock.getElapsedTime();
@@ -553,6 +567,7 @@ namespace He_ARC::rpg {
         log << "Player grid coordinates: (" << playerGridPosition.x << ", " << playerGridPosition.y << ")\n";
         log << "Player screen coordinates: (" << currentHeroPosReal.x << ", " << currentHeroPosReal.y << ")\n";
         log << "Current top item in backpack: " << (war1->backpack.isNotEmpty()? war1->backpack.getStackTop()->getName() : "None") << endl;
+        log << "Current input of note sequence: "; for(int i=0; i < inputNote.size(); i++) log << inputNote.at(i) << ' '; log << endl;
         log << "Elapsed time in seconds since execution: " << totalTime << endl;
         log.close();
         // Loading textures
@@ -604,7 +619,7 @@ namespace He_ARC::rpg {
             window.draw(obstacleText.getSprite());
         }
 
-        for (Entity *entity : stonePlatformEntities) {
+        for (const Entity *entity : stonePlatformEntities) {
             window.draw(entity->getSprite());
         }
 

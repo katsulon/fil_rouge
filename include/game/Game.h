@@ -7,6 +7,7 @@
 #include <fstream>
 #include <cmath>
 #include <list>
+#include <vector>
 #include "hero/Hero.h"
 #include "hero/class/ClassImpl.h"
 #include "Interactable.h"
@@ -78,15 +79,22 @@ namespace He_ARC::rpg {
             Entity chest = Entity(13, 5, 16*4, "res/sprites/map/chest/chest_closed.png", "res/sfx/chest.wav", true);
             bool chestOpen = false;
 
+            sf::Music musicCredits;
+
+            const vector<Notes>noteSequence = {G, D, D, Eb, Eb, F, G, G, F, Eb};
+            vector<Notes>inputNote;
+
             list<Entity*> stonePlatformEntities;
             Entity statueText = Entity(30, 0, 16*4, "res/sprites/map/forest/Environment_mod.png");
             Interactable statue = Interactable(30, 2, 16*4, true);
-            Entity redNote = Entity(28, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", true);
+
+            vector<MusicInteractable*> noteLanterns;
+            MusicEntity redNote = MusicEntity(28, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", "res/sfx/notes/D.wav", D, true);
             Entity blueNoteText = Entity(29, 1, 16*4, "res/sprites/map/forest/Environment_mod.png");
-            Interactable blueNote = Interactable(29, 2, 16*4, true);
+            MusicInteractable blueNote = MusicInteractable(29, 2, 16*4, "res/sfx/notes/Eb.wav", Eb, true);
             Entity greenNoteText = Entity(31, 1, 16*4, "res/sprites/map/forest/Environment_mod.png");
-            Interactable greenNote = Interactable(31, 2, 16*4, true);
-            Entity yellowNote = Entity(32, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", true);
+            MusicInteractable greenNote = MusicInteractable(31, 2, 16*4, "res/sfx/notes/F.wav", F, true);
+            MusicEntity yellowNote = MusicEntity(32, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", "res/sfx/notes/G.wav", G, true);
 
             // Special bounds
             list<sf::FloatRect> tunnelBounds;

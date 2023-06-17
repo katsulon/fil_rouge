@@ -3,11 +3,24 @@
 ## Description
 Mini project to apply concepts seen in class to an RPG written in C++.
 
+Follows a mini scenario. When the final music starts playing that means the game is "over".
+If something seems to sticks out, chances are there's something to do, generally by interacting with it.
+
+If stuck here's the scenario:
+- Enter tunnel
+- Interact with trapdoor (might need to go further up in the tunnel if it doesn't seem to react)
+- Get item from chest
+- Activate bridge by interacting with the small rock
+- Give item to npc who will give you an item to destroy the boulder blocking the way
+- Interact with statue to get a sequence of colors. Interact with the lanterns of the corresponding color in the given sequence. If the given sequence is correct, starts playing end music. Interact can be slightly too sensitive sometimes. If messed up sequence, can reset it by interacting with the statue.
+
 ## Commands
 - <kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8594;</kbd>: Movement
 - <kbd>E</kbd> or <kbd>Enter</kbd>: Interaction
-- <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd>: Select Hero
+- <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd>: Select Hero (in current state of game only cosmetic)
 - <kbd>Esc</kbd>: Exit game
+
+Screen can be resized to your heart's content so long as it's bigger than 800x600 (will automatically resize to 800x600 otherwise).
 
 ## Project status
 - [x] General setup
@@ -18,7 +31,9 @@ Mini project to apply concepts seen in class to an RPG written in C++.
 - [x] V5
 - [x] Player movement
 - [x] Game Map
-- [ ] Map Interaction
+- [x] Map Interaction
+- [ ] Improve code
+- [ ] Documentation
 
 ## Dependencies
 - **CMake**: for building the project. Minimum version 3.14 required.

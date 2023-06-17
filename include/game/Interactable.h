@@ -2,6 +2,11 @@
 #include <iostream>
 
 namespace He_ARC::rpg {
+    /**
+    * Base class for interactables
+    * @author Elisa Goloviatinski
+    * @version 1.0
+    */
     class Interactable {
         protected:
             bool collision = false;
@@ -102,8 +107,31 @@ namespace He_ARC::rpg {
             }
     };
 
-    class Entity : public Interactable {
-        private:
+    // Needed notes for music
+    enum Notes { D, Eb, F, G };
+
+    /**
+    * Specific class for Interactables playing a note
+    * @author Elisa Goloviatinski
+    * @version 1.0
+    */
+    class MusicInteractable : virtual public Interactable {
+        protected:
+            Notes note;
+        public:
+            MusicInteractable(int _gridX, int _gridY, int _tileWidth, string _soundfile, Notes _note, bool _collision = false) : Interactable(_gridX, _gridY, _tileWidth, _soundfile, _collision), note(_note) {}
+
+            Notes getNote() { return note; }
+            void setNote(Notes _note) { note = _note; }
+    };
+
+    /**
+    * Base class for entities. Derived from Interactable but includes textures and sfx
+    * @author Elisa Goloviatinski
+    * @version 1.0
+    */
+    class Entity : virtual public Interactable {
+        protected:
             string texturesrc;
             string soundfile;
             sf::Texture texture;
@@ -166,5 +194,18 @@ namespace He_ARC::rpg {
                 sf::Vector2f pos = sf::Vector2f(gridX*tileWidth, gridY*tileWidth);
                 sprite.setPosition(pos);
             }
+    };
+
+    /**
+    * Specific class for Entities playing a note
+    * @author Elisa Goloviatinski
+    * @version 1.0
+    */
+    class MusicEntity : public Entity, public MusicInteractable {
+        public:
+            MusicEntity(int _gridX, int _gridY, int _tileWidth, string _texturesrc, string _soundfile, Notes _note, bool _collision = false) : 
+                MusicInteractable(_gridX, _gridY, _tileWidth, _soundfile, _note, _collision), 
+                Entity(_gridX, _gridY, _tileWidth, _texturesrc, _soundfile, _collision), 
+                Interactable(_gridX, _gridY, _tileWidth, _soundfile, _collision) {}
     };
 }
