@@ -171,7 +171,7 @@ namespace He_ARC::rpg {
         interactables.push_back(&bridgeSwitch);
         interactables.push_back(&chest);
         interactables.push_back(&npcDemorden);
-        //interactables.push_back(&obstacle);
+        interactables.push_back(&obstacle);
         interactables.push_back(&statue);
         interactables.push_back(&redNote);
         interactables.push_back(&blueNote);

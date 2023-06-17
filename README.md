@@ -12,11 +12,12 @@ If stuck here's the scenario:
 - Get item from chest
 - Activate bridge by interacting with the small rock
 - Give item to npc who will give you an item to destroy the boulder blocking the way
-- Interact with statue to get a sequence of colors. Interact with the lanterns of the corresponding color in the given sequence. If the given sequence is correct, starts playing end music. Interact can be slightly too sensitive sometimes. If messed up sequence, can reset it by interacting with the statue.
+- Interact with statue to get a sequence of colors. Interact with the lanterns of the corresponding color in the given sequence. If the given sequence is correct, starts playing end music. Interact can be slightly too sensitive sometimes.
 
 ## Commands
 - <kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8594;</kbd>: Movement
 - <kbd>E</kbd> or <kbd>Enter</kbd>: Interaction
+- <kbd>R</kbd> or <kbd>Enter</kbd>: Reset note sequence
 - <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd>: Select Hero (in current state of game only cosmetic)
 - <kbd>Esc</kbd>: Exit game
 
