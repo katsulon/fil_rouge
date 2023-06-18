@@ -47,6 +47,7 @@ namespace He_ARC::rpg {
             }
 
             // Setters
+
             /// @brief Changes loaded soundfile.
             /// @param src Source of soundfile.
             void setSoundfile(string src) {
@@ -107,7 +108,7 @@ namespace He_ARC::rpg {
             }
     };
 
-    // Needed notes for music
+    // Needed notes for music "puzzle"
     enum Notes { D, Eb, F, G };
 
     /**
@@ -119,9 +120,27 @@ namespace He_ARC::rpg {
         protected:
             Notes note;
         public:
+            // Constructor
+
+            /// @brief MusicInteractable standard parameterized constructor
+            /// @param _gridX X-pos on map grid
+            /// @param _gridY Y-pos on map grid
+            /// @param _tileWidth Size of tile
+            /// @param _soundfile Sfx associated to entity
+            /// @param _note Associated note
+            /// @param _collision Whether Entity object has collision or not
             MusicInteractable(int _gridX, int _gridY, int _tileWidth, string _soundfile, Notes _note, bool _collision = false) : Interactable(_gridX, _gridY, _tileWidth, _soundfile, _collision), note(_note) {}
 
-            Notes getNote() { return note; }
+            //Getter
+
+            /// @brief Gets associated note to object
+            /// @return Current associated note
+            Notes getNote() const { return note; }
+
+            //Setter
+
+            /// @brief Changed associated note
+            /// @param _note Note that's going to be associated with object
             void setNote(Notes _note) { note = _note; }
     };
 
@@ -137,7 +156,7 @@ namespace He_ARC::rpg {
             sf::Texture texture;
             sf::Sprite sprite;
         public:
-            // Constructor
+            // Constructors
 
             /// @brief Entity standard parameterized constructor
             /// @param _gridX X-pos on map grid
@@ -157,7 +176,7 @@ namespace He_ARC::rpg {
             /// @param _tileWidth Size of tile
             /// @param _texturesrc Source of texture
             /// @param _soundfile Sfx associated to entity
-            /// @param _collision Whether Entity object has collision or not
+            /// @param _collision Whether object has collisions or not
             Entity(int _gridX, int _gridY, int _tileWidth, string _texturesrc, string _soundfile, bool _collision = false) : Interactable(_gridX, _gridY, _tileWidth, _soundfile, _collision), texturesrc(_texturesrc){
                 setTilePos(gridX, gridY);
                 texture.loadFromFile(texturesrc);
@@ -197,12 +216,23 @@ namespace He_ARC::rpg {
     };
 
     /**
-    * Specific class for Entities playing a note
+    * Specific class for entities playing a note
     * @author Elisa Goloviatinski
     * @version 1.0
     */
     class MusicEntity : public Entity, public MusicInteractable {
         public:
+            // Constructor
+
+            /// @param _collision Whether Entity object has collision or not
+            /// @brief MusicEntity standard parameterized constructor
+            /// @param _gridX X-pos on map grid
+            /// @param _gridY Y-pos on map grid
+            /// @param _tileWidth Size of tile
+            /// @param _texturesrc Source of texture
+            /// @param _soundfile Sfx associated to entity
+            /// @param _note Associated note
+            /// @param _collision Whether object has collisions or not
             MusicEntity(int _gridX, int _gridY, int _tileWidth, string _texturesrc, string _soundfile, Notes _note, bool _collision = false) : 
                 MusicInteractable(_gridX, _gridY, _tileWidth, _soundfile, _note, _collision), 
                 Entity(_gridX, _gridY, _tileWidth, _texturesrc, _soundfile, _collision), 

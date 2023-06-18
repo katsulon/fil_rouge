@@ -11,6 +11,7 @@
 #include "hero/Hero.h"
 #include "hero/class/ClassImpl.h"
 #include "Interactable.h"
+#include "DialogBox.h"
 
 using namespace std;
 
@@ -27,6 +28,7 @@ namespace He_ARC::rpg {
             sf::Image icon;
             sf::Vector2f size;
             sf::View view;
+            sf::View guiView;
             float viewWidth;
             float viewHeight;
             float aspectRatio;
@@ -62,6 +64,9 @@ namespace He_ARC::rpg {
             int const frameRate = 60;
             // Var to check whether a key has already been pressed
             bool keyDown = false;
+
+            DialogBox interactionDialog = DialogBox(sf::Vector2f(0, 0), "res/files/npcBeforeItem.txt");
+            bool isGlobalEnabled = false;
 
             // Initialization of entities
             list<Interactable*> interactables;

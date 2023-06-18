@@ -131,10 +131,13 @@ namespace He_ARC::rpg {
         icon.loadFromFile("res/icon.png"); 
         window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
+        guiView.setSize(sf::Vector2f(window.getSize()));
+        guiView.setCenter(guiView.getSize() * 0.5f);
         view = sf::View(sf::Vector2f(window.getSize().x/2, window.getSize().y/2), sf::Vector2f(window.getSize().x, window.getSize().y));
         viewWidth = view.getSize().x;
         viewHeight = view.getSize().y;
         view.setCenter(viewWidth/2, viewHeight/2);
+        interactionDialog.setPos(sf::Vector2f(0, viewHeight-interactionDialog.getSpriteSize().y));
 
         // loading tiles
         map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(16, 16), level, mapSize.x, mapSize.y);
@@ -246,7 +249,9 @@ namespace He_ARC::rpg {
         }
         view.setCenter(currentHeroPos);
         view.setSize(sf::Vector2f(aspectRatio*viewHeight, viewHeight));
-        window.setView(sf::View(view));
+        window.setView(view);
+        guiView.setSize(sf::Vector2f(window.getSize()));
+        guiView.setCenter(guiView.getSize() * 0.5f);
     }
 
     void Game::terminal() {
@@ -326,6 +331,7 @@ namespace He_ARC::rpg {
                         window.close();
                     if (keyDown == false) {
                         // Interactions
+                        interactionDialog.enable(isGlobalEnabled);
                         if(sfEvent.key.code == sf::Keyboard::Enter || sfEvent.key.code == sf::Keyboard::E) {
                             if (bridgeSwitch.canInteract(playerBounds)) {
                                 bridgeSwitch.playSFX();
@@ -339,21 +345,42 @@ namespace He_ARC::rpg {
                                 war1->backpack.pack(ajaWine);
                                 chest.playSFX();
                                 chestOpen = true;
-                            }
-                            if (npcDemorden.canInteract(playerBounds) && transactionDone == false) {
-                                if(war1->backpack.getStackTop() == ajaWine) {
-                                    war1->backpack.unPack();
-                                    war1->backpack.pack(relicKey);
-                                    npcDemorden.playSFX();
-                                    transactionDone = true;
+                                string text = "Obtained " + war1->backpack.getStackTop()->getName() + ".";
+                                interactionDialog.setTextFile("default.txt");
+                                interactionDialog.appendText(text);
+                                if (interactionDialog.getNext()){
+                                    interactionDialog.enable(true);
                                 }
+                            }
+                            if (npcDemorden.canInteract(playerBounds)){
+                                if(transactionDone == false) {
+                                    if(war1->backpack.getStackTop() == ajaWine) {
+                                        war1->backpack.unPack();
+                                        war1->backpack.pack(relicKey);
+                                        npcDemorden.playSFX();
+                                        transactionDone = true;
+                                        string text = "Obtained " + war1->backpack.getStackTop()->getName() + ".";
+                                        interactionDialog.setTextFile("res/files/npcAfterItem.txt");
+                                        interactionDialog.appendText(text);
+                                    }
+                                }
+                                if (interactionDialog.getNext()){
+                                    interactionDialog.enable(true);
+                                }
+                                
                             }
                             if (obstacle.canInteract(playerBounds)) {
                                 if(war1->backpack.getStackTop() == relicKey) {
                                     obstacle.playSFX();
                                     obstacleExists = false;
+                                    string text = war1->backpack.getStackTop()->getName() + " has been destroyed.";
                                     war1->backpack.unPack();
                                     interactables.remove(&obstacle);
+                                    interactionDialog.setTextFile("default.txt");
+                                    interactionDialog.appendText(text);
+                                    if (interactionDialog.getNext()){
+                                        interactionDialog.enable(true);
+                                    }
                                 }
                             }
                             for (MusicInteractable* noteLantern : noteLanterns) {
@@ -436,6 +463,7 @@ namespace He_ARC::rpg {
         updateSFMLEvents();
         view = window.getView();
         currentHeroPos = currentHero->getPos();
+        
         // Collision management
         bool collisionEnabled = true;
         playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
@@ -551,9 +579,20 @@ namespace He_ARC::rpg {
         view.move(viewMoveSpeed);
         window.setView(view);
 
+        if (interactionDialog.isEnabled() == false) {
+            interactionDialog.setLine(0);
+        }
+        
+
         if (inputNote.size() >= 10) {
             if ((inputNote == noteSequence) && (musicCredits.getStatus() != sf::Music::Status::Playing)) {
                 musicCredits.play();
+                isGlobalEnabled = true;
+                interactionDialog.setTextFile("default.txt");
+                interactionDialog.appendText("Thanks for playing !");
+                if (interactionDialog.getNext()){
+                    interactionDialog.enable(true);
+                }
             }
             inputNote.clear();
         }
@@ -622,6 +661,14 @@ namespace He_ARC::rpg {
         for (const Entity *entity : stonePlatformEntities) {
             window.draw(entity->getSprite());
         }
+
+        window.setView(guiView);
+
+        if (interactionDialog.isEnabled()) {
+            interactionDialog.draw(window);
+        }
+
+        window.setView(view);
 
         window.display();
     }

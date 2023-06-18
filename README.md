@@ -17,7 +17,7 @@ If stuck here's the scenario:
 ## Commands
 - <kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8594;</kbd>: Movement
 - <kbd>E</kbd> or <kbd>Enter</kbd>: Interaction
-- <kbd>R</kbd> or <kbd>Enter</kbd>: Reset note sequence
+- <kbd>R</kbd>: Reset note sequence
 - <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd>: Select Hero (in current state of game only cosmetic)
 - <kbd>Esc</kbd>: Exit game
 
@@ -33,7 +33,8 @@ Screen can be resized to your heart's content so long as it's bigger than 800x60
 - [x] Player movement
 - [x] Game Map
 - [x] Map Interaction
-- [ ] Improve code
+- [x] Dialog boxes
+- [ ] Slightly improved code
 - [ ] Documentation
 
 ## Dependencies
@@ -47,14 +48,19 @@ Inside the build folder, after creating it:
 ## Installing packages
 If any of these don't work see [the official SFML tutorials](https://www.sfml-dev.org/tutorials/2.5/)
 ### Windows
-CMakeLists have been configured to directly fetch the git repository of dependencies with FetchContent if the required built library was not found locally so normally dependencies should be integrated into build automatically.
+CMakeLists have been configured to directly fetch the git repository of dependencies with FetchContent if the required built library was not found locally so normally dependencies should be integrated into build automatically. Just in case though, here are all the necessary dll files for runtime:
+    
+    openal32.dll
+    sfml-audio-d-2.dll
+    sfml-graphics-d-2.dll
+    sfml-system-d-2.dll
+    sfml-window-d-2.dll
+
 ### Linux
     sudo apt-get install libsfml-dev
 
 ## Possible future plan
-- [ ] Dialogue boxes
-- [ ] Different game scenes
-- [ ] Improve code by using keys or functions instead of ifs
+- [ ] Improve code by either using keys or functions instead of ifs (possible scene class)
 
 ## Credits
 ### Additional art
@@ -66,3 +72,4 @@ CMakeLists have been configured to directly fetch the git repository of dependen
 - Open chest sfx: [8-Bit Sound Effects Library » Open_01.wav](https://freesound.org/people/LittleRobotSoundFactory/sounds/270338/) by LittleRobotSoundFactory
 - Destroy obstacle sfx: [Earth Wind Fire Water pack 1 » Earth1.aif](https://freesound.org/people/pushtobreak/sounds/16793/) by pushtobreak
 - NPC transaction sfx: [8-bit Video Game Sounds » Coins 1](https://freesound.org/people/ProjectsU012/sounds/341695/) by ProjectsU012
+- Lantern keys sfx: [Pack: Piano FF](https://freesound.org/people/jobro/packs/2489/) by jobro
