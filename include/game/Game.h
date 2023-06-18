@@ -25,6 +25,11 @@ namespace He_ARC::rpg {
         private:
             // Attributes
             
+            // To avoid magic numbers
+
+            const int TILE_SIZE = 16;
+            const float SCALE = 4.0f;
+
             sf::RenderWindow window;
             sf::Image icon;
             sf::Vector2f size;
@@ -77,18 +82,18 @@ namespace He_ARC::rpg {
             // Initialization of entities and related variables
 
             list<Interactable*> interactables;
-            Entity bridgeSwitch = Entity(12, 13, 16*4, "res/sprites/map/forest/Rocks.png", "res/sfx/switch.wav", true);
+            Entity bridgeSwitch = Entity(12, 13, TILE_SIZE*SCALE, "res/sprites/map/forest/Rocks.png", "res/sfx/switch.wav", true);
             bool enableBridge = false;
-            Entity obstacleText = Entity(17, 10, 16*4, "res/sprites/map/forest/Rocks.png");
-            Interactable obstacle = Interactable(17, 11, 16*4, "res/sfx/destroy.wav", true);
+            Entity obstacleText = Entity(17, 10, TILE_SIZE*SCALE, "res/sprites/map/forest/Rocks.png");
+            Interactable obstacle = Interactable(17, 11, TILE_SIZE*SCALE, "res/sfx/destroy.wav", true);
             bool obstacleExists = true;
             Potion *ajaWine = new Potion(9999, "Aja Red Wine");
             Weapon *relicKey = new Weapon(9999, "Legendary Relic");
-            Entity npcDemorden = Entity(18, 18, 16*4, "res/sprites/character/free_fighters/DEMORDEN/demorden.png", "res/sfx/coin.wav", true);
+            Entity npcDemorden = Entity(18, 18, TILE_SIZE*SCALE, "res/sprites/character/free_fighters/DEMORDEN/demorden.png", "res/sfx/coin.wav", true);
             bool transactionDone = false;
-            Entity ladder = Entity(14, 0, 16*4, "res/sprites/map/forest/Cliff.png", "res/sfx/ladder.wav", false);
+            Entity ladder = Entity(14, 0, TILE_SIZE*SCALE, "res/sprites/map/forest/Cliff.png", "res/sfx/ladder.wav", false);
             bool onCliff = false;
-            Entity chest = Entity(13, 5, 16*4, "res/sprites/map/chest/chest_closed.png", "res/sfx/chest.wav", true);
+            Entity chest = Entity(13, 5, TILE_SIZE*SCALE, "res/sprites/map/chest/chest_closed.png", "res/sfx/chest.wav", true);
             bool chestOpen = false;
 
             // Music puzzle
@@ -99,16 +104,16 @@ namespace He_ARC::rpg {
             vector<Notes>inputNote;
 
             list<Entity*> stonePlatformEntities;
-            Entity statueText = Entity(30, 0, 16*4, "res/sprites/map/forest/Environment_mod.png");
-            Interactable statue = Interactable(30, 2, 16*4, true);
+            Entity statueText = Entity(30, 0, TILE_SIZE*SCALE, "res/sprites/map/forest/Environment_mod.png");
+            Interactable statue = Interactable(30, 2, TILE_SIZE*SCALE, true);
 
             vector<MusicInteractable*> noteLanterns;
-            MusicEntity redNote = MusicEntity(28, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", "res/sfx/notes/D.wav", D, true);
-            Entity blueNoteText = Entity(29, 1, 16*4, "res/sprites/map/forest/Environment_mod.png");
-            MusicInteractable blueNote = MusicInteractable(29, 2, 16*4, "res/sfx/notes/Eb.wav", Eb, true);
-            Entity greenNoteText = Entity(31, 1, 16*4, "res/sprites/map/forest/Environment_mod.png");
-            MusicInteractable greenNote = MusicInteractable(31, 2, 16*4, "res/sfx/notes/F.wav", F, true);
-            MusicEntity yellowNote = MusicEntity(32, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", "res/sfx/notes/G.wav", G, true);
+            MusicEntity redNote = MusicEntity(28, 2, TILE_SIZE*SCALE, "res/sprites/map/forest/Environment_mod.png", "res/sfx/notes/D.wav", D, true);
+            Entity blueNoteText = Entity(29, 1, TILE_SIZE*SCALE, "res/sprites/map/forest/Environment_mod.png");
+            MusicInteractable blueNote = MusicInteractable(29, 2, TILE_SIZE*SCALE, "res/sfx/notes/Eb.wav", Eb, true);
+            Entity greenNoteText = Entity(31, 1, TILE_SIZE*SCALE, "res/sprites/map/forest/Environment_mod.png");
+            MusicInteractable greenNote = MusicInteractable(31, 2, TILE_SIZE*SCALE, "res/sfx/notes/F.wav", F, true);
+            MusicEntity yellowNote = MusicEntity(32, 2, TILE_SIZE*SCALE, "res/sprites/map/forest/Environment_mod.png", "res/sfx/notes/G.wav", G, true);
 
             // Special bounds
 
@@ -122,7 +127,7 @@ namespace He_ARC::rpg {
             Wizard *wzd1 = new Wizard;
 
             Hero *currentHero = war1;
-            sf::Vector2f currentHeroPos = sf::Vector2f(0,7*16*4);
+            sf::Vector2f currentHeroPos = sf::Vector2f(0,7*TILE_SIZE*SCALE);
             // whether sprite is flipped or not
             bool currentHeroFlipped = false;
             sf::Vector2f currentHeroVelocity = sf::Vector2f(0, 0);

@@ -10,6 +10,7 @@ namespace He_ARC::rpg {
     */
     class Entity : virtual public Interactable {
         protected:
+            const float SCALE = 4.0f;
             string texturesrc;
             string soundfile;
             sf::Texture texture;
@@ -27,7 +28,7 @@ namespace He_ARC::rpg {
                 setTilePos(gridX, gridY);
                 texture.loadFromFile(texturesrc);
                 sprite.setTexture(texture);
-                sprite.setScale(sf::Vector2f(4.0f, 4.0f));
+                sprite.setScale(sf::Vector2f(SCALE, SCALE));
             }
             /// @brief Entity standard parameterized constructor with sfx
             /// @param _gridX X-pos on map grid
@@ -40,7 +41,7 @@ namespace He_ARC::rpg {
                 setTilePos(gridX, gridY);
                 texture.loadFromFile(texturesrc);
                 sprite.setTexture(texture);
-                sprite.setScale(sf::Vector2f(4.0f, 4.0f));
+                sprite.setScale(sf::Vector2f(SCALE, SCALE));
             }
             // SFML Getters
 

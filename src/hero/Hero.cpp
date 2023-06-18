@@ -19,10 +19,10 @@ namespace He_ARC::rpg {
     sf::Vector2f Hero::getPos() const { 
         int flipOffset = 0;
         if (flipped) {
-            flipOffset = (frameSize-16/2+16/2/4)*4;
+            flipOffset = (frameSize-TILE_SIZE/2+TILE_SIZE/2/4)*4;
         }
         
-        return sf::Vector2f(sprite.getPosition().x-(-frameSize/2+16/4*3)*4-flipOffset, sprite.getPosition().y-(-frameSize+16)*4); 
+        return sf::Vector2f(sprite.getPosition().x-(-frameSize/2+TILE_SIZE/4*3)*SCALE-flipOffset, sprite.getPosition().y-(-frameSize+TILE_SIZE)*SCALE); 
     }
 
     // Setters
@@ -79,13 +79,13 @@ namespace He_ARC::rpg {
         //sprite.setColor(sf::Color(255, 255, 255, 200)); set sprite color
         
         if ((flipped == true) && (counter == 0)) {
-            sprite.move((frameSize-16/2+16/2/4)*4.f,0.f);
-            sprite.setScale(-4.f,4.f);
+            sprite.move((frameSize-TILE_SIZE/2+TILE_SIZE/2/4)*SCALE,0.f);
+            sprite.setScale(-SCALE, SCALE);
             counter=1;
         } 
         else if((flipped == false) && (counter == 1)) {
-            sprite.move(-(frameSize-16/2+16/2/4)*4.f,0.f);
-            sprite.setScale(4.f,4.f);
+            sprite.move(-(frameSize-TILE_SIZE/2+TILE_SIZE/2/4)*SCALE,0.f);
+            sprite.setScale(SCALE, SCALE);
             counter=0;
         }
     }
@@ -95,10 +95,10 @@ namespace He_ARC::rpg {
     /// @param y Y coordinate of the new position
     void Hero::setPos(float x, float y) {
         if (!flipped) {
-            sprite.setPosition(x+(-frameSize/2+16/4*3)*4, y+(-frameSize+16)*4);
+            sprite.setPosition(x+(-frameSize/2+TILE_SIZE/4*3)*4, y+(-frameSize+TILE_SIZE)*SCALE);
         }
         else {
-            sprite.setPosition(x+(-frameSize/2+16/4*3)*4+(frameSize-16/2+16/2/4)*4, y+(-frameSize+16)*4);
+            sprite.setPosition(x+(-frameSize/2+TILE_SIZE/4*3)*SCALE+(frameSize-TILE_SIZE/2+TILE_SIZE/2/4)*4, y+(-frameSize+TILE_SIZE)*SCALE);
         }
     }
 

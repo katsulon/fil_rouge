@@ -17,11 +17,16 @@ namespace He_ARC::rpg {
     */
     class Hero {
     protected:
+        const int TILE_SIZE = 16;
+        const float SCALE = 4.f;
+
         int hp = 0;
         string name = "no_name";
         Weapon *weapon = nullptr;
         IObject *pObject = nullptr;
+
         //SFML variables
+        
         sf::Texture texture;
         sf::Sprite sprite;
         bool flipped = false;

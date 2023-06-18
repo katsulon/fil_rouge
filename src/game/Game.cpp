@@ -164,37 +164,37 @@ namespace He_ARC::rpg {
         interactionDialog.setPos(sf::Vector2f(0, guiView.getSize().y-interactionDialog.getSpriteSize().y));
 
         // loading tiles
-        map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(16, 16), level, mapSize.x, mapSize.y);
-        map.setScale(sf::Vector2f(4.0f, 4.0f));
-        mapCliff.load("res/sprites/map/forest/Cliff.png", sf::Vector2u(16, 16), levelCliff, mapSize.x, mapSize.y);
-        mapCliff.setScale(sf::Vector2f(4.0f, 4.0f));
-        mapWater.load("res/sprites/map/forest/Water_Tileset.png", sf::Vector2u(16, 16), levelWater, mapSize.x, mapSize.y);
-        mapWater.setScale(sf::Vector2f(4.0f, 4.0f));
-        mapStoneTilePlatform.load("res/sprites/map/forest/Stairs_Bridge.png", sf::Vector2u(16, 16), stoneTilePlatform, 17, 3);
-        mapStoneTilePlatform.setScale(sf::Vector2f(4.0f, 4.0f));
-        mapStoneTilePlatform.setPosition(sf::Vector2f(22*16*4, 2*16*4));
-        mapStoneStairsPlatform.load("res/sprites/map/forest/Stairs_Bridge.png", sf::Vector2u(16, 16), stairs, 3, 3);
-        mapStoneStairsPlatform.setScale(sf::Vector2f(4.0f, 4.0f));
-        mapStoneStairsPlatform.setPosition(sf::Vector2f(29*16*4, 4*16*4));
-        mapStoneWallPlatform.load("res/sprites/map/forest/Environment.png", sf::Vector2u(16, 16), stoneWallPlatform, mapSize.x, mapSize.y);
-        mapStoneWallPlatform.setScale(sf::Vector2f(4.0f, 4.0f));
-        mapStonePlatformSequence.load("res/sprites/map/forest/Environment_mod.png", sf::Vector2u(16, 16), stonePlatformSequence, mapSize.x, mapSize.y);
-        mapStonePlatformSequence.setScale(sf::Vector2f(4.0f, 4.0f));
+        map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(TILE_SIZE, TILE_SIZE), level, mapSize.x, mapSize.y);
+        map.setScale(sf::Vector2f(SCALE, SCALE));
+        mapCliff.load("res/sprites/map/forest/Cliff.png", sf::Vector2u(TILE_SIZE, TILE_SIZE), levelCliff, mapSize.x, mapSize.y);
+        mapCliff.setScale(sf::Vector2f(SCALE, SCALE));
+        mapWater.load("res/sprites/map/forest/Water_Tileset.png", sf::Vector2u(TILE_SIZE, TILE_SIZE), levelWater, mapSize.x, mapSize.y);
+        mapWater.setScale(sf::Vector2f(SCALE, SCALE));
+        mapStoneTilePlatform.load("res/sprites/map/forest/Stairs_Bridge.png", sf::Vector2u(TILE_SIZE, TILE_SIZE), stoneTilePlatform, 17, 3);
+        mapStoneTilePlatform.setScale(sf::Vector2f(SCALE, SCALE));
+        mapStoneTilePlatform.setPosition(sf::Vector2f(22*TILE_SIZE*SCALE, 2*TILE_SIZE*SCALE));
+        mapStoneStairsPlatform.load("res/sprites/map/forest/Stairs_Bridge.png", sf::Vector2u(TILE_SIZE, TILE_SIZE), stairs, 3, 3);
+        mapStoneStairsPlatform.setScale(sf::Vector2f(SCALE, SCALE));
+        mapStoneStairsPlatform.setPosition(sf::Vector2f(29*TILE_SIZE*SCALE, 4*TILE_SIZE*SCALE));
+        mapStoneWallPlatform.load("res/sprites/map/forest/Environment.png", sf::Vector2u(TILE_SIZE, TILE_SIZE), stoneWallPlatform, mapSize.x, mapSize.y);
+        mapStoneWallPlatform.setScale(sf::Vector2f(SCALE, SCALE));
+        mapStonePlatformSequence.load("res/sprites/map/forest/Environment_mod.png", sf::Vector2u(TILE_SIZE, TILE_SIZE), stonePlatformSequence, mapSize.x, mapSize.y);
+        mapStonePlatformSequence.setScale(sf::Vector2f(SCALE, SCALE));
 
-        mapBridge.load("res/sprites/map/forest/Stairs_Bridge.png", sf::Vector2u(16, 16), bridge, 3, 7);
-        mapBridge.setScale(sf::Vector2f(4.0f, 4.0f));
-        mapBridge.setPosition(sf::Vector2f(13*16*4, 13*16*4));
+        mapBridge.load("res/sprites/map/forest/Stairs_Bridge.png", sf::Vector2u(TILE_SIZE, TILE_SIZE), bridge, 3, 7);
+        mapBridge.setScale(sf::Vector2f(SCALE, SCALE));
+        mapBridge.setPosition(sf::Vector2f(13*TILE_SIZE*SCALE, 13*TILE_SIZE*SCALE));
 
         // loading entities
-        bridgeSwitch.setSpriteTexture(sf::IntRect(16, 0, 16, 16));
-        npcDemorden.setSpriteTexture(sf::IntRect(0,16, 16, 16));
-        obstacleText.setSpriteTexture(sf::IntRect(0, 16*2, 16*2, 16*2));
-        ladder.setSpriteTexture(sf::IntRect(16*11, 16*5, 16, 16));
-        statueText.setSpriteTexture(sf::IntRect(0, 16*3, 16, 16*3));
-        redNote.setSpriteTexture(sf::IntRect(16, 16*5, 16, 16));
-        blueNoteText.setSpriteTexture(sf::IntRect(16*2, 16*3, 16, 16*2));
-        greenNoteText.setSpriteTexture(sf::IntRect(16*3, 16*3, 16, 16*2));
-        yellowNote.setSpriteTexture(sf::IntRect(16*4, 16*5, 16, 16));
+        bridgeSwitch.setSpriteTexture(sf::IntRect(TILE_SIZE, 0, TILE_SIZE, TILE_SIZE));
+        npcDemorden.setSpriteTexture(sf::IntRect(0, TILE_SIZE, TILE_SIZE, TILE_SIZE));
+        obstacleText.setSpriteTexture(sf::IntRect(0, TILE_SIZE*2, TILE_SIZE*2, TILE_SIZE*2));
+        ladder.setSpriteTexture(sf::IntRect(TILE_SIZE*11, TILE_SIZE*5, TILE_SIZE, TILE_SIZE));
+        statueText.setSpriteTexture(sf::IntRect(0, TILE_SIZE*3, TILE_SIZE, TILE_SIZE*3));
+        redNote.setSpriteTexture(sf::IntRect(TILE_SIZE, TILE_SIZE*5, TILE_SIZE, TILE_SIZE));
+        blueNoteText.setSpriteTexture(sf::IntRect(TILE_SIZE*2, TILE_SIZE*3, TILE_SIZE, TILE_SIZE*2));
+        greenNoteText.setSpriteTexture(sf::IntRect(TILE_SIZE*3, TILE_SIZE*3, TILE_SIZE, TILE_SIZE*2));
+        yellowNote.setSpriteTexture(sf::IntRect(TILE_SIZE*4, TILE_SIZE*5, TILE_SIZE, TILE_SIZE));
 
         // entities list creation
         interactables.push_back(&bridgeSwitch);
@@ -228,10 +228,10 @@ namespace He_ARC::rpg {
         party.push_back(wzd1);
 
         // tunnel bounds creation
-        tunnelBounds.push_back(sf::FloatRect(7*16*4, 6*16*4, 4*16*4, 16*4));
-        tunnelBounds.push_back(sf::FloatRect(10*16*4, 2*16*4, 16*4, 5*16*4));
-        tunnelBounds.push_back(sf::FloatRect(10*16*4, 2*16*4, 5*16*4, 16*4));
-        tunnelBounds.push_back(sf::FloatRect(14*16*4, 0*16*4, 16*4, 3*16*4));
+        tunnelBounds.push_back(sf::FloatRect(7*TILE_SIZE*SCALE, 6*TILE_SIZE*SCALE, 4*TILE_SIZE*SCALE, TILE_SIZE*SCALE));
+        tunnelBounds.push_back(sf::FloatRect(10*TILE_SIZE*SCALE, 2*TILE_SIZE*SCALE, TILE_SIZE*SCALE, 5*TILE_SIZE*SCALE));
+        tunnelBounds.push_back(sf::FloatRect(10*TILE_SIZE*SCALE, 2*TILE_SIZE*SCALE, 5*TILE_SIZE*SCALE, TILE_SIZE*SCALE));
+        tunnelBounds.push_back(sf::FloatRect(14*TILE_SIZE*SCALE, 0*TILE_SIZE*SCALE, TILE_SIZE*SCALE, 3*TILE_SIZE*SCALE));
 
 
         for(Hero *member : party) {
@@ -263,14 +263,14 @@ namespace He_ARC::rpg {
         if (minViewSize.x >= 0) {
             currentHeroPos.x = aspectRatio*viewHeight/2;
         }
-        if (currentHeroPos.x-currentHero->getFrameSize()*4-16/2*4 + size.x/2 >= maxViewSize.x) {
-            currentHeroPos.x = mapSize.x*4*16-aspectRatio*viewHeight/2;
+        if (currentHeroPos.x-currentHero->getFrameSize()*SCALE-TILE_SIZE/2*SCALE + size.x/2 >= maxViewSize.x) {
+            currentHeroPos.x = mapSize.x*SCALE*TILE_SIZE-aspectRatio*viewHeight/2;
         }
         if (minViewSize.y >= 0) {
             currentHeroPos.y = viewHeight/2;
         }
-        if (currentHeroPos.y-currentHero->getFrameSize()*4-16/2*4 + size.y/2 >= maxViewSize.y) {
-            currentHeroPos.y = mapSize.y*4*16-viewHeight/2;
+        if (currentHeroPos.y-currentHero->getFrameSize()*SCALE-TILE_SIZE/2*SCALE + size.y/2 >= maxViewSize.y) {
+            currentHeroPos.y = mapSize.y*SCALE*TILE_SIZE-viewHeight/2;
         }
         view.setCenter(currentHeroPos);
         view.setSize(sf::Vector2f(aspectRatio*viewHeight, viewHeight));
@@ -432,28 +432,28 @@ namespace He_ARC::rpg {
 
     sf::Vector2f Game::tileCollision(const int levelTiles[], int nonColliderTile, int tileNumber, sf::Vector2i gridPosition, sf::Vector2f previousPos, sf::FloatRect rectBounds) {
         sf::Vector2f currentPos = previousPos;
-        sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
+        sf::FloatRect tileBounds = sf::FloatRect((gridPosition.x+1)*TILE_SIZE*SCALE, (gridPosition.y)*TILE_SIZE*SCALE, TILE_SIZE*SCALE, TILE_SIZE*SCALE);
         if (levelTiles[tileNumber+1] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.x = tileBounds.left-rectBounds.width;  
             }
         }
-        tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y+1)*16*4,16*4,16*4);
+        tileBounds = sf::FloatRect((gridPosition.x)*TILE_SIZE*SCALE, (gridPosition.y+1)*TILE_SIZE*SCALE, TILE_SIZE*SCALE, TILE_SIZE*SCALE);
         if (levelTiles[tileNumber+mapSize.x] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.y = tileBounds.top-rectBounds.height;
             }
         }    
-        tileBounds = sf::FloatRect((gridPosition.x-1)*16*4,(gridPosition.y)*16*4,16*4,16*4);
+        tileBounds = sf::FloatRect((gridPosition.x-1)*TILE_SIZE*SCALE, (gridPosition.y)*TILE_SIZE*SCALE, TILE_SIZE*SCALE, TILE_SIZE*SCALE);
         if (levelTiles[tileNumber-1] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
                 currentPos.x = tileBounds.left+tileBounds.width;
             }
         }        
-        tileBounds = sf::FloatRect((gridPosition.x)*16*4,(gridPosition.y-1)*16*4,16*4,16*4);
+        tileBounds = sf::FloatRect((gridPosition.x)*TILE_SIZE*SCALE, (gridPosition.y-1)*TILE_SIZE*SCALE, TILE_SIZE*SCALE, TILE_SIZE*SCALE);
         if (levelTiles[tileNumber-mapSize.x] != nonColliderTile) {
             if (rectBounds.intersects(tileBounds))
             {
@@ -471,13 +471,13 @@ namespace He_ARC::rpg {
         // Collision management
 
         bool collisionEnabled = true;
-        playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
+        playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, TILE_SIZE*SCALE, TILE_SIZE*SCALE);
         sf::Vector2i playerGridPosition = sf::Vector2i(0,0);
-        playerGridPosition.x = round(playerBounds.left / (16*4));
-        playerGridPosition.y = round(playerBounds.top / (16*4));
+        playerGridPosition.x = round(playerBounds.left / (TILE_SIZE*SCALE));
+        playerGridPosition.y = round(playerBounds.top / (TILE_SIZE*SCALE));
         int tileNumber = (playerGridPosition.y * mapSize.x + playerGridPosition.x);
         // Bridge river collision removal
-        sf::FloatRect bridgeBounds = sf::FloatRect(14*16*4, 14*16*4, 16*4, 16*4*5);
+        sf::FloatRect bridgeBounds = sf::FloatRect(14*TILE_SIZE*SCALE, 14*TILE_SIZE*SCALE, TILE_SIZE*SCALE, 5*TILE_SIZE*SCALE);
         sf::FloatRect intersect;
         if (playerBounds.intersects(bridgeBounds) && enableBridge) {
             collisionEnabled = false;
@@ -551,34 +551,34 @@ namespace He_ARC::rpg {
             currentHeroPos.x = 0.f;
         }
         // Checks for collision on right side of map
-        if ((currentHero->getPos().x+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.x*16*4) {
-            currentHeroPos.x = mapSize.x*16*4-currentHero->getFrameSize()-currentHero->getFrameSize()/2+16/4;
+        if ((currentHero->getPos().x+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.x*TILE_SIZE*SCALE) {
+            currentHeroPos.x = mapSize.x*TILE_SIZE*SCALE-currentHero->getFrameSize()-currentHero->getFrameSize()/2+TILE_SIZE/4;
         }
         // Checks for collision on top of map
         if (currentHero->getPos().y < 0.f) {
             currentHeroPos.y = 0.f;
         }
         // Checks for collision on bottom of map
-        if ((currentHero->getPos().y+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.y*16*4 ) {
-            currentHeroPos.y = mapSize.y*16*4 - currentHero->getFrameSize()-currentHero->getFrameSize()/2+16/4;
+        if ((currentHero->getPos().y+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.y*TILE_SIZE*SCALE ) {
+            currentHeroPos.y = mapSize.y*TILE_SIZE*SCALE - currentHero->getFrameSize()-currentHero->getFrameSize()/2+TILE_SIZE/4;
         }
 
         // View movement
         currentHeroPosReal = sf::Vector2f(window.mapCoordsToPixel(currentHeroPos));
         minViewSize = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(0,0)));
-        maxViewSize = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(mapSize.x*16*4,mapSize.y*16*4)));
+        maxViewSize = sf::Vector2f(window.mapCoordsToPixel(sf::Vector2f(mapSize.x*TILE_SIZE*SCALE, mapSize.y*TILE_SIZE*SCALE)));
         sf::Vector2f viewMoveSpeed = sf::Vector2f(0.f, 0.f);
-        if (((currentHeroPosReal.x+16/2*4-window.getSize().x/2) < 0) && (minViewSize.x < 0) && currentHeroVelocity.x < 0) {
+        if (((currentHeroPosReal.x+TILE_SIZE/2*SCALE-window.getSize().x/2) < 0) && (minViewSize.x < 0) && currentHeroVelocity.x < 0) {
             viewMoveSpeed.x = (currentHeroPos.x-view.getCenter().x)*time;
         }
-        if (((currentHeroPosReal.x+16/2*4+window.getSize().x/2) > window.getSize().x) && (maxViewSize.x > window.getSize().x) && currentHeroVelocity.x > 0) {
-            viewMoveSpeed.x = ((currentHeroPos.x+16/2*4*2)-view.getCenter().x)*time;
+        if (((currentHeroPosReal.x+TILE_SIZE/2*SCALE+window.getSize().x/2) > window.getSize().x) && (maxViewSize.x > window.getSize().x) && currentHeroVelocity.x > 0) {
+            viewMoveSpeed.x = ((currentHeroPos.x+TILE_SIZE/2*SCALE*2)-view.getCenter().x)*time;
         }
-        if (((currentHeroPosReal.y+16/2*4-window.getSize().y/2) < 0) && (minViewSize.y < 0) && currentHeroVelocity.y < 0) {
+        if (((currentHeroPosReal.y+TILE_SIZE/2*SCALE-window.getSize().y/2) < 0) && (minViewSize.y < 0) && currentHeroVelocity.y < 0) {
             viewMoveSpeed.y = (currentHeroPos.y-view.getCenter().y)*time;
         }
-        if (((currentHeroPosReal.y+16/2*4+window.getSize().y/2) > window.getSize().y) && (maxViewSize.y > window.getSize().y) && currentHeroVelocity.y > 0) {
-            viewMoveSpeed.y = ((currentHeroPos.y+16/2*4*2)-view.getCenter().y)*time;
+        if (((currentHeroPosReal.y+TILE_SIZE/2*SCALE+window.getSize().y/2) > window.getSize().y) && (maxViewSize.y > window.getSize().y) && currentHeroVelocity.y > 0) {
+            viewMoveSpeed.y = ((currentHeroPos.y+TILE_SIZE/2*SCALE*2)-view.getCenter().y)*time;
         }
         
         viewMoveSpeed*=currentHero->getSpeed()*2/100;
