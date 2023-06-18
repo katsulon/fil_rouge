@@ -1,0 +1,14 @@
+<map id="C:/env/Cpp/goloviatinski_fil_rouge/include/game/interactable/MusicEntity.h" name="C:/env/Cpp/goloviatinski_fil_rouge/include/game/interactable/MusicEntity.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="50,5,226,64"/>
+<area shape="rect" id="Node000002" href="$_entity_8h.html" title=" " alt="" coords="44,112,110,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,66,96,101,91,98,116,63"/>
+<area shape="rect" id="Node000006" href="$_music_interactable_8h.html" title=" " alt="" coords="134,112,268,139"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="160,63,186,98,181,101,156,66"/>
+<area shape="rect" id="Node000003" href="$_interactable_8h.html" title=" " alt="" coords="88,187,188,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,137,120,173,116,177,85,141"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,261,143,288"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="129,216,97,252,93,248,125,212"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="166,261,238,288"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="151,212,183,248,179,252,147,216"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="192,141,160,177,156,173,188,137"/>
+</map>

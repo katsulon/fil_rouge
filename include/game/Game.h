@@ -10,19 +10,20 @@
 #include <vector>
 #include "hero/Hero.h"
 #include "hero/class/ClassImpl.h"
-#include "Interactable.h"
+#include "game/interactable/Interactable.h"
+#include "game/interactable/InteractableImpl.h"
 #include "DialogBox.h"
 
 using namespace std;
 
 namespace He_ARC::rpg {
     /**
-    * Class for game loop
+    * @brief Class for game loop
     * @author Elisa Goloviatinski
     */
     class Game {
         private:
-            // Variables
+            // Attributes
             
             sf::RenderWindow window;
             sf::Image icon;
@@ -58,6 +59,8 @@ namespace He_ARC::rpg {
             TileMap mapStonePlatformSequence;
             sf::Vector2i mapSize = sf::Vector2i(39,22);
 
+            // View
+
             sf::Vector2f currentHeroPosReal;
             sf::Vector2f minViewSize;
             sf::Vector2f maxViewSize;
@@ -66,10 +69,13 @@ namespace He_ARC::rpg {
             // Var to check whether a key has already been pressed
             bool keyDown = false;
 
+            // Dialog box
+
             DialogBox interactionDialog = DialogBox(sf::Vector2f(0, 0), "res/files/npcBeforeItem.txt");
             bool isGlobalEnabled = false;
 
-            // Initialization of entities
+            // Initialization of entities and related variables
+
             list<Interactable*> interactables;
             Entity bridgeSwitch = Entity(12, 13, 16*4, "res/sprites/map/forest/Rocks.png", "res/sfx/switch.wav", true);
             bool enableBridge = false;
@@ -84,6 +90,8 @@ namespace He_ARC::rpg {
             bool onCliff = false;
             Entity chest = Entity(13, 5, 16*4, "res/sprites/map/chest/chest_closed.png", "res/sfx/chest.wav", true);
             bool chestOpen = false;
+
+            // Music puzzle
 
             sf::Music musicCredits;
 
@@ -103,6 +111,7 @@ namespace He_ARC::rpg {
             MusicEntity yellowNote = MusicEntity(32, 2, 16*4, "res/sprites/map/forest/Environment_mod.png", "res/sfx/notes/G.wav", G, true);
 
             // Special bounds
+
             list<sf::FloatRect> tunnelBounds;
             
             // Initialization of party and hero
@@ -115,7 +124,8 @@ namespace He_ARC::rpg {
 
             Hero *currentHero = war1;
             sf::Vector2f currentHeroPos = sf::Vector2f(0,7*16*4);
-            bool currentHeroFlipped = false; 
+            // whether sprite is flipped or not
+            bool currentHeroFlipped = false;
             sf::Vector2f currentHeroVelocity = sf::Vector2f(0, 0);
             sf::FloatRect playerBounds;
             

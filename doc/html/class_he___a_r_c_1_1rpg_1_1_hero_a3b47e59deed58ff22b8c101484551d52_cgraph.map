@@ -1,9 +1,0 @@
-<map id="He_ARC::rpg::Hero::walk" name="He_ARC::rpg::Hero::walk">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,172,107"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a722e192f7b19fa42e4d734e2e09ee1f1" title="Gets current position of hero. An offset variable has been added to account for different position if..." alt="" coords="220,5,360,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,77,209,51,210,56,132,82"/>
-<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a1825610716cbaf6702e4dde44b3e515a" title="Loads, animates and scales hero&#39;s texture." alt="" coords="220,72,360,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,91,205,91,205,96,172,96"/>
-<area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#ab7a7ea7d8a07a1cfd896f0abb9455eca" title="Sets position of current hero, taking into account frame sizes." alt="" coords="220,139,360,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="132,105,210,131,209,136,131,110"/>
-</map>

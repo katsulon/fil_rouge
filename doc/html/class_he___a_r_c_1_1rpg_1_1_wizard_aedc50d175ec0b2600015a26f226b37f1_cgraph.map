@@ -1,5 +1,0 @@
-<map id="He_ARC::rpg::Wizard::interact" name="He_ARC::rpg::Wizard::interact">
-<area shape="rect" id="Node000001" title="Wizard interaction with another hero." alt="" coords="5,5,152,48"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a06d47cdfb429e8f562c73dd94375ca7f" title=" " alt="" coords="200,5,340,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,24,185,24,185,29,152,29"/>
-</map>

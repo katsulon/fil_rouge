@@ -6,7 +6,7 @@
 
 namespace He_ARC::rpg {
     /**
-    * Base class for dialog boxes
+    * @brief Base class for dialog boxes
     * @author Elisa Goloviatinski
     * @version 1.0
     */

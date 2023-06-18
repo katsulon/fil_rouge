@@ -1,5 +1,0 @@
-<map id="He_ARC::rpg::Rogue::interact" name="He_ARC::rpg::Rogue::interact">
-<area shape="rect" id="Node000001" title="Rogue interaction with another hero." alt="" coords="5,5,148,48"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a06d47cdfb429e8f562c73dd94375ca7f" title=" " alt="" coords="196,5,336,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,24,181,24,181,29,148,29"/>
-</map>

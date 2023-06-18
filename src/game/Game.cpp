@@ -161,7 +161,7 @@ namespace He_ARC::rpg {
         viewWidth = view.getSize().x;
         viewHeight = view.getSize().y;
         view.setCenter(viewWidth/2, viewHeight/2);
-        interactionDialog.setPos(sf::Vector2f(0, viewHeight-interactionDialog.getSpriteSize().y));
+        interactionDialog.setPos(sf::Vector2f(0, guiView.getSize().y-interactionDialog.getSpriteSize().y));
 
         // loading tiles
         map.load("res/sprites/map/forest/Ground_Tileset.png", sf::Vector2u(16, 16), level, mapSize.x, mapSize.y);
@@ -278,6 +278,7 @@ namespace He_ARC::rpg {
         window.setView(view);
         guiView.setSize(sf::Vector2f(window.getSize()));
         guiView.setCenter(guiView.getSize() * 0.5f);
+        interactionDialog.setPos(sf::Vector2f(0, guiView.getSize().y-interactionDialog.getSpriteSize().y));
     }
 
     void Game::terminal() {
