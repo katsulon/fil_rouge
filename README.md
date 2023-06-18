@@ -45,7 +45,6 @@ More information about the classes and methods used can be found in the html fil
 - [x] Game Map
 - [x] Map Interaction
 - [x] Dialog boxes
-- [] Slightly improved code
 - [x] Documentation
 
 ## Dependencies

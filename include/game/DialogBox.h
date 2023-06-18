@@ -4,6 +4,8 @@
 #include <fstream>
 #include <sstream>
 
+using namespace std;
+
 namespace He_ARC::rpg {
     /**
     * @brief Base class for dialog boxes
@@ -124,6 +126,12 @@ namespace He_ARC::rpg {
                 setTextPos(pos);
             } 
 
+            /// @brief Whether to dialog box should be drawable or not.
+            /// @param condtion True if enabled, false otherwise.
+            void enable(bool condtion) {
+                enabled = condtion;
+            }
+
             /// @brief Sets position of text. Is used in setPos().
             /// @param pos Float position of text.
             void setTextPos(sf::Vector2f pos) {
@@ -137,53 +145,17 @@ namespace He_ARC::rpg {
                 sprite.setScale(size);
             }
 
-            /// @brief Sets source of new textfile to use.
-            /// @param _fileText Source of textfile.
-            void setTextFile(string _fileText) {
-                textList.clear();
-                dialog.open(_fileText);
-                while(getline(dialog, line) ) {  
-                    textList.push_back(line);
-                }
-                dialog.close();
-            }
-
-            /// @brief Sets current line of text.
-            /// @param _currentLine Current line of text.
-            void setLine(int _currentLine) {
-                try {
-                    if ((currentLine >= 0 && currentLine <= textList.size())) {
-                        currentLine = _currentLine;
-                    }
-                    else {
-                        throw "Nonvalid value";
-                    }
-                }
-                catch(const char* nonValid) {
-                    cout << nonValid << endl;
-                    currentLine = 0;
-                } 
-            }
-
             /// @brief Adds text to vector textList
             /// @param _text Text to add
             void appendText(string _text) {
                 textList.push_back(_text);
             }
 
-            /// @brief Whether to dialog box should be drawable or not.
-            /// @param condtion True if enabled, false otherwise.
-            void enable(bool condtion) {
-                enabled = condtion;
-            }
+            void setTextFile(string);
+            void setLine(int);
 
-            // Methods
+            // Method
 
-            /// @brief Draws dialog box's sprite and text on window.
-            /// @param window Window on which to draw.
-            void draw(sf::RenderWindow &window) {
-                window.draw(sprite);
-                window.draw(text);
-            }
+            void draw(sf::RenderWindow&);
     };
 }

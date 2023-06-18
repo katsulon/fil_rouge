@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Interactable.h"
+#include "game/Interactable.h"
 
 namespace He_ARC::rpg {
 /**

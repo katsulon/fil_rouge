@@ -10,8 +10,8 @@
 #include <vector>
 #include "hero/Hero.h"
 #include "hero/class/ClassImpl.h"
-#include "game/interactable/Interactable.h"
-#include "game/interactable/InteractableImpl.h"
+#include "Interactable.h"
+#include "interactable/InteractableImpl.h"
 #include "DialogBox.h"
 
 using namespace std;
