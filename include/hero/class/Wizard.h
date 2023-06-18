@@ -3,11 +3,16 @@
 #include "hero/Hero.h"
 
 namespace He_ARC::rpg {
+    /**
+    * @brief Derived class for wizards
+    * @author Elisa Goloviatinski
+    * @version 5.0
+    */
     class Wizard : public Hero {
         protected:
             int mana;
         public:
-            Wizard(int=3, int=7, int=10, int=100, int=2, Weapon *weapon=new Weapon(100, "Old Staff"), IObject *pObject=new Potion(10), string="Gandalf");
+            Wizard(int=100, int=2, Weapon *weapon=new Weapon(100, "Old Staff"), IObject *pObject=new Potion(10), string="Gandalf");
             int getMana() const { return mana; }
             void castSpell();
             void show() const override;

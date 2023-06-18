@@ -4,15 +4,11 @@ namespace He_ARC::rpg {
     // Constructors
 
     /// @brief Hero standard parameterized constructor
-    /// @param _strength Value of hero's strength
-    /// @param _agility Value of hero's agility
-    /// @param _intelligence Value of hero's intelligence
     /// @param _hp Value of hero's hit points
     /// @param _weapon Points to hero's right hand weapon
     /// @param _pObject Points to hero's left hand object
     /// @param _name Hero's name
-    Hero::Hero(int _strength, int _agility, int _intelligence, int _hp, Weapon *_weapon, IObject *_pObject, string _name) : 
-    strength(_strength), agility(_agility), intelligence(_intelligence), hp(_hp), name(_name), weapon(_weapon), pObject(_pObject) {}
+    Hero::Hero(int _hp, Weapon *_weapon, IObject *_pObject, string _name) : hp(_hp), name(_name), weapon(_weapon), pObject(_pObject) {}
 
     //Getters
 
@@ -29,30 +25,6 @@ namespace He_ARC::rpg {
 
     // Setters
 
-    /// @brief Sets value of heros's strength. If value below 0, sets it to 0.
-    /// @param strength Strength value of hero
-    void Hero::setStrength(int strength) {
-        if (strength > -1)
-            this->strength = strength;
-        else
-            this->strength = 0; 
-    }
-    /// @brief Sets value of heros's agility. If value below 0, sets it to 0.
-    /// @param agility Agility value of hero
-    void Hero::setAgility(int agility) {
-        if (agility > -1)
-            this->agility = agility;
-        else
-            this->agility = 0; 
-    }
-    /// @brief Sets value of heros's intelligence If value below 0, sets it to 0.
-    /// @param intelligence Intelligence value of hero
-    void Hero::setIntelligence(int intelligence) {
-        if (intelligence > -1)
-            this->intelligence = intelligence;
-        else
-            this->intelligence = 0; 
-    }
     /// @brief Sets value of heros's hit points. If value below 0, sets it to 0.
     /// @param hp Hit points value of hero
     void Hero::setHealth(int hp) {
@@ -163,11 +135,10 @@ namespace He_ARC::rpg {
         cout << "==========================" << endl;
         cout << "HERO          " << name << endl;
         cout << "==========================" << endl;
-        cout << "strength      " << strength << endl;
-        cout << "agility       " << agility << endl;
-        cout << "intelligence  " << intelligence << endl;
+        cout << "Speed         " << int(speed/100) << endl;
         cout << "HP            " << hp << endl;
-        cout <<  endl;
+        cout << "Top item      " << (backpack.isNotEmpty()? backpack.getStackTop()->getName() : "None") << endl;
+        cout <<  endl;  
     }
 
     /// @brief Method to allow overriding ostream in derived classes.
@@ -176,11 +147,10 @@ namespace He_ARC::rpg {
         cout << "==========================" << endl;
         cout << "HERO          " << name << endl;
         cout << "==========================" << endl;
-        cout << "strength      " << strength << endl;
-        cout << "agility       " << agility << endl;
-        cout << "intelligence  " << intelligence << endl;
+        cout << "speed         " << int(speed/100) << endl;
         cout << "HP            " << hp << endl;
-        cout <<  endl;
+        cout << "Top item      " << (backpack.isNotEmpty()? backpack.getStackTop()->getName() : "None") << endl;
+        cout <<  endl;  
     }
 
     /// @brief Shows hero's stats by overloading the "<<" operator.

@@ -5,4 +5,3 @@
 #include "Rogue.h"
 #include "Warrior.h"
 #include "Wizard.h"
-#include "wizard/Necromancer.h"

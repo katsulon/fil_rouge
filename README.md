@@ -3,7 +3,8 @@
 ## Description
 Mini project to apply concepts seen in class to an RPG written in C++.
 
-Follows a mini scenario. When the final music starts playing that means the game is "over".
+Control 1 of 3 selectable characters in a small interactable minimap.
+Follows a small scenario. When the final music starts playing that means the game is "over".
 If something seems to sticks out, chances are there's something to do, generally by interacting with it.
 
 If stuck here's the scenario:
@@ -12,7 +13,7 @@ If stuck here's the scenario:
 - Get item from chest
 - Activate bridge by interacting with the small rock
 - Give item to npc who will give you an item to destroy the boulder blocking the way
-- Interact with statue to get a sequence of colors. Interact with the lanterns of the corresponding color in the given sequence. If the given sequence is correct, starts playing end music. Interact can be slightly too sensitive sometimes.
+- Look at color sequence given by stone lanterns below platform. Interact with the lanterns of the corresponding color in the given sequence. If the given sequence is correct, starts playing end music. Interact can be slightly too sensitive sometimes. If so, sequence can be reset with the key <kbd>R</kbd>.
 
 ## Commands
 - <kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8594;</kbd>: Movement
@@ -22,6 +23,14 @@ If stuck here's the scenario:
 - <kbd>Esc</kbd>: Exit game
 
 Screen can be resized to your heart's content so long as it's bigger than 800x600 (will automatically resize to 800x600 otherwise).
+
+## Code features
+- Character movement and animation. Movement handled by Game class while animation by Hero class.
+- View movement that centers on the player in middle of screen. Stops being centered on hero if it hits edge of map.
+- Tilemap imported from an SFML tutorial. Gives ability to draw tile by tile by delimiting 4 corners of a square.
+- Collisions. If not an Interactable object, handled by Game class with the method Game::tileCollision. Otherwise method Interactable::tileCollision. Game::tileCollision checks whether next tile will be a collider and if so, sends back player to initial position. Interactable::tileCollision directly checks if player intersects with Interactable collider or not and if so sets player position to one of the sides of the collider depending on intersected side.
+- Dynamic resizable screen. By using sf::View view and defining an aspectRatio variable it is possible to resize for any resolution. Just like for view movement, makes sure to not get out of the edge of the map. (cf. Game::resizeView)
+- Dialog boxes. Need textfiles to display text. Can stay in same position according to screen and not map coordinates by using sf::View guiView rather than sf::View view.
 
 ## Project status
 - [x] General setup
@@ -39,7 +48,7 @@ Screen can be resized to your heart's content so long as it's bigger than 800x60
 
 ## Dependencies
 - **CMake**: for building the project. Minimum version 3.14 required.
-- **SFML 2.5.1**: multimedia API, used for graphics
+- **SFML 2.5.1**: multimedia API, used for graphics and audio
 
 ## Building the project
 Inside the build folder, after creating it:

@@ -226,7 +226,6 @@ namespace He_ARC::rpg {
         party.push_back(war1);
         party.push_back(rog1);
         party.push_back(wzd1);
-        party.push_back(ncm1);
 
         // tunnel bounds creation
         tunnelBounds.push_back(sf::FloatRect(7*16*4, 6*16*4, 4*16*4, 16*4));
@@ -287,35 +286,13 @@ namespace He_ARC::rpg {
         }
 
         war1->interact(*wzd1);
-        wzd1->interact(*ncm1);
+        wzd1->interact(*rog1);
         rog1->interact(*wzd1);
 
         wzd1->castSpell();
-        ncm1->castSpell();
-        ncm1->raiseUndeads();
 
         cout << "Staff damage: " << wzd1->getWeapon().getFeature() << endl;
         cout << wzd1->getLeftHandItem()->getName() << endl;
-        cout << ncm1->getLeftHandItem()->getName() << endl;
-
-        Weapon *wpn1 = new Weapon();
-        war1->backpack.pack(wpn1);
-        Weapon *wpn2 = new Weapon(20, "Nice Bass");
-        war1->backpack.pack(wpn2);
-        Weapon *wpn3 = new Weapon(5, "Stick");
-        war1->backpack.pack(wpn3);
-        Shield *shd1 = new Shield();
-        war1->backpack.pack(shd1);
-        Shield *shd2 = new Shield(1000, "Stovetop");
-        war1->backpack.pack(shd2);
-        Potion *pot1 = new Potion();
-        war1->backpack.pack(pot1);
-        Potion *pot2 = new Potion(1000, "Super extra wonderful delicious elixir");
-        war1->backpack.pack(pot2);
-        
-        while (war1->backpack.isNotEmpty()) {
-            delete war1->backpack.unPack();
-        }
     }
 
     void Game::changeCurrentHero(Hero *newHero) {
@@ -574,7 +551,7 @@ namespace He_ARC::rpg {
         }
         // Checks for collision on right side of map
         if ((currentHero->getPos().x+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.x*16*4) {
-            currentHeroPos.x = mapSize.x*16*4-currentHero->getFrameSize()-currentHero->getFrameSize()/2;
+            currentHeroPos.x = mapSize.x*16*4-currentHero->getFrameSize()-currentHero->getFrameSize()/2+16/4;
         }
         // Checks for collision on top of map
         if (currentHero->getPos().y < 0.f) {
@@ -582,7 +559,7 @@ namespace He_ARC::rpg {
         }
         // Checks for collision on bottom of map
         if ((currentHero->getPos().y+currentHero->getFrameSize()+currentHero->getFrameSize()/2) > mapSize.y*16*4 ) {
-            currentHeroPos.y = mapSize.y*16*4 - currentHero->getFrameSize()-currentHero->getFrameSize()/2;
+            currentHeroPos.y = mapSize.y*16*4 - currentHero->getFrameSize()-currentHero->getFrameSize()/2+16/4;
         }
 
         // View movement
@@ -647,14 +624,6 @@ namespace He_ARC::rpg {
     void Game::render() {
         window.clear();
 
-        // White rectangle for debug
-        /*sf::RectangleShape test;
-        test.setSize(sf::Vector2f(16*4,16*4));
-        test.setPosition(currentHero->getPos().x,currentHero->getPos().y);
-        test.setFillColor(sf::Color::Transparent);
-        test.setOutlineColor(sf::Color::White);
-        test.setOutlineThickness(1.f);
-        window.draw(test);*/
         // Render items
         window.draw(map);
         window.draw(mapWater);

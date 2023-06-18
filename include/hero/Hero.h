@@ -11,15 +11,12 @@ using namespace std;
 
 namespace He_ARC::rpg {
     /**
-    * @brief Base class for playable characters and combat NPC
+    * @brief Base class for playable characters
     * @author Elisa Goloviatinski
     * @version 5.0
     */
     class Hero {
     protected:
-        int strength = 0;
-        int agility = 0;
-        int intelligence = 0;
         int hp = 0;
         string name = "no_name";
         Weapon *weapon = nullptr;
@@ -44,14 +41,10 @@ namespace He_ARC::rpg {
     public:
         /// @brief Default constructor
         Hero() = default;
-        Hero(int, int, int, int, Weapon*, IObject*, string);
-        //Hero(const Hero&); //constructor by copy, not necessary
+        Hero(int, Weapon*, IObject*, string);
         Backpack backpack;
 
         // Getters
-        int getStrength() const { return strength; }
-        int getAgility() const { return agility; }
-        int getIntelligence() const { return intelligence; }
         int getHealth() const { return hp; }
         string getName() const { return name; }
         Weapon getWeapon() const { return *weapon; }
@@ -66,9 +59,6 @@ namespace He_ARC::rpg {
 
         // Setters
 
-        void setStrength(int);
-        void setAgility(int);
-        void setIntelligence(int);
         void setHealth(int);
         /// @brief Sets hero's name.
         /// @param name Hero's name
