@@ -5,7 +5,7 @@
 
 namespace He_ARC::rpg {
     /**
-    * Specific class for entities playing a note
+    * @brief Specific class for entities playing a note
     * @author Elisa Goloviatinski
     * @version 1.0
     */

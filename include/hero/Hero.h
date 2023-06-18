@@ -35,21 +35,34 @@ namespace He_ARC::rpg {
         string immobileTexture;
         string idleTexture;
         string walkTexture;
-        string attackTexture;
-        string gethurtTexture;
-        string knockoutTexture;
     public:
         /// @brief Default constructor
         Hero() = default;
         Hero(int, Weapon*, IObject*, string);
-        Backpack backpack;
+
+        // Static variable
+
+        static Backpack backpack;
 
         // Getters
+
+        /// @brief Gets current amount of hero's health.
+        /// @return Amount of health left.
         int getHealth() const { return hp; }
+        /// @brief Gets current hero name.
+        /// @return Hero's name.
         string getName() const { return name; }
+        /// @brief Gets hero's weapon (right hand item).
+        /// @return Held weapon.
         Weapon getWeapon() const { return *weapon; }
+        /// @brief Gets pointer to hero's item in left hand.
+        /// @return Item in left hand.
         IObject* getLeftHandItem() const { return pObject; }
+
         // SFML Getters
+        
+        /// @brief Gets texture
+        /// @return 
         sf::Texture& getTexture() { return texture; }
         sf::Sprite getSprite() const { return sprite; }
         int getFrameSize() const { return frameSize; }
@@ -81,13 +94,17 @@ namespace He_ARC::rpg {
         // SFML methods
         // Enums
 
-        enum state { Immobile, Idle, Move, Attack, Gethurt, Knockout };
+        // States for animation textures
+        enum state { Immobile, Idle, Move };
         state currentState = Immobile;
+
         void loadTexture(int, bool);
         void setPos(float, float);
         void walk(const float &, const float, const float, int);
         // Methods
 
+        /// @brief Pure virtual method that defined hero's response when interacting with another hero.
+        /// @param otherHero Reference to hero with which the current hero is interacting.
         virtual void interact(const Hero&) = 0;
         virtual void show() const;
         virtual void print(ostream& where) const;

@@ -13,9 +13,6 @@ namespace He_ARC::rpg {
         immobileTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac.png";
         idleTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_idle.png";
         walkTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_walk.png";
-        attackTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_attack.png";
-        gethurtTexture =  "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_gethurt.png";
-        knockoutTexture = "res/sprites/character/free_fighters/BEARZODIAC/bearzodiac_knockout.png";
     }
 
     /// @brief Warrior interaction with another hero

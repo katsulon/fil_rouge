@@ -1,6 +1,8 @@
 #include "hero/class/Wizard.h"
 
 namespace He_ARC::rpg {
+    // Constructor
+
     /// @brief Wizard standard parameterized constructor
     /// @param _hp Value of wizard's hit points
     /// @param _mana Value of wizard's mana points
@@ -14,6 +16,27 @@ namespace He_ARC::rpg {
         immobileTexture = "res/sprites/character/wizard/wizard.png";
         walkTexture = "res/sprites/character/wizard/wizard_walk.png";
     }
+
+    // Setter
+
+    /// @brief Sets value of wizard's mana. If value below 0, sets it to 0.
+    /// @param mana Hit points value of hero
+    void Wizard::setMana(int mana) {
+        try {
+            if (mana > -1) {
+                this->mana = mana;
+            }
+            else {
+                throw "Negative value";
+            }
+        }
+        catch(const char* negativeValue) {
+            cout << negativeValue << endl;
+            this->mana = 0;
+        }
+    }
+
+    // Methods
 
     /// @brief Basic wizard spell cast
     void Wizard::castSpell() {

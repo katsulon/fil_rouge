@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['walk_0',['walk',['../class_he___a_r_c_1_1rpg_1_1_hero.html#a3b47e59deed58ff22b8c101484551d52',1,'He_ARC::rpg::Hero']]],
-  ['warrior_1',['Warrior',['../class_he___a_r_c_1_1rpg_1_1_warrior.html#a9de57ead96463cf71ba626345247668c',1,'He_ARC::rpg::Warrior']]],
-  ['weapon_2',['Weapon',['../class_he___a_r_c_1_1rpg_1_1_weapon.html#aa5a6d3651954f1f2076dea3a55ee381d',1,'He_ARC::rpg::Weapon::Weapon(int=10, string=&quot;Rusty Sword&quot;)'],['../class_he___a_r_c_1_1rpg_1_1_weapon.html#af288a4e02f9ae301af25fd3ab27065a9',1,'He_ARC::rpg::Weapon::Weapon(const Weapon &amp;)']]],
-  ['wizard_3',['Wizard',['../class_he___a_r_c_1_1rpg_1_1_wizard.html#acac7b0a972caa5df234b849eb9d4bc78',1,'He_ARC::rpg::Wizard']]]
+  ['_7ebackpack_0',['~Backpack',['../class_he___a_r_c_1_1rpg_1_1_backpack.html#aace59cf9c31e5d19512dad997f3aac5f',1,'He_ARC::rpg::Backpack']]],
+  ['_7egame_1',['~Game',['../class_he___a_r_c_1_1rpg_1_1_game.html#ad18ddfde5295474082f41e3fe6db493c',1,'He_ARC::rpg::Game']]],
+  ['_7ehero_2',['~Hero',['../class_he___a_r_c_1_1rpg_1_1_hero.html#a281ad269bbe13c780dc73a2402d0e1bf',1,'He_ARC::rpg::Hero']]],
+  ['_7eiobject_3',['~IObject',['../class_he___a_r_c_1_1rpg_1_1_i_object.html#a1e05cb9ef9bff87cd1c743bf2b5ef52a',1,'He_ARC::rpg::IObject']]],
+  ['_7epotion_4',['~Potion',['../class_he___a_r_c_1_1rpg_1_1_potion.html#a9c7528bafcbef69289fa31cda998ba91',1,'He_ARC::rpg::Potion']]],
+  ['_7eweapon_5',['~Weapon',['../class_he___a_r_c_1_1rpg_1_1_weapon.html#aad3e98217ca3d2094b2285d2652ce6c9',1,'He_ARC::rpg::Weapon']]]
 ];

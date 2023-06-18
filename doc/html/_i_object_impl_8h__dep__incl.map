@@ -1,33 +1,28 @@
 <map id="C:/env/Cpp/goloviatinski_fil_rouge/include/hero/object/IObjectImpl.h" name="C:/env/Cpp/goloviatinski_fil_rouge/include/hero/object/IObjectImpl.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="233,5,391,64"/>
-<area shape="rect" id="Node000002" href="$_hero_8h.html" title=" " alt="" coords="216,112,408,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="314,79,314,112,309,112,309,79"/>
-<area shape="rect" id="Node000003" href="$_game_8h.html" title=" " alt="" coords="5,523,213,565"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,152,104,173,65,188,40,205,27,223,18,242,9,285,12,330,23,375,40,419,60,460,97,521,92,523,55,462,35,422,18,377,7,330,4,284,13,240,23,220,36,201,62,183,102,168,200,147"/>
-<area shape="rect" id="Node000005" href="$_rogue_8h.html" title=" " alt="" coords="50,203,208,261"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="261,164,185,204,182,200,258,160"/>
-<area shape="rect" id="Node000008" href="$_warrior_8h.html" title=" " alt="" coords="233,203,391,261"/>
-<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="314,169,314,202,309,202,309,169"/>
-<area shape="rect" id="Node000010" href="$_wizard_8h.html" title=" " alt="" coords="415,203,574,261"/>
-<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="365,160,441,200,439,204,362,164"/>
-<area shape="rect" id="Node000014" href="$_hero_8cpp.html" title=" " alt="" coords="597,211,781,253"/>
-<area shape="poly" id="edge17_Node000002_Node000014" title=" " alt="" coords="410,156,586,200,614,207,612,213,584,205,409,161"/>
-<area shape="rect" id="Node000004" href="$_game_8cpp.html" title=" " alt="" coords="10,613,208,656"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="112,580,112,613,106,613,106,580"/>
-<area shape="rect" id="Node000006" href="$_class_impl_8h.html" title=" " alt="" coords="174,416,332,475"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="73,273,56,290,43,310,34,340,36,352,43,366,69,393,102,413,138,427,174,435,173,440,136,432,100,418,66,398,39,370,31,354,29,339,39,308,52,287,69,269"/>
-<area shape="rect" id="Node000007" href="$_rogue_8cpp.html" title=" " alt="" coords="53,309,216,368"/>
-<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="134,276,136,309,130,309,129,276"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="200,485,141,524,139,520,197,481"/>
-<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="294,276,281,310,267,366,259,416,254,415,262,365,276,309,289,274"/>
-<area shape="rect" id="Node000009" href="$_warrior_8cpp.html" title=" " alt="" coords="291,309,453,368"/>
-<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="338,273,358,308,353,310,333,276"/>
-<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="498,276,490,324,481,348,467,370,438,395,404,414,368,428,333,437,332,432,367,423,402,410,435,391,463,366,476,346,485,323,493,276"/>
-<area shape="rect" id="Node000011" href="$_necromancer_8h.html" title=" " alt="" coords="528,309,717,368"/>
-<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="542,269,589,307,586,311,539,273"/>
-<area shape="rect" id="Node000013" href="$_wizard_8cpp.html" title=" " alt="" coords="741,309,904,368"/>
-<area shape="poly" id="edge16_Node000010_Node000013" title=" " alt="" coords="588,260,742,309,740,314,587,265"/>
-<area shape="poly" id="edge14_Node000011_Node000006" title=" " alt="" coords="514,373,334,424,332,419,512,368"/>
-<area shape="rect" id="Node000012" href="$_necromancer_8cpp.html" title=" " alt="" coords="538,416,707,475"/>
-<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="625,383,625,416,620,416,620,383"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="559,5,718,64"/>
+<area shape="rect" id="Node000002" href="$_hero_8h.html" title=" " alt="" coords="542,112,735,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="641,79,641,112,636,112,636,79"/>
+<area shape="rect" id="Node000003" href="$_game_8h.html" title=" " alt="" coords="411,416,618,459"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="694,161,715,179,731,201,753,247,764,287,764,307,759,327,737,370,713,394,684,412,652,425,619,433,618,427,650,419,681,407,709,390,732,366,754,325,758,307,758,288,748,248,727,204,711,183,691,165"/>
+<area shape="rect" id="Node000005" href="$_rogue_8h.html" title=" " alt="" coords="191,203,350,261"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="537,161,365,205,351,209,349,204,363,200,536,156"/>
+<area shape="rect" id="Node000008" href="$_warrior_8h.html" title=" " alt="" coords="375,203,534,261"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="587,164,510,204,508,200,585,160"/>
+<area shape="rect" id="Node000010" href="$_wizard_8h.html" title=" " alt="" coords="559,203,718,261"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="641,169,641,202,636,202,636,169"/>
+<area shape="rect" id="Node000012" href="$_hero_8cpp.html" title=" " alt="" coords="798,211,981,253"/>
+<area shape="poly" id="edge14_Node000002_Node000012" title=" " alt="" coords="707,158,836,208,835,213,705,163"/>
+<area shape="rect" id="Node000004" href="$_game_8cpp.html" title=" " alt="" coords="415,507,614,549"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="517,473,517,506,512,506,512,473"/>
+<area shape="rect" id="Node000006" href="$_class_impl_8h.html" title=" " alt="" coords="191,309,350,368"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="273,276,273,309,268,309,268,276"/>
+<area shape="rect" id="Node000007" href="$_rogue_8cpp.html" title=" " alt="" coords="5,309,168,368"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="209,271,138,311,135,307,206,267"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="357,371,463,413,461,418,355,376"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="393,271,322,311,319,307,390,267"/>
+<area shape="rect" id="Node000009" href="$_warrior_8cpp.html" title=" " alt="" coords="373,309,536,368"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="457,276,457,309,452,309,452,276"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="546,264,362,312,351,315,349,310,360,307,544,259"/>
+<area shape="rect" id="Node000011" href="$_wizard_8cpp.html" title=" " alt="" coords="560,309,722,368"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="642,276,643,309,638,309,637,276"/>
 </map>

@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['sfx_0',['sfx',['../class_he___a_r_c_1_1rpg_1_1_interactable.html#a0bff902f5ad617c53069f5201c4ec26c',1,'He_ARC::rpg::Interactable']]],
-  ['soundfile_1',['soundfile',['../class_he___a_r_c_1_1rpg_1_1_entity.html#aa9e13084d5724d20aec1431829e7756a',1,'He_ARC::rpg::Entity']]],
-  ['speed_2',['speed',['../class_he___a_r_c_1_1rpg_1_1_hero.html#af5539e92c325003c8d442a4c0f99a947',1,'He_ARC::rpg::Hero']]],
-  ['sprite_3',['sprite',['../class_he___a_r_c_1_1rpg_1_1_entity.html#af21cdf5ccccd5530398cca2cf4592910',1,'He_ARC::rpg::Entity::sprite'],['../class_he___a_r_c_1_1rpg_1_1_hero.html#a2a03a0a6b75b2ad28591fc82dfc89b52',1,'He_ARC::rpg::Hero::sprite']]],
-  ['stairs_4',['stairs',['../namespace_he___a_r_c_1_1rpg.html#ab915b804acce1d7d78430f65a648a572',1,'He_ARC::rpg']]],
-  ['stoneplatformsequence_5',['stonePlatformSequence',['../namespace_he___a_r_c_1_1rpg.html#a707b8db4b9c5b9ede394d5e8c3fc2b64',1,'He_ARC::rpg']]],
-  ['stonetileplatform_6',['stoneTilePlatform',['../namespace_he___a_r_c_1_1rpg.html#a1ec0d576410cf59962729f073a256baa',1,'He_ARC::rpg']]],
-  ['stonewallplatform_7',['stoneWallPlatform',['../namespace_he___a_r_c_1_1rpg.html#a1b0e61d907168211bcce98933f3ce72e',1,'He_ARC::rpg']]],
-  ['strength_8',['strength',['../class_he___a_r_c_1_1rpg_1_1_hero.html#a37cebe5cc60029c33781f8e6784c234f',1,'He_ARC::rpg::Hero']]]
+  ['texture_0',['texture',['../class_he___a_r_c_1_1rpg_1_1_entity.html#a9617f9745432c0dc5a7ab1aa75e70247',1,'He_ARC::rpg::Entity::texture'],['../class_he___a_r_c_1_1rpg_1_1_hero.html#a215b7115b4c7c377b7ca4dec6c4053c3',1,'He_ARC::rpg::Hero::texture']]],
+  ['texturesrc_1',['texturesrc',['../class_he___a_r_c_1_1rpg_1_1_entity.html#a2c0e2161e6708b704821c12b7b20b77d',1,'He_ARC::rpg::Entity']]],
+  ['tilewidth_2',['tileWidth',['../class_he___a_r_c_1_1rpg_1_1_interactable.html#a3db7f9ac998aa7cd3bcb19f0b127c6d8',1,'He_ARC::rpg::Interactable']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['potion_2ecpp_0',['Potion.cpp',['../_potion_8cpp.html',1,'']]],
-  ['potion_2eh_1',['Potion.h',['../_potion_8h.html',1,'']]]
+  ['rogue_2ecpp_0',['Rogue.cpp',['../_rogue_8cpp.html',1,'']]],
+  ['rogue_2eh_1',['Rogue.h',['../_rogue_8h.html',1,'']]]
 ];

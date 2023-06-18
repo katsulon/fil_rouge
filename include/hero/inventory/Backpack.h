@@ -5,7 +5,7 @@
 
 namespace He_ARC::rpg {
     /**
-    * Backpack class for storing inventory in a similar way to stacks
+    * @brief Backpack class for storing inventory in a similar way to stacks
     * @author Elisa Goloviatinski
     * @version 5.0
     */

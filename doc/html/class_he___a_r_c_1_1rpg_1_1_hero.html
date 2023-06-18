@@ -79,6 +79,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_he___a_r_c_1_1rpg_1_1_hero-members.html">List of all members</a>  </div>
@@ -86,7 +87,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Base class for playable characters and combat NPC.  
+<p>Base class for playable characters.  
  <a href="class_he___a_r_c_1_1rpg_1_1_hero.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_hero_8h_source.html">Hero.h</a>&gt;</code></p>
@@ -95,15 +96,13 @@ Inheritance diagram for He_ARC::rpg::Hero:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_he___a_r_c_1_1rpg_1_1_hero__inherit__graph.png" border="0" usemap="#a_he___a_r_c_1_1rpg_1_1_hero_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_he___a_r_c_1_1rpg_1_1_hero_inherit__map" id="a_he___a_r_c_1_1rpg_1_1_hero_inherit__map">
-<area shape="rect" title="Base class for playable characters and combat NPC." alt="" coords="235,5,407,1563"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_rogue.html" title=" " alt="" coords="5,1661,193,1848"/>
-<area shape="poly" title=" " alt="" coords="234,1176,123,1662,118,1661,229,1175"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_warrior.html" title=" " alt="" coords="218,1669,423,1840"/>
-<area shape="poly" title=" " alt="" coords="323,1577,323,1669,318,1669,318,1577"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_wizard.html" title=" " alt="" coords="448,1611,652,1899"/>
-<area shape="poly" title=" " alt="" coords="413,1162,519,1610,514,1611,407,1163"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_necromancer.html" title=" " alt="" coords="448,1947,652,2133"/>
-<area shape="poly" title=" " alt="" coords="553,1913,553,1947,547,1947,547,1913"/>
+<area shape="rect" title="Base class for playable characters." alt="" coords="232,5,409,1275"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_rogue.html" title="Derived class for rogues." alt="" coords="5,1384,193,1555"/>
+<area shape="poly" title=" " alt="" coords="231,987,124,1385,119,1384,226,986"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_warrior.html" title="Derived class for warriors." alt="" coords="218,1392,423,1547"/>
+<area shape="poly" title=" " alt="" coords="323,1288,323,1392,318,1392,318,1288"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_wizard.html" title="Derived class for wizards." alt="" coords="448,1323,647,1616"/>
+<area shape="poly" title=" " alt="" coords="416,978,510,1322,505,1324,411,979"/>
 </map>
 </div>
 <div class="dynheader">
@@ -111,28 +110,22 @@ Collaboration diagram for He_ARC::rpg::Hero:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_he___a_r_c_1_1rpg_1_1_hero__coll__graph.png" border="0" usemap="#a_he___a_r_c_1_1rpg_1_1_hero_coll__map" alt="Collaboration graph"/></div>
 <map name="a_he___a_r_c_1_1rpg_1_1_hero_coll__map" id="a_he___a_r_c_1_1rpg_1_1_hero_coll__map">
-<area shape="rect" title="Base class for playable characters and combat NPC." alt="" coords="145,577,317,2071"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_weapon.html" title=" " alt="" coords="143,215,319,513"/>
-<area shape="poly" title=" " alt="" coords="234,513,234,561,229,561,229,513"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_i_object.html" title=" " alt="" coords="5,5,153,165"/>
-<area shape="poly" title=" " alt="" coords="76,165,71,326,72,420,78,513,106,728,145,939,139,940,101,729,73,514,67,420,66,326,71,165"/>
+<area shape="rect" title="Base class for playable characters." alt="" coords="145,577,317,1783"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_weapon.html" title="Class for weapons." alt="" coords="143,215,319,513"/>
+<area shape="poly" title=" " alt="" coords="234,513,234,560,229,560,229,513"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_i_object.html" title="Object interface class." alt="" coords="5,5,153,165"/>
+<area shape="poly" title=" " alt="" coords="79,165,78,215,72,364,71,430,78,513,106,689,144,861,139,862,101,690,73,514,66,430,66,364,73,215,74,165"/>
 <area shape="poly" title=" " alt="" coords="132,177,152,214,148,216,127,179"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_backpack.html" title=" " alt="" coords="344,260,508,468"/>
-<area shape="poly" title=" " alt="" coords="408,468,323,883,318,882,403,467"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_backpack.html" title="Backpack class for storing inventory in a similar way to stacks." alt="" coords="344,260,508,468"/>
+<area shape="poly" title=" " alt="" coords="404,469,324,803,319,802,399,467"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a2d646cd6f7f76b530caac48f69f01264"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264">state</a> { <br />
-&#160;&#160;<a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264ac5515f3ce4fd054ad247b3122797a01b">Immobile</a>
+<tr class="memitem:a2d646cd6f7f76b530caac48f69f01264"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264">state</a> { <a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264ac5515f3ce4fd054ad247b3122797a01b">Immobile</a>
 , <a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264a116e9269bc80ca6f69c1b58f3d978b8b">Idle</a>
 , <a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264a5c1ca3436009af12fb93d1939a462f57">Move</a>
-, <a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264a43ef6b14af322538f542661a7b44d550">Attack</a>
-, <br />
-&#160;&#160;<a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264aa9c2d4945c2c026cc141bac035824f60">Gethurt</a>
-, <a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264a2fcebee2f40f8b1d20b99dfa8a692835">Knockout</a>
-<br />
  }</td></tr>
 <tr class="separator:a2d646cd6f7f76b530caac48f69f01264"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -141,24 +134,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a926d6a4d36891d282e6dc7f1ac10b026"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a926d6a4d36891d282e6dc7f1ac10b026">Hero</a> ()=default</td></tr>
 <tr class="memdesc:a926d6a4d36891d282e6dc7f1ac10b026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="separator:a926d6a4d36891d282e6dc7f1ac10b026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada644ed118027b660969c5a9352b4775"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#ada644ed118027b660969c5a9352b4775">Hero</a> (int, int, int, int, <a class="el" href="class_he___a_r_c_1_1rpg_1_1_weapon.html">Weapon</a> *, <a class="el" href="class_he___a_r_c_1_1rpg_1_1_i_object.html">IObject</a> *, string)</td></tr>
-<tr class="memdesc:ada644ed118027b660969c5a9352b4775"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC.">Hero</a> standard parameterized constructor.  <br /></td></tr>
-<tr class="separator:ada644ed118027b660969c5a9352b4775"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7605d9d42b2b985d17002bbba4c9061"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#af7605d9d42b2b985d17002bbba4c9061">getStrength</a> () const</td></tr>
-<tr class="separator:af7605d9d42b2b985d17002bbba4c9061"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9d9469dab688028c565ce7154de9749"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#ad9d9469dab688028c565ce7154de9749">getAgility</a> () const</td></tr>
-<tr class="separator:ad9d9469dab688028c565ce7154de9749"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbbcee16c30bc7d149b4e453db59749c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#adbbcee16c30bc7d149b4e453db59749c">getIntelligence</a> () const</td></tr>
-<tr class="separator:adbbcee16c30bc7d149b4e453db59749c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643c7f051cfd494f1f994761844b1599"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a643c7f051cfd494f1f994761844b1599">Hero</a> (int, <a class="el" href="class_he___a_r_c_1_1rpg_1_1_weapon.html">Weapon</a> *, <a class="el" href="class_he___a_r_c_1_1rpg_1_1_i_object.html">IObject</a> *, string)</td></tr>
+<tr class="memdesc:a643c7f051cfd494f1f994761844b1599"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters.">Hero</a> standard parameterized constructor.  <br /></td></tr>
+<tr class="separator:a643c7f051cfd494f1f994761844b1599"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a059b5731ebf59d7f959c79dfd3ad2fc0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a059b5731ebf59d7f959c79dfd3ad2fc0">getHealth</a> () const</td></tr>
+<tr class="memdesc:a059b5731ebf59d7f959c79dfd3ad2fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current amount of hero's health.  <br /></td></tr>
 <tr class="separator:a059b5731ebf59d7f959c79dfd3ad2fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06d47cdfb429e8f562c73dd94375ca7f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a06d47cdfb429e8f562c73dd94375ca7f">getName</a> () const</td></tr>
+<tr class="memdesc:a06d47cdfb429e8f562c73dd94375ca7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current hero name.  <br /></td></tr>
 <tr class="separator:a06d47cdfb429e8f562c73dd94375ca7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94660b64092c71dc2e98e8b27c1c7efa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_weapon.html">Weapon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a94660b64092c71dc2e98e8b27c1c7efa">getWeapon</a> () const</td></tr>
+<tr class="memdesc:a94660b64092c71dc2e98e8b27c1c7efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets hero's weapon (right hand item).  <br /></td></tr>
 <tr class="separator:a94660b64092c71dc2e98e8b27c1c7efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a155de3b4a07fcbec2ce28adbd80a7049"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_i_object.html">IObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a155de3b4a07fcbec2ce28adbd80a7049">getLeftHandItem</a> () const</td></tr>
+<tr class="memdesc:a155de3b4a07fcbec2ce28adbd80a7049"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets pointer to hero's item in left hand.  <br /></td></tr>
 <tr class="separator:a155de3b4a07fcbec2ce28adbd80a7049"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af00bf33fa51d546db6d2f8ae29f79915"><td class="memItemLeft" align="right" valign="top">sf::Texture &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#af00bf33fa51d546db6d2f8ae29f79915">getTexture</a> ()</td></tr>
+<tr class="memdesc:af00bf33fa51d546db6d2f8ae29f79915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets texture.  <br /></td></tr>
 <tr class="separator:af00bf33fa51d546db6d2f8ae29f79915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26da5a19ef5868839f8a433cea06ae57"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a26da5a19ef5868839f8a433cea06ae57">getSprite</a> () const</td></tr>
 <tr class="separator:a26da5a19ef5868839f8a433cea06ae57"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,15 +163,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a722e192f7b19fa42e4d734e2e09ee1f1"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a722e192f7b19fa42e4d734e2e09ee1f1">getPos</a> () const</td></tr>
 <tr class="memdesc:a722e192f7b19fa42e4d734e2e09ee1f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current position of hero. An offset variable has been added to account for different position if hero's sprite has been flipped.  <br /></td></tr>
 <tr class="separator:a722e192f7b19fa42e4d734e2e09ee1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bf0328c667d55068b544c0d8c9b1b94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2bf0328c667d55068b544c0d8c9b1b94">setStrength</a> (int)</td></tr>
-<tr class="memdesc:a2bf0328c667d55068b544c0d8c9b1b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets value of heros's strength. If value below 0, sets it to 0.  <br /></td></tr>
-<tr class="separator:a2bf0328c667d55068b544c0d8c9b1b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abef16ea646cbaca88bb1285f6e2b2b20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#abef16ea646cbaca88bb1285f6e2b2b20">setAgility</a> (int)</td></tr>
-<tr class="memdesc:abef16ea646cbaca88bb1285f6e2b2b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets value of heros's agility. If value below 0, sets it to 0.  <br /></td></tr>
-<tr class="separator:abef16ea646cbaca88bb1285f6e2b2b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ddfc1d4a899ea9d0e3081a46647f9c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a1ddfc1d4a899ea9d0e3081a46647f9c9">setIntelligence</a> (int)</td></tr>
-<tr class="memdesc:a1ddfc1d4a899ea9d0e3081a46647f9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets value of heros's intelligence If value below 0, sets it to 0.  <br /></td></tr>
-<tr class="separator:a1ddfc1d4a899ea9d0e3081a46647f9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7beab3ea35d76b3228b3673ca50b59cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a7beab3ea35d76b3228b3673ca50b59cf">setHealth</a> (int)</td></tr>
 <tr class="memdesc:a7beab3ea35d76b3228b3673ca50b59cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets value of heros's hit points. If value below 0, sets it to 0.  <br /></td></tr>
 <tr class="separator:a7beab3ea35d76b3228b3673ca50b59cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,8 +188,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab7a7ea7d8a07a1cfd896f0abb9455eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets position of current hero, taking into account frame sizes.  <br /></td></tr>
 <tr class="separator:ab7a7ea7d8a07a1cfd896f0abb9455eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b47e59deed58ff22b8c101484551d52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a3b47e59deed58ff22b8c101484551d52">walk</a> (const float &amp;, const float, const float, int)</td></tr>
+<tr class="memdesc:a3b47e59deed58ff22b8c101484551d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for updating hero textures and speed when moving.  <br /></td></tr>
 <tr class="separator:a3b47e59deed58ff22b8c101484551d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2d7b04f6db8c9b4e503f1db55913e08"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#ab2d7b04f6db8c9b4e503f1db55913e08">interact</a> (const <a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html">Hero</a> &amp;)=0</td></tr>
+<tr class="memdesc:ab2d7b04f6db8c9b4e503f1db55913e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method that defined hero's response when interacting with another hero.  <br /></td></tr>
 <tr class="separator:ab2d7b04f6db8c9b4e503f1db55913e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f18e9550dba0ffa92f0c26c7a3e366e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a6f18e9550dba0ffa92f0c26c7a3e366e">show</a> () const</td></tr>
 <tr class="memdesc:a6f18e9550dba0ffa92f0c26c7a3e366e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to show hero's stats.  <br /></td></tr>
@@ -215,24 +200,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7ac91fcfa66fa7c0cd40cc620de15d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to allow overriding ostream in derived classes.  <br /></td></tr>
 <tr class="separator:a7ac91fcfa66fa7c0cd40cc620de15d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a281ad269bbe13c780dc73a2402d0e1bf"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a281ad269bbe13c780dc73a2402d0e1bf">~Hero</a> ()</td></tr>
-<tr class="memdesc:a281ad269bbe13c780dc73a2402d0e1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC.">Hero</a> deconstructor. Deletes pointers to right hand weapon and left hand objet.  <br /></td></tr>
+<tr class="memdesc:a281ad269bbe13c780dc73a2402d0e1bf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters.">Hero</a> deconstructor. Deletes pointers to right hand weapon and left hand objet as well as the contents of backpack.  <br /></td></tr>
 <tr class="separator:a281ad269bbe13c780dc73a2402d0e1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac4456f093b2f6f2f3cda552f650f153d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_backpack.html">Backpack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#ac4456f093b2f6f2f3cda552f650f153d">backpack</a></td></tr>
-<tr class="separator:ac4456f093b2f6f2f3cda552f650f153d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59f57cfb6e71d52084ff89d6ee12a283"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264">state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a59f57cfb6e71d52084ff89d6ee12a283">currentState</a> = <a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a2d646cd6f7f76b530caac48f69f01264ac5515f3ce4fd054ad247b3122797a01b">Immobile</a></td></tr>
 <tr class="separator:a59f57cfb6e71d52084ff89d6ee12a283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ac4456f093b2f6f2f3cda552f650f153d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_he___a_r_c_1_1rpg_1_1_backpack.html">Backpack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#ac4456f093b2f6f2f3cda552f650f153d">backpack</a></td></tr>
+<tr class="separator:ac4456f093b2f6f2f3cda552f650f153d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a37cebe5cc60029c33781f8e6784c234f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a37cebe5cc60029c33781f8e6784c234f">strength</a> = 0</td></tr>
-<tr class="separator:a37cebe5cc60029c33781f8e6784c234f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27b3523c3d680e71521eaab852ce7a7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a27b3523c3d680e71521eaab852ce7a7f">agility</a> = 0</td></tr>
-<tr class="separator:a27b3523c3d680e71521eaab852ce7a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79e66765814c4ecb3984918c45226959"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a79e66765814c4ecb3984918c45226959">intelligence</a> = 0</td></tr>
-<tr class="separator:a79e66765814c4ecb3984918c45226959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae851daf456fcba4cfea27ea7e04d2c2f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#ae851daf456fcba4cfea27ea7e04d2c2f">hp</a> = 0</td></tr>
 <tr class="separator:ae851daf456fcba4cfea27ea7e04d2c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bcd67e2463b78bb3377fa47596b5c5a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a6bcd67e2463b78bb3377fa47596b5c5a">name</a> = &quot;no_name&quot;</td></tr>
@@ -267,12 +249,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:adfb82660580c722fce3754dfd48be841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05f5edb0f9e0b022928505aeb0922584"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a05f5edb0f9e0b022928505aeb0922584">walkTexture</a></td></tr>
 <tr class="separator:a05f5edb0f9e0b022928505aeb0922584"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a088202e6e73ec199e782b286e7ff6228"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a088202e6e73ec199e782b286e7ff6228">attackTexture</a></td></tr>
-<tr class="separator:a088202e6e73ec199e782b286e7ff6228"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5ab0e012de71c298ddc119880e261c9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#af5ab0e012de71c298ddc119880e261c9">gethurtTexture</a></td></tr>
-<tr class="separator:af5ab0e012de71c298ddc119880e261c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09342b9058d62ce9aa6d8927f518bbae"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html#a09342b9058d62ce9aa6d8927f518bbae">knockoutTexture</a></td></tr>
-<tr class="separator:a09342b9058d62ce9aa6d8927f518bbae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -281,7 +257,7 @@ Friends</h2></td></tr>
 <tr class="separator:a6d3e38e84b0b06aefa3320bf3aef615f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class for playable characters and combat NPC. </p>
+<div class="textblock"><p>Base class for playable characters. </p>
 <dl class="section author"><dt>Author</dt><dd>Elisa Goloviatinski </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>5.0 </dd></dl>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
@@ -300,9 +276,6 @@ Friends</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2d646cd6f7f76b530caac48f69f01264ac5515f3ce4fd054ad247b3122797a01b" name="a2d646cd6f7f76b530caac48f69f01264ac5515f3ce4fd054ad247b3122797a01b"></a>Immobile&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2d646cd6f7f76b530caac48f69f01264a116e9269bc80ca6f69c1b58f3d978b8b" name="a2d646cd6f7f76b530caac48f69f01264a116e9269bc80ca6f69c1b58f3d978b8b"></a>Idle&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2d646cd6f7f76b530caac48f69f01264a5c1ca3436009af12fb93d1939a462f57" name="a2d646cd6f7f76b530caac48f69f01264a5c1ca3436009af12fb93d1939a462f57"></a>Move&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2d646cd6f7f76b530caac48f69f01264a43ef6b14af322538f542661a7b44d550" name="a2d646cd6f7f76b530caac48f69f01264a43ef6b14af322538f542661a7b44d550"></a>Attack&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2d646cd6f7f76b530caac48f69f01264aa9c2d4945c2c026cc141bac035824f60" name="a2d646cd6f7f76b530caac48f69f01264aa9c2d4945c2c026cc141bac035824f60"></a>Gethurt&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2d646cd6f7f76b530caac48f69f01264a2fcebee2f40f8b1d20b99dfa8a692835" name="a2d646cd6f7f76b530caac48f69f01264a2fcebee2f40f8b1d20b99dfa8a692835"></a>Knockout&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -335,8 +308,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ada644ed118027b660969c5a9352b4775" name="ada644ed118027b660969c5a9352b4775"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada644ed118027b660969c5a9352b4775">&#9670;&#160;</a></span>Hero() <span class="overload">[2/2]</span></h2>
+<a id="a643c7f051cfd494f1f994761844b1599" name="a643c7f051cfd494f1f994761844b1599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a643c7f051cfd494f1f994761844b1599">&#9670;&#160;</a></span>Hero() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,24 +317,6 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">He_ARC::rpg::Hero::Hero </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_strength</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_agility</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_intelligence</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>_hp</em>, </td>
         </tr>
@@ -391,16 +346,13 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC.">Hero</a> standard parameterized constructor. </p>
+<p><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters.">Hero</a> standard parameterized constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">_strength</td><td>Value of hero's strength </td></tr>
-    <tr><td class="paramname">_agility</td><td>Value of hero's agility </td></tr>
-    <tr><td class="paramname">_intelligence</td><td>Value of hero's intelligence </td></tr>
     <tr><td class="paramname">_hp</td><td>Value of hero's hit points </td></tr>
     <tr><td class="paramname">_weapon</td><td>Points to hero's right hand weapon </td></tr>
     <tr><td class="paramname">_pObject</td><td>Points to hero's left hand object </td></tr>
-    <tr><td class="paramname">_name</td><td><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC.">Hero</a>'s name </td></tr>
+    <tr><td class="paramname">_name</td><td><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters.">Hero</a>'s name </td></tr>
   </table>
   </dd>
 </dl>
@@ -430,36 +382,11 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC.">Hero</a> deconstructor. Deletes pointers to right hand weapon and left hand objet. </p>
+<p><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters.">Hero</a> deconstructor. Deletes pointers to right hand weapon and left hand objet as well as the contents of backpack. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad9d9469dab688028c565ce7154de9749" name="ad9d9469dab688028c565ce7154de9749"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9d9469dab688028c565ce7154de9749">&#9670;&#160;</a></span>getAgility()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int He_ARC::rpg::Hero::getAgility </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="acbab2bea710e72a312cbddc1d287b531" name="acbab2bea710e72a312cbddc1d287b531"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbab2bea710e72a312cbddc1d287b531">&#9670;&#160;</a></span>getFrameSize()</h2>
 
@@ -508,30 +435,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="adbbcee16c30bc7d149b4e453db59749c" name="adbbcee16c30bc7d149b4e453db59749c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbbcee16c30bc7d149b4e453db59749c">&#9670;&#160;</a></span>getIntelligence()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int He_ARC::rpg::Hero::getIntelligence </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Gets current amount of hero's health. </p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of health left. </dd></dl>
 
 </div>
 </div>
@@ -558,6 +463,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets pointer to hero's item in left hand. </p>
+<dl class="section return"><dt>Returns</dt><dd>Item in left hand. </dd></dl>
+
 </div>
 </div>
 <a id="a06d47cdfb429e8f562c73dd94375ca7f" name="a06d47cdfb429e8f562c73dd94375ca7f"></a>
@@ -582,6 +490,9 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets current hero name. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters.">Hero</a>'s name. </dd></dl>
 
 </div>
 </div>
@@ -680,31 +591,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="af7605d9d42b2b985d17002bbba4c9061" name="af7605d9d42b2b985d17002bbba4c9061"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7605d9d42b2b985d17002bbba4c9061">&#9670;&#160;</a></span>getStrength()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int He_ARC::rpg::Hero::getStrength </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="af00bf33fa51d546db6d2f8ae29f79915" name="af00bf33fa51d546db6d2f8ae29f79915"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af00bf33fa51d546db6d2f8ae29f79915">&#9670;&#160;</a></span>getTexture()</h2>
 
@@ -727,6 +613,10 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets texture. </p>
+<dl class="section return"><dt>Returns</dt><dd><br  />
+ </dd></dl>
 
 </div>
 </div>
@@ -753,6 +643,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Gets hero's weapon (right hand item). </p>
+<dl class="section return"><dt>Returns</dt><dd>Held weapon. </dd></dl>
+
 </div>
 </div>
 <a id="ab2d7b04f6db8c9b4e503f1db55913e08" name="ab2d7b04f6db8c9b4e503f1db55913e08"></a>
@@ -778,6 +671,14 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Pure virtual method that defined hero's response when interacting with another hero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">otherHero</td><td>Reference to hero with which the current hero is interacting. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_he___a_r_c_1_1rpg_1_1_rogue.html#ac0fd8ad481f57c6e8c0fb54d420b93f0">He_ARC::rpg::Rogue</a>, <a class="el" href="class_he___a_r_c_1_1rpg_1_1_warrior.html#a8a7254232f38d9f45820b896f22dcd68">He_ARC::rpg::Warrior</a>, and <a class="el" href="class_he___a_r_c_1_1rpg_1_1_wizard.html#aedc50d175ec0b2600015a26f226b37f1">He_ARC::rpg::Wizard</a>.</p>
 
@@ -856,32 +757,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="abef16ea646cbaca88bb1285f6e2b2b20" name="abef16ea646cbaca88bb1285f6e2b2b20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abef16ea646cbaca88bb1285f6e2b2b20">&#9670;&#160;</a></span>setAgility()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void He_ARC::rpg::Hero::setAgility </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>agility</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets value of heros's agility. If value below 0, sets it to 0. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">agility</td><td>Agility value of hero </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a7beab3ea35d76b3228b3673ca50b59cf" name="a7beab3ea35d76b3228b3673ca50b59cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7beab3ea35d76b3228b3673ca50b59cf">&#9670;&#160;</a></span>setHealth()</h2>
 
@@ -902,32 +777,6 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hp</td><td>Hit points value of hero </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1ddfc1d4a899ea9d0e3081a46647f9c9" name="a1ddfc1d4a899ea9d0e3081a46647f9c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ddfc1d4a899ea9d0e3081a46647f9c9">&#9670;&#160;</a></span>setIntelligence()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void He_ARC::rpg::Hero::setIntelligence </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>intelligence</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets value of heros's intelligence If value below 0, sets it to 0. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">intelligence</td><td>Intelligence value of hero </td></tr>
   </table>
   </dd>
 </dl>
@@ -995,7 +844,7 @@ Friends</h2></td></tr>
 <p>Sets hero's name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC.">Hero</a>'s name </td></tr>
+    <tr><td class="paramname">name</td><td><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters.">Hero</a>'s name </td></tr>
   </table>
   </dd>
 </dl>
@@ -1107,32 +956,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a2bf0328c667d55068b544c0d8c9b1b94" name="a2bf0328c667d55068b544c0d8c9b1b94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bf0328c667d55068b544c0d8c9b1b94">&#9670;&#160;</a></span>setStrength()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void He_ARC::rpg::Hero::setStrength </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>strength</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets value of heros's strength. If value below 0, sets it to 0. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">strength</td><td>Strength value of hero </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a835b8bcd5b5faf74a0518774ca16ff72" name="a835b8bcd5b5faf74a0518774ca16ff72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a835b8bcd5b5faf74a0518774ca16ff72">&#9670;&#160;</a></span>setWeapon()</h2>
 
@@ -1234,6 +1057,17 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Method for updating hero textures and speed when moving. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Delta time </td></tr>
+    <tr><td class="paramname">dir_x</td><td>X-direction of velocity </td></tr>
+    <tr><td class="paramname">dir_y</td><td>Y-direction of velocity </td></tr>
+    <tr><td class="paramname">frameRate</td><td><a class="el" href="class_he___a_r_c_1_1rpg_1_1_game.html" title="Class for game loop.">Game</a> framerate </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
@@ -1275,7 +1109,7 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td>Ostream </td></tr>
-    <tr><td class="paramname">hero</td><td><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC.">Hero</a> whose stats are to be shown </td></tr>
+    <tr><td class="paramname">hero</td><td><a class="el" href="class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters.">Hero</a> whose stats are to be shown </td></tr>
   </table>
   </dd>
 </dl>
@@ -1284,28 +1118,6 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a27b3523c3d680e71521eaab852ce7a7f" name="a27b3523c3d680e71521eaab852ce7a7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27b3523c3d680e71521eaab852ce7a7f">&#9670;&#160;</a></span>agility</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int He_ARC::rpg::Hero::agility = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a238281356b5cfec02f84c2d591bad976" name="a238281356b5cfec02f84c2d591bad976"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a238281356b5cfec02f84c2d591bad976">&#9670;&#160;</a></span>animFrame</h2>
 
@@ -1328,8 +1140,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a088202e6e73ec199e782b286e7ff6228" name="a088202e6e73ec199e782b286e7ff6228"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a088202e6e73ec199e782b286e7ff6228">&#9670;&#160;</a></span>attackTexture</h2>
+<a id="ac4456f093b2f6f2f3cda552f650f153d" name="ac4456f093b2f6f2f3cda552f650f153d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4456f093b2f6f2f3cda552f650f153d">&#9670;&#160;</a></span>backpack</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1338,28 +1150,14 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string He_ARC::rpg::Hero::attackTexture</td>
+          <td class="memname"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_backpack.html">Backpack</a> He_ARC::rpg::Hero::backpack</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac4456f093b2f6f2f3cda552f650f153d" name="ac4456f093b2f6f2f3cda552f650f153d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4456f093b2f6f2f3cda552f650f153d">&#9670;&#160;</a></span>backpack</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_backpack.html">Backpack</a> He_ARC::rpg::Hero::backpack</td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>
@@ -1466,28 +1264,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="af5ab0e012de71c298ddc119880e261c9" name="af5ab0e012de71c298ddc119880e261c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5ab0e012de71c298ddc119880e261c9">&#9670;&#160;</a></span>gethurtTexture</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string He_ARC::rpg::Hero::gethurtTexture</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae851daf456fcba4cfea27ea7e04d2c2f" name="ae851daf456fcba4cfea27ea7e04d2c2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae851daf456fcba4cfea27ea7e04d2c2f">&#9670;&#160;</a></span>hp</h2>
 
@@ -1543,50 +1319,6 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">string He_ARC::rpg::Hero::immobileTexture</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a79e66765814c4ecb3984918c45226959" name="a79e66765814c4ecb3984918c45226959"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79e66765814c4ecb3984918c45226959">&#9670;&#160;</a></span>intelligence</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int He_ARC::rpg::Hero::intelligence = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a09342b9058d62ce9aa6d8927f518bbae" name="a09342b9058d62ce9aa6d8927f518bbae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09342b9058d62ce9aa6d8927f518bbae">&#9670;&#160;</a></span>knockoutTexture</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string He_ARC::rpg::Hero::knockoutTexture</td>
         </tr>
       </table>
   </td>
@@ -1675,28 +1407,6 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">sf::Sprite He_ARC::rpg::Hero::sprite</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a37cebe5cc60029c33781f8e6784c234f" name="a37cebe5cc60029c33781f8e6784c234f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37cebe5cc60029c33781f8e6784c234f">&#9670;&#160;</a></span>strength</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int He_ARC::rpg::Hero::strength = 0</td>
         </tr>
       </table>
   </td>

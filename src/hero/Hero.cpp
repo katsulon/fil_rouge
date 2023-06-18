@@ -10,6 +10,8 @@ namespace He_ARC::rpg {
     /// @param _name Hero's name
     Hero::Hero(int _hp, Weapon *_weapon, IObject *_pObject, string _name) : hp(_hp), name(_name), weapon(_weapon), pObject(_pObject) {}
 
+    Backpack Hero::backpack;
+
     //Getters
 
     /// @brief Gets current position of hero. An offset variable has been added to account for different position if hero's sprite has been flipped.
@@ -28,10 +30,18 @@ namespace He_ARC::rpg {
     /// @brief Sets value of heros's hit points. If value below 0, sets it to 0.
     /// @param hp Hit points value of hero
     void Hero::setHealth(int hp) {
-        if (hp > -1)
-            this->hp = hp;
-        else
-            this->hp = 0; 
+        try {
+            if (hp > -1) {
+                this->hp = hp;
+            }
+            else {
+                throw "Negative value";
+            }
+        }
+        catch(const char* negativeValue) {
+            cout << negativeValue << endl;
+            this->hp = 0;
+        }
     }
     // SFML setters
 
@@ -49,15 +59,6 @@ namespace He_ARC::rpg {
                 break;
             case Move:
                 srcTexture = walkTexture;
-                break;
-            case Attack:
-                srcTexture = attackTexture;
-                break;
-            case Gethurt:
-                srcTexture = gethurtTexture;
-                break;
-            case Knockout:
-                srcTexture = knockoutTexture;
                 break;
         }
         texture.loadFromFile(srcTexture);
@@ -103,6 +104,11 @@ namespace He_ARC::rpg {
 
     // Methods
     
+    /// @brief Method for updating hero textures and speed when moving
+    /// @param dt Delta time
+    /// @param dir_x X-direction of velocity
+    /// @param dir_y Y-direction of velocity
+    /// @param frameRate Game framerate
     void Hero::walk(float const& dt, const float dir_x, const float dir_y, int frameRate) {
         float currentX = getPos().x;
         float currentY = getPos().y;
@@ -162,7 +168,7 @@ namespace He_ARC::rpg {
         return s;
     }
 
-    /// @brief Hero deconstructor. Deletes pointers to right hand weapon and left hand objet.
+    /// @brief Hero deconstructor. Deletes pointers to right hand weapon and left hand objet as well as the contents of backpack.
     Hero::~Hero() {
         delete weapon;
         delete pObject;

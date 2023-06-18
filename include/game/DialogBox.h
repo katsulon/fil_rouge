@@ -77,6 +77,7 @@ namespace He_ARC::rpg {
             /// @return If not all lines exhasuted returns true otherwise false.
             bool getNext() {
                 if (currentLine < textList.size()) {
+                    // wraps text if too big to fit inside of textbox
                     stringstream words(textList[currentLine]);
                     string word;
                     string line;
@@ -164,6 +165,8 @@ namespace He_ARC::rpg {
                 } 
             }
 
+            /// @brief Adds text to vector textList
+            /// @param _text Text to add
             void appendText(string _text) {
                 textList.push_back(_text);
             }

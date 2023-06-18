@@ -1,5 +1,5 @@
 <map id="He_ARC::rpg::TileMap" name="He_ARC::rpg::TileMap">
-<area shape="rect" id="Node000001" title=" " alt="" coords="19,123,198,256"/>
+<area shape="rect" id="Node000001" title="Class for a tile&#45;based game map." alt="" coords="19,123,198,256"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,89,75"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,87,84,122,79,124,64,89"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="114,5,226,75"/>

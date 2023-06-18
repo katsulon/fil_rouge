@@ -2,12 +2,14 @@
 
 namespace He_ARC::rpg {
     /**
-    * Class for tile-based game map.
+    * @brief Class for a tile-based game map.
     * @author SFML tutorial, tile map example
     */
     class TileMap : public sf::Drawable, public sf::Transformable {
     private:
-
+        /// @brief Tells how to draw tilemap.
+        /// @param target Tiles vertex array.
+        /// @param states Texture of tileset.
         virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
         {
             // apply the transform
@@ -23,7 +25,13 @@ namespace He_ARC::rpg {
         sf::VertexArray m_vertices;
         sf::Texture m_tileset;
     public:
-
+        /// @brief Loads texture and delimits in into small squares.
+        /// @param tileset Source of texture.
+        /// @param tileSize Size of tile.
+        /// @param tiles Array of tiles to which we want to map.
+        /// @param width Width of tilemap.
+        /// @param height Height of tilemap.
+        /// @return If managed to load texture true, otherwise false.
         bool load(const std::string& tileset, sf::Vector2u tileSize, const int* tiles, unsigned int width, unsigned int height)
         {
             // load the tileset texture

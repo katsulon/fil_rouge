@@ -1,9 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_he___a_r_c_1_1rpg_1_1_i_object.html" title=" " alt="" coords="5,56,152,83"/>
-<area shape="rect" id="Node000001" href="$class_he___a_r_c_1_1rpg_1_1_potion.html" title=" " alt="" coords="205,5,348,32"/>
-<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="147,49,221,30,222,35,149,54"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_shield.html" title=" " alt="" coords="206,56,347,83"/>
-<area shape="poly" id="edge10_Node000000_Node000002" title=" " alt="" coords="166,67,205,67,205,72,166,72"/>
-<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html" title=" " alt="" coords="200,107,353,133"/>
-<area shape="poly" id="edge11_Node000000_Node000003" title=" " alt="" coords="149,84,222,103,221,109,147,90"/>
+<area shape="rect" id="Node000000" href="$class_he___a_r_c_1_1rpg_1_1_i_object.html" title="Object interface class." alt="" coords="5,31,152,57"/>
+<area shape="rect" id="Node000001" href="$class_he___a_r_c_1_1rpg_1_1_potion.html" title="Class for potions." alt="" coords="205,5,348,32"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="166,30,205,25,205,30,167,35"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html" title="Class for weapons." alt="" coords="200,56,353,83"/>
+<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="167,53,200,57,199,62,166,58"/>
 </map>

@@ -7,7 +7,7 @@ namespace He_ARC::rpg {
     enum Notes { D, Eb, F, G };
 
     /**
-    * Specific class for Interactables playing a note
+    * @brief Specific class for interactables playing a note
     * @author Elisa Goloviatinski
     * @version 1.0
     */

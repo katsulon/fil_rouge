@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['ypos_0',['yPos',['../class_he___a_r_c_1_1rpg_1_1_hero.html#aa0c5fc4c2ab9725fe1b109d1c9beb25c',1,'He_ARC::rpg::Hero']]]
+  ['_7ebackpack_0',['~Backpack',['../class_he___a_r_c_1_1rpg_1_1_backpack.html#aace59cf9c31e5d19512dad997f3aac5f',1,'He_ARC::rpg::Backpack']]],
+  ['_7egame_1',['~Game',['../class_he___a_r_c_1_1rpg_1_1_game.html#ad18ddfde5295474082f41e3fe6db493c',1,'He_ARC::rpg::Game']]],
+  ['_7ehero_2',['~Hero',['../class_he___a_r_c_1_1rpg_1_1_hero.html#a281ad269bbe13c780dc73a2402d0e1bf',1,'He_ARC::rpg::Hero']]],
+  ['_7eiobject_3',['~IObject',['../class_he___a_r_c_1_1rpg_1_1_i_object.html#a1e05cb9ef9bff87cd1c743bf2b5ef52a',1,'He_ARC::rpg::IObject']]],
+  ['_7epotion_4',['~Potion',['../class_he___a_r_c_1_1rpg_1_1_potion.html#a9c7528bafcbef69289fa31cda998ba91',1,'He_ARC::rpg::Potion']]],
+  ['_7eweapon_5',['~Weapon',['../class_he___a_r_c_1_1rpg_1_1_weapon.html#aad3e98217ca3d2094b2285d2652ce6c9',1,'He_ARC::rpg::Weapon']]]
 ];

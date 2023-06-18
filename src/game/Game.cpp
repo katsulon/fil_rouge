@@ -346,10 +346,10 @@ namespace He_ARC::rpg {
                                 ladder.playSFX();
                             }
                             if (chest.canInteract(playerBounds) && chestOpen == false) {
-                                war1->backpack.pack(ajaWine);
+                                Hero::backpack.pack(ajaWine);
                                 chest.playSFX();
                                 chestOpen = true;
-                                string text = "Obtained " + war1->backpack.getStackTop()->getName() + ".";
+                                string text = "Obtained " + Hero::backpack.getStackTop()->getName() + ".";
                                 interactionDialog.setTextFile("default.txt");
                                 interactionDialog.appendText(text);
                                 if (interactionDialog.getNext()){
@@ -363,7 +363,7 @@ namespace He_ARC::rpg {
                                         war1->backpack.pack(relicKey);
                                         npcDemorden.playSFX();
                                         transactionDone = true;
-                                        string text = "Obtained " + war1->backpack.getStackTop()->getName() + ".";
+                                        string text = "Obtained " + Hero::backpack.getStackTop()->getName() + ".";
                                         interactionDialog.setTextFile("res/files/npcAfterItem.txt");
                                         interactionDialog.appendText(text);
                                     }
@@ -377,8 +377,8 @@ namespace He_ARC::rpg {
                                 if(war1->backpack.getStackTop() == relicKey) {
                                     obstacle.playSFX();
                                     obstacleExists = false;
-                                    string text = war1->backpack.getStackTop()->getName() + " has been destroyed.";
-                                    war1->backpack.unPack();
+                                    string text = Hero::backpack.getStackTop()->getName() + " has been destroyed.";
+                                    Hero::backpack.unPack();
                                     interactables.remove(&obstacle);
                                     interactionDialog.setTextFile("default.txt");
                                     interactionDialog.appendText(text);
@@ -469,6 +469,7 @@ namespace He_ARC::rpg {
         currentHeroPos = currentHero->getPos();
         
         // Collision management
+
         bool collisionEnabled = true;
         playerBounds = sf::FloatRect(currentHeroPos.x, currentHeroPos.y, 16*4,16*4);
         sf::Vector2i playerGridPosition = sf::Vector2i(0,0);
@@ -584,10 +585,12 @@ namespace He_ARC::rpg {
         view.move(viewMoveSpeed);
         window.setView(view);
 
+        // Resets text in textbox if not enabled
         if (interactionDialog.isEnabled() == false) {
             interactionDialog.setLine(0);
         }
         
+        // Music puzzle management
         if (inputNote.size() >= 10) {
             if ((inputNote == noteSequence) && (musicCredits.getStatus() != sf::Music::Status::Playing)) {
                 musicCredits.play();
@@ -602,6 +605,7 @@ namespace He_ARC::rpg {
         }
 
         currentHero->setPos(currentHeroPos.x, currentHeroPos.y);
+
         // Log file
         deltaTotalTime = clock.getElapsedTime();
         totalTime = deltaTotalTime.asSeconds();
@@ -613,6 +617,7 @@ namespace He_ARC::rpg {
         log << "Current input of note sequence: "; for(int i=0; i < inputNote.size(); i++) log << inputNote.at(i) << ' '; log << endl;
         log << "Elapsed time in seconds since execution: " << totalTime << endl;
         log.close();
+        
         // Loading textures
         currentHero->loadTexture(frameRate, currentHeroFlipped);
         if (chestOpen) {

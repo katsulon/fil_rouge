@@ -5,7 +5,7 @@
 
 namespace He_ARC::rpg {
     /**
-    * Base class for interactables
+    * @brief Base class for interactables
     * @author Elisa Goloviatinski
     * @version 1.0
     */

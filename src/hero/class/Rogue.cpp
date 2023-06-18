@@ -13,9 +13,6 @@ namespace He_ARC::rpg {
         immobileTexture = "res/sprites/character/free_fighters/GLADIUS/gladius.png";
         idleTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_idle.png";
         walkTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_walk.png";
-        attackTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_attack.png";
-        gethurtTexture =  "res/sprites/character/free_fighters/GLADIUS/gladius_gethurt.png";
-        knockoutTexture = "res/sprites/character/free_fighters/GLADIUS/gladius_knockout.png";
     }
 
     /// @brief Rogue interaction with another hero

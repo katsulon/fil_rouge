@@ -1,5 +1,5 @@
 <map id="He_ARC::rpg::Potion" name="He_ARC::rpg::Potion">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,213,189,512"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_i_object.html" title=" " alt="" coords="23,5,171,165"/>
+<area shape="rect" id="Node000001" title="Class for potions." alt="" coords="5,213,189,512"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_i_object.html" title="Object interface class." alt="" coords="23,5,171,165"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,179,100,214,95,214,95,179"/>
 </map>

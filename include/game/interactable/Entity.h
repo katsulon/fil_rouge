@@ -4,7 +4,7 @@
 
 namespace He_ARC::rpg {
 /**
-    * Base class for entities. Derived from Interactable but includes textures and sfx
+    * @brief Base class for entities. Derived from Interactable but includes textures and sfx
     * @author Elisa Goloviatinski
     * @version 1.0
     */

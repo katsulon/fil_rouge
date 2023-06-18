@@ -1,7 +1,5 @@
 <map id="He_ARC::rpg::Wizard" name="He_ARC::rpg::Wizard">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,1611,209,1899"/>
-<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_necromancer.html" title=" " alt="" coords="5,1947,209,2133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,1913,110,1947,105,1947,105,1913"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC." alt="" coords="21,5,193,1563"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,1577,110,1611,105,1611,105,1577"/>
+<area shape="rect" id="Node000001" title="Derived class for wizards." alt="" coords="5,1323,204,1616"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters." alt="" coords="16,5,193,1275"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,1289,107,1323,102,1323,102,1289"/>
 </map>
