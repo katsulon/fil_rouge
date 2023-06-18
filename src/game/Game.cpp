@@ -263,13 +263,13 @@ namespace He_ARC::rpg {
         if (minViewSize.x >= 0) {
             currentHeroPos.x = aspectRatio*viewHeight/2;
         }
-        if (currentHeroPos.x-currentHero->getFrameSize()*SCALE-TILE_SIZE/2*SCALE + size.x/2 >= maxViewSize.x) {
+        if (currentHeroPos.x + TILE_SIZE*SCALE >= maxViewSize.x) {
             currentHeroPos.x = mapSize.x*SCALE*TILE_SIZE-aspectRatio*viewHeight/2;
         }
         if (minViewSize.y >= 0) {
             currentHeroPos.y = viewHeight/2;
         }
-        if (currentHeroPos.y-currentHero->getFrameSize()*SCALE-TILE_SIZE/2*SCALE + size.y/2 >= maxViewSize.y) {
+        if (currentHeroPos.y + TILE_SIZE*SCALE >= maxViewSize.y) {
             currentHeroPos.y = mapSize.y*SCALE*TILE_SIZE-viewHeight/2;
         }
         view.setCenter(currentHeroPos);
@@ -592,7 +592,7 @@ namespace He_ARC::rpg {
         
         // Music puzzle management
         if (inputNote.size() >= 10) {
-            if ((inputNote == noteSequence) && (musicCredits.getStatus() != sf::Music::Status::Playing)) {
+            if ((inputNote == noteSequence) && ((musicCredits.getStatus() != sf::Music::Playing))) {
                 musicCredits.play();
                 isGlobalEnabled = true;
                 interactionDialog.setTextFile("default.txt");

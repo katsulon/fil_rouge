@@ -1,7 +1,9 @@
-<map id="C:/env/Cpp/goloviatinski_fil_rouge/include/game/interactable/Interactable.h" name="C:/env/Cpp/goloviatinski_fil_rouge/include/game/interactable/Interactable.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="51,5,225,64"/>
+<map id="C:/env/Cpp/goloviatinski_fil_rouge/include/game/Interactable.h" name="C:/env/Cpp/goloviatinski_fil_rouge/include/game/Interactable.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="147,5,305,64"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,112,143,139"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,66,94,101,89,98,115,63"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="166,112,238,139"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,63,187,98,182,101,156,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,67,109,107,107,102,175,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="167,112,285,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,64,229,97,223,97,223,64"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="309,112,380,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="266,62,318,101,315,105,263,66"/>
 </map>

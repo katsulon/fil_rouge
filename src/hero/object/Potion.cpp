@@ -19,10 +19,18 @@ namespace He_ARC::rpg {
     /// @brief Sets new amount of power.
     /// @param power New power of potion.
     void Potion::setFeature(int power) {
-        if (power > -1)
-            this->power = power;
-        else
+        try {
+            if (power > -1) {
+                this->power = power;
+            }
+            else {
+                throw "Negative value";
+            }
+        }
+        catch(const char* negativeValue) {
+            cout << negativeValue << endl;
             this->power = 0;
+        }
     }
 
     // Methods

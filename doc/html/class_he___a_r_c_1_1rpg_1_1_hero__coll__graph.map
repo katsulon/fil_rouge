@@ -1,10 +1,10 @@
 <map id="He_ARC::rpg::Hero" name="He_ARC::rpg::Hero">
-<area shape="rect" id="Node000001" title="Base class for playable characters." alt="" coords="145,577,317,1783"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html" title="Class for weapons." alt="" coords="143,215,319,513"/>
+<area shape="rect" id="Node000001" title="Base class for playable characters." alt="" coords="145,577,317,1825"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html" title="Derived class for weapons." alt="" coords="143,215,319,513"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,513,234,560,229,560,229,513"/>
 <area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_i_object.html" title="Object interface class." alt="" coords="5,5,153,165"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="79,165,78,215,72,364,71,430,78,513,106,689,144,861,139,862,101,690,73,514,66,430,66,364,73,215,74,165"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="79,165,78,215,72,364,71,430,78,513,106,695,144,872,139,873,101,696,73,514,66,430,66,364,73,215,74,165"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="132,177,152,214,148,216,127,179"/>
 <area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html" title="Backpack class for storing inventory in a similar way to stacks." alt="" coords="344,260,508,468"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="404,469,324,803,319,802,399,467"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="405,468,324,815,319,814,400,467"/>
 </map>

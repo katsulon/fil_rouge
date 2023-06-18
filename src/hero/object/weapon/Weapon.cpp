@@ -19,10 +19,18 @@ namespace He_ARC::rpg {
     /// @brief Sets new damage to weapon.
     /// @param damage Damage to set.
     void Weapon::setFeature(int damage) {
-        if (damage > -1)
-            this->damage = damage;
-        else
+        try {
+            if (damage > -1) {
+                this->damage = damage;
+            }
+            else {
+                throw "Negative value";
+            }
+        }
+        catch(const char* negativeValue) {
+            cout << negativeValue << endl;
             this->damage = 0;
+        }
     }
 
     // Methods

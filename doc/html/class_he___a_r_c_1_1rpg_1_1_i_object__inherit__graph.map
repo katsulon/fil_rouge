@@ -1,7 +1,7 @@
 <map id="He_ARC::rpg::IObject" name="He_ARC::rpg::IObject">
 <area shape="rect" id="Node000001" title="Object interface class." alt="" coords="125,5,273,165"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_potion.html" title="Class for potions." alt="" coords="5,213,189,512"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_potion.html" title="Derived class for potions." alt="" coords="5,213,189,512"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,180,154,215,149,213,162,178"/>
-<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html" title="Class for weapons." alt="" coords="213,213,389,512"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html" title="Derived class for weapons." alt="" coords="213,213,389,512"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,178,249,213,244,215,231,180"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="He_ARC::rpg::Entity" name="He_ARC::rpg::Entity">
-<area shape="rect" id="Node000001" title="Base class for entities. Derived from Interactable but includes textures and sfx." alt="" coords="5,613,220,1077"/>
-<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_music_entity.html" title="Specific class for entities playing a note." alt="" coords="15,1125,211,1259"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,1092,115,1126,110,1126,110,1092"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_interactable.html" title="Base class for interactables." alt="" coords="9,5,217,565"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,580,115,614,110,614,110,580"/>
+<area shape="rect" id="Node000001" title="Base class for entities. Derived from Interactable but includes textures and sfx." alt="" coords="5,597,220,1083"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_music_entity.html" title="Specific class for entities playing a note." alt="" coords="15,1131,211,1264"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,1097,115,1131,110,1131,110,1097"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_interactable.html" title="Base class for interactables." alt="" coords="9,5,217,549"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,564,115,597,110,597,110,564"/>
 </map>
