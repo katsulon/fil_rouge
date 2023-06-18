@@ -1,0 +1,5 @@
+<map id="He_ARC::rpg::DialogBox::getNext" name="He_ARC::rpg::DialogBox::getNext">
+<area shape="rect" id="Node000001" title="Gets next line for dialog box." alt="" coords="5,5,170,48"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_dialog_box.html#a1f8591c7eb41642f07d40889fadb6c90" title="Gets size of dialog box texture." alt="" coords="218,5,382,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,24,203,24,203,29,170,29"/>
+</map>

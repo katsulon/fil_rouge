@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['terminal_0',['terminal',['../class_he___a_r_c_1_1rpg_1_1_game.html#ad5bf24d24c701f8e609a4e571c0ae952',1,'He_ARC::rpg::Game']]],
-  ['tilecollision_1',['tileCollision',['../class_he___a_r_c_1_1rpg_1_1_game.html#acd57ae6144dfdcdc5014b36f8b5d38b6',1,'He_ARC::rpg::Game']]],
-  ['tilemap_2',['TileMap',['../class_he___a_r_c_1_1rpg_1_1_tile_map.html',1,'He_ARC::rpg']]]
+  ['name_0',['name',['../class_he___a_r_c_1_1rpg_1_1_hero.html#a6bcd67e2463b78bb3377fa47596b5c5a',1,'He_ARC::rpg::Hero']]],
+  ['necromancer_1',['Necromancer',['../class_he___a_r_c_1_1rpg_1_1_necromancer.html',1,'He_ARC::rpg::Necromancer'],['../class_he___a_r_c_1_1rpg_1_1_necromancer.html#a680eb29047681e3059840616bb44625d',1,'He_ARC::rpg::Necromancer::Necromancer()']]],
+  ['necromancer_2ecpp_2',['Necromancer.cpp',['../_necromancer_8cpp.html',1,'']]],
+  ['necromancer_2eh_3',['Necromancer.h',['../_necromancer_8h.html',1,'']]],
+  ['note_4',['note',['../class_he___a_r_c_1_1rpg_1_1_music_interactable.html#aeaf84c078810cedbd37d168b8ef77950',1,'He_ARC::rpg::MusicInteractable']]],
+  ['notes_5',['Notes',['../namespace_he___a_r_c_1_1rpg.html#ac4de61ce5084be381c2dc63462503ee0',1,'He_ARC::rpg']]]
 ];

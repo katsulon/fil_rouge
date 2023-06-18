@@ -14,7 +14,7 @@ namespace He_ARC::rpg {
         private:
             int currentLine = 0;
             sf::Font font;
-            string fontsrc;
+            string fontsrc = "res/sprites/ui/monogram.ttf";
             sf::Vector2f pos = sf::Vector2f(0, 0);
             string line;
             string fileText;

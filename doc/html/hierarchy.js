@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "He_ARC::rpg::Backpack", "class_he___a_r_c_1_1rpg_1_1_backpack.html", null ],
+    [ "He_ARC::rpg::DialogBox", "class_he___a_r_c_1_1rpg_1_1_dialog_box.html", null ],
     [ "sf::Drawable", null, [
       [ "He_ARC::rpg::TileMap", "class_he___a_r_c_1_1rpg_1_1_tile_map.html", null ]
     ] ],
@@ -13,7 +14,12 @@ var hierarchy =
       ] ]
     ] ],
     [ "He_ARC::rpg::Interactable", "class_he___a_r_c_1_1rpg_1_1_interactable.html", [
-      [ "He_ARC::rpg::Entity", "class_he___a_r_c_1_1rpg_1_1_entity.html", null ]
+      [ "He_ARC::rpg::Entity", "class_he___a_r_c_1_1rpg_1_1_entity.html", [
+        [ "He_ARC::rpg::MusicEntity", "class_he___a_r_c_1_1rpg_1_1_music_entity.html", null ]
+      ] ],
+      [ "He_ARC::rpg::MusicInteractable", "class_he___a_r_c_1_1rpg_1_1_music_interactable.html", [
+        [ "He_ARC::rpg::MusicEntity", "class_he___a_r_c_1_1rpg_1_1_music_entity.html", null ]
+      ] ]
     ] ],
     [ "He_ARC::rpg::IObject", "class_he___a_r_c_1_1rpg_1_1_i_object.html", [
       [ "He_ARC::rpg::Potion", "class_he___a_r_c_1_1rpg_1_1_potion.html", null ],

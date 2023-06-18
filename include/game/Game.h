@@ -55,6 +55,7 @@ namespace He_ARC::rpg {
             TileMap mapStoneTilePlatform;
             TileMap mapStoneWallPlatform;
             TileMap mapStoneStairsPlatform;
+            TileMap mapStonePlatformSequence;
             sf::Vector2i mapSize = sf::Vector2i(39,22);
 
             sf::Vector2f currentHeroPosReal;

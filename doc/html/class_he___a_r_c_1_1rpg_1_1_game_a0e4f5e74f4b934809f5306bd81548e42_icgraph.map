@@ -1,0 +1,5 @@
+<map id="He_ARC::rpg::Game::render" name="He_ARC::rpg::Game::render">
+<area shape="rect" id="Node000001" title="Game render." alt="" coords="220,5,368,48"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_game.html#a8797bd5df8bfa9307cef77c0ca10c4fa" title="Runs game loop." alt="" coords="5,13,172,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,29,172,29,172,24,205,24"/>
+</map>

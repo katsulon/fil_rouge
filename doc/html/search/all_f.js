@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['_7egame_0',['~Game',['../class_he___a_r_c_1_1rpg_1_1_game.html#ad18ddfde5295474082f41e3fe6db493c',1,'He_ARC::rpg::Game']]],
-  ['_7ehero_1',['~Hero',['../class_he___a_r_c_1_1rpg_1_1_hero.html#a281ad269bbe13c780dc73a2402d0e1bf',1,'He_ARC::rpg::Hero']]]
+  ['raiseundeads_0',['raiseUndeads',['../class_he___a_r_c_1_1rpg_1_1_necromancer.html#a10d0f5dac6a7670eb1eeaaecdfb977ea',1,'He_ARC::rpg::Necromancer']]],
+  ['render_1',['render',['../class_he___a_r_c_1_1rpg_1_1_game.html#a0e4f5e74f4b934809f5306bd81548e42',1,'He_ARC::rpg::Game']]],
+  ['resizeview_2',['resizeView',['../class_he___a_r_c_1_1rpg_1_1_game.html#affeae01240bcc30ec481093d33a611af',1,'He_ARC::rpg::Game']]],
+  ['rogue_3',['Rogue',['../class_he___a_r_c_1_1rpg_1_1_rogue.html',1,'He_ARC::rpg::Rogue'],['../class_he___a_r_c_1_1rpg_1_1_rogue.html#a7c0fc197693343b5b09cadc94f93ae5e',1,'He_ARC::rpg::Rogue::Rogue()']]],
+  ['rogue_2ecpp_4',['Rogue.cpp',['../_rogue_8cpp.html',1,'']]],
+  ['rogue_2eh_5',['Rogue.h',['../_rogue_8h.html',1,'']]],
+  ['run_6',['run',['../class_he___a_r_c_1_1rpg_1_1_game.html#a8797bd5df8bfa9307cef77c0ca10c4fa',1,'He_ARC::rpg::Game']]]
 ];

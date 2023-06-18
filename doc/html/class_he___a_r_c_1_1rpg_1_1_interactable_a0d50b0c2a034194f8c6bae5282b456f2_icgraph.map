@@ -1,0 +1,7 @@
+<map id="He_ARC::rpg::Interactable::getCollision" name="He_ARC::rpg::Interactable::getCollision">
+<area shape="rect" id="Node000001" title="Gets current collision state." alt="" coords="416,5,588,48"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_game.html#a730db00277387c7907521dbebe60ee9d" title="General updates." alt="" coords="220,5,368,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="401,29,368,29,368,24,401,24"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_game.html#a8797bd5df8bfa9307cef77c0ca10c4fa" title="Runs game loop." alt="" coords="5,13,172,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,29,172,29,172,24,205,24"/>
+</map>

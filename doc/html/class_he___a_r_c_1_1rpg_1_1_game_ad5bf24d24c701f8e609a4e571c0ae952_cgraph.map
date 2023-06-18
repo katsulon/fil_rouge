@@ -1,0 +1,31 @@
+<map id="He_ARC::rpg::Game::terminal" name="He_ARC::rpg::Game::terminal">
+<area shape="rect" id="Node000001" title="Shows character interactions as well as events on terminal." alt="" coords="5,372,154,415"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_wizard.html#a87efc42b5b0881ea236c51c4f76095f0" title="Basic wizard spell cast." alt="" coords="220,5,366,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,371,88,311,108,227,123,182,144,138,169,95,200,58,205,53,209,57,204,62,173,99,148,140,128,184,113,229,93,312,85,372"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html#a05372e7cef871a6339bff466e0ec0318" title=" " alt="" coords="216,72,370,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="82,371,94,321,117,255,151,186,174,153,200,125,203,122,207,126,204,129,178,157,156,189,122,257,99,322,87,372"/>
+<area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a155de3b4a07fcbec2ce28adbd80a7049" title=" " alt="" coords="223,139,363,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="86,370,102,332,126,284,159,235,200,191,208,185,211,190,203,195,163,238,131,287,107,334,91,372"/>
+<area shape="rect" id="Node000005" href="$class_he___a_r_c_1_1rpg_1_1_i_object.html#a7c417f79870d8e62eeca5fd630c4d170" title=" " alt="" coords="220,205,366,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="93,370,137,315,167,284,200,258,208,253,211,257,203,262,171,288,141,318,98,373"/>
+<area shape="rect" id="Node000006" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a94660b64092c71dc2e98e8b27c1c7efa" title=" " alt="" coords="223,272,363,315"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="116,369,201,324,214,318,216,323,203,329,118,374"/>
+<area shape="rect" id="Node000007" href="$class_he___a_r_c_1_1rpg_1_1_rogue.html#ac0fd8ad481f57c6e8c0fb54d420b93f0" title="Rogue interaction with another hero." alt="" coords="222,339,364,381"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="154,379,206,371,207,376,154,384"/>
+<area shape="rect" id="Node000009" href="$class_he___a_r_c_1_1rpg_1_1_warrior.html#a8a7254232f38d9f45820b896f22dcd68" title="Warrior interaction with another hero." alt="" coords="219,405,367,448"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="154,402,204,410,204,415,154,408"/>
+<area shape="rect" id="Node000010" href="$class_he___a_r_c_1_1rpg_1_1_wizard.html#aedc50d175ec0b2600015a26f226b37f1" title="Wizard interaction with another hero." alt="" coords="220,472,366,515"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="118,413,203,458,216,464,214,468,201,462,116,418"/>
+<area shape="rect" id="Node000011" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#a6e69ab94460932776ab58b12984658ac" title="Checks whether the backpack is empty or not." alt="" coords="211,539,375,581"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="98,414,141,469,171,498,203,524,211,529,208,534,200,529,167,502,137,472,93,417"/>
+<area shape="rect" id="Node000012" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#aaea915d4ea2affd6151a57978434c492" title="Adds an IObject item to the stack." alt="" coords="211,605,375,648"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="91,414,107,452,131,500,163,549,203,591,208,595,205,599,200,595,159,552,126,502,102,454,86,416"/>
+<area shape="rect" id="Node000013" href="$class_he___a_r_c_1_1rpg_1_1_necromancer.html#a10d0f5dac6a7670eb1eeaaecdfb977ea" title="Basic necromancer spell cast." alt="" coords="202,672,384,715"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="87,415,99,464,122,529,156,598,178,630,204,658,207,661,203,665,200,662,174,633,151,601,117,531,94,466,82,416"/>
+<area shape="rect" id="Node000014" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#a672055bf82b4965cec3a2a30b4efb6f8" title="Removes an IObject item from the stack." alt="" coords="211,739,375,781"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="85,415,93,475,113,558,128,603,148,647,173,688,204,725,206,728,203,731,200,728,169,691,144,649,123,605,108,559,88,476,80,415"/>
+<area shape="rect" id="Node000008" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a06d47cdfb429e8f562c73dd94375ca7f" title=" " alt="" coords="432,405,572,448"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="363,379,420,398,418,403,361,384"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="367,424,417,424,417,429,367,429"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="361,469,418,451,420,456,363,474"/>
+</map>

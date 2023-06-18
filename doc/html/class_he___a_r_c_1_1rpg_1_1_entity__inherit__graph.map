@@ -1,5 +1,7 @@
 <map id="He_ARC::rpg::Entity" name="He_ARC::rpg::Entity">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,459,223,752"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_interactable.html" title=" " alt="" coords="19,5,209,411"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,425,117,459,111,459,111,425"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,613,220,1077"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_music_entity.html" title=" " alt="" coords="15,1125,211,1259"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,1092,115,1126,110,1126,110,1092"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_interactable.html" title=" " alt="" coords="9,5,217,565"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,580,115,614,110,614,110,580"/>
 </map>

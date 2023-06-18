@@ -1,0 +1,7 @@
+<map id="He_ARC::rpg::Entity::setTilePos" name="He_ARC::rpg::Entity::setTilePos">
+<area shape="rect" id="Node000001" title="Sets new position in grid coordinates." alt="" coords="193,39,332,81"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_entity.html#a2cd003e30308d2106e5ed0f810fb76c3" title="Entity standard parameterized constructor." alt="" coords="5,5,145,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,48,145,42,146,36,178,42"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_entity.html#a497dc90d9f4ac6f60a58c2046a949993" title="Entity standard parameterized constructor with sfx." alt="" coords="5,72,145,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,78,146,84,145,78,177,72"/>
+</map>

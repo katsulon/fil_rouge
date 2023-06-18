@@ -1,0 +1,101 @@
+<map id="He_ARC::rpg::Game::update" name="He_ARC::rpg::Game::update">
+<area shape="rect" id="Node000001" title="General updates." alt="" coords="5,1090,154,1132"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_dialog_box.html#ab86fde79de833bbaa6df7ca62cb66d0d" title=" " alt="" coords="426,210,590,252"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,1089,78,986,83,911,92,826,106,735,128,642,159,550,199,463,245,392,292,345,348,306,421,262,429,257,432,262,423,266,351,311,296,349,250,396,204,465,164,551,133,643,111,736,97,827,88,912,84,986,83,1089"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_dialog_box.html#afd67546c37184ffa891ac3790c2b8d35" title="Whether to dialog box should be drawable or not." alt="" coords="426,276,590,319"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="79,1089,87,1004,107,877,122,804,142,730,168,656,199,586,246,503,291,444,345,393,420,335,438,324,441,328,424,340,349,397,295,448,250,506,204,588,173,658,147,731,127,805,112,878,92,1005,85,1089"/>
+<area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_interactable.html#a0d50b0c2a034194f8c6bae5282b456f2" title="Gets current collision state." alt="" coords="202,1250,374,1292"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="101,1131,145,1179,203,1229,222,1240,219,1245,200,1233,141,1183,97,1134"/>
+<area shape="rect" id="Node000005" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#acbab2bea710e72a312cbddc1d287b531" title=" " alt="" coords="663,1211,804,1254"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="135,1130,202,1154,311,1182,422,1200,541,1215,649,1224,648,1230,540,1220,422,1205,310,1187,201,1159,133,1135"/>
+<area shape="rect" id="Node000006" href="$class_he___a_r_c_1_1rpg_1_1_i_object.html#a7c417f79870d8e62eeca5fd630c4d170" title=" " alt="" coords="660,78,807,120"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="79,1089,90,947,113,732,129,619,149,513,172,424,199,360,238,304,278,263,320,233,365,211,413,194,467,180,594,144,657,123,658,128,595,149,468,185,415,199,367,216,323,237,282,267,242,308,204,363,177,426,154,514,134,619,118,733,95,947,85,1089"/>
+<area shape="rect" id="Node000007" href="$class_he___a_r_c_1_1rpg_1_1_dialog_box.html#afb0ff20d5c1a5028267881c898caf612" title="Gets next line for dialog box." alt="" coords="426,1148,590,1191"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="155,1120,202,1127,412,1155,411,1160,201,1132,154,1125"/>
+<area shape="rect" id="Node000009" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a722e192f7b19fa42e4d734e2e09ee1f1" title="Gets current position of hero. An offset variable has been added to account for different position if..." alt="" coords="663,944,804,987"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="97,1087,147,1034,222,965,267,930,315,898,367,870,421,848,470,833,510,825,550,829,596,849,615,867,622,888,629,910,644,930,652,936,649,940,640,934,624,912,617,890,610,870,593,853,549,834,511,831,471,838,423,853,369,874,318,902,270,934,225,969,151,1037,101,1091"/>
+<area shape="rect" id="Node000010" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a82489fe7bb66359cc8d52e862540c07a" title=" " alt="" coords="218,1316,358,1359"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="91,1131,108,1168,132,1214,164,1261,203,1302,208,1306,205,1310,200,1306,160,1264,127,1216,103,1170,87,1134"/>
+<area shape="rect" id="Node000011" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#a5906387ab2147a5f3c6dcbfa84572e1e" title="Gets top item in backpack." alt="" coords="427,92,590,135"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="79,1089,92,895,116,596,133,443,152,309,175,207,187,173,200,152,222,133,246,119,301,101,357,95,412,96,411,101,358,100,302,106,249,124,225,138,204,155,192,175,180,209,158,310,138,444,122,596,97,895,85,1089"/>
+<area shape="rect" id="Node000012" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#a6e69ab94460932776ab58b12984658ac" title="Checks whether the backpack is empty or not." alt="" coords="652,11,815,54"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="79,1089,91,886,115,572,132,412,151,271,174,163,186,127,200,105,246,67,299,39,357,20,417,9,476,4,535,3,637,12,637,17,534,9,477,9,417,14,358,25,302,44,249,71,204,109,191,129,179,165,156,272,137,413,120,573,96,887,85,1089"/>
+<area shape="rect" id="Node000013" href="$class_he___a_r_c_1_1rpg_1_1_dialog_box.html#ac114f4dfa9bbc53cf73273abf201ab6c" title="Checks whether box dialogue is activated or not." alt="" coords="206,1383,370,1426"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="88,1132,100,1180,123,1243,157,1310,178,1341,204,1369,207,1372,203,1376,200,1373,174,1345,152,1313,118,1246,95,1182,83,1133"/>
+<area shape="rect" id="Node000014" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a1825610716cbaf6702e4dde44b3e515a" title="Loads, animates and scales hero&#39;s texture." alt="" coords="663,1078,804,1120"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="154,1107,649,1098,649,1103,154,1112"/>
+<area shape="rect" id="Node000015" href="$class_he___a_r_c_1_1rpg_1_1_dialog_box.html#a8971be900f8ed1cc3bef6c071a5e248e" title="Sets current line of text." alt="" coords="206,1450,370,1492"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="85,1132,94,1192,114,1273,130,1316,149,1359,174,1400,204,1436,206,1438,203,1442,200,1439,170,1403,145,1362,125,1318,109,1274,89,1193,80,1133"/>
+<area shape="rect" id="Node000016" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#ab7a7ea7d8a07a1cfd896f0abb9455eca" title="Sets position of current hero, taking into account frame sizes." alt="" coords="663,1011,804,1054"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="154,1093,201,1086,445,1056,648,1036,649,1042,445,1061,202,1091,155,1099"/>
+<area shape="rect" id="Node000017" href="$class_he___a_r_c_1_1rpg_1_1_dialog_box.html#a8b2f4007465d7ff1fdb068647566177d" title="Sets source of new textfile to use." alt="" coords="426,980,590,1023"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="110,1087,152,1061,201,1039,254,1024,309,1013,411,1002,412,1007,309,1019,255,1029,203,1044,154,1066,112,1091"/>
+<area shape="rect" id="Node000018" href="$class_he___a_r_c_1_1rpg_1_1_entity.html#abfcbcde23d48a8f95496f5e9fa08dc25" title="Sets texture to use for sprite." alt="" coords="218,1516,358,1559"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="84,1133,89,1202,107,1301,122,1354,142,1408,169,1458,204,1502,208,1507,204,1511,200,1506,165,1461,138,1410,117,1356,101,1302,84,1203,79,1133"/>
+<area shape="rect" id="Node000019" href="$class_he___a_r_c_1_1rpg_1_1_game.html#ae0f3ba76b4bb497dd552bc54d6bf10a0" title="Checks and resolves tile collisions." alt="" coords="214,1583,362,1626"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="83,1133,85,1213,90,1268,99,1329,114,1392,135,1456,165,1516,204,1569,206,1571,202,1575,200,1573,160,1518,130,1458,109,1394,94,1330,84,1269,79,1213,77,1133"/>
+<area shape="rect" id="Node000020" href="$class_he___a_r_c_1_1rpg_1_1_interactable.html#abd792d00f0c66f2ed131d34725580b21" title="Resolves collision with player." alt="" coords="202,1650,374,1692"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="86,1132,99,1238,123,1389,140,1466,158,1537,180,1596,204,1636,205,1638,201,1641,200,1639,175,1598,153,1539,134,1467,118,1390,94,1239,80,1133"/>
+<area shape="rect" id="Node000021" href="$class_he___a_r_c_1_1rpg_1_1_game.html#ab2d1832cd5b09d4108aa6e4794b94f21" title="SFML event handling." alt="" coords="214,599,362,642"/>
+<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="87,1088,199,806,268,654,273,656,204,808,92,1090"/>
+<area shape="rect" id="Node000008" href="$class_he___a_r_c_1_1rpg_1_1_dialog_box.html#a1f8591c7eb41642f07d40889fadb6c90" title="Gets size of dialog box texture." alt="" coords="651,1144,816,1187"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="590,1165,636,1165,636,1170,591,1171"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="568,89,658,57,659,62,570,94"/>
+<area shape="poly" id="edge22_Node000021_Node000002" title=" " alt="" coords="289,598,298,534,320,445,337,396,359,348,387,303,420,262,423,259,427,263,424,266,391,306,364,351,342,398,325,446,304,535,294,599"/>
+<area shape="poly" id="edge29_Node000021_Node000003" title=" " alt="" coords="308,597,341,558,372,510,382,485,387,462,389,420,395,380,404,358,420,336,430,326,434,329,424,339,409,361,400,381,395,421,392,463,387,486,376,512,345,561,312,600"/>
+<area shape="poly" id="edge30_Node000021_Node000006" title=" " alt="" coords="307,597,340,558,372,510,385,473,390,441,397,411,406,395,420,380,443,364,465,356,509,355,552,353,572,345,592,329,610,305,617,281,618,257,617,233,614,208,616,182,623,156,640,130,646,124,650,128,644,134,628,159,621,183,620,207,622,232,624,257,622,282,614,307,596,333,575,350,553,358,510,360,466,361,445,368,424,384,410,398,402,413,395,442,390,475,376,512,344,561,311,600"/>
+<area shape="poly" id="edge31_Node000021_Node000007" title=" " alt="" coords="297,641,341,807,378,921,424,1034,454,1088,485,1135,480,1137,449,1091,420,1036,373,923,336,809,292,643"/>
+<area shape="poly" id="edge33_Node000021_Node000011" title=" " alt="" coords="290,598,302,527,327,425,365,309,390,251,420,196,441,167,466,143,470,147,445,171,424,199,395,253,370,310,332,426,307,528,295,599"/>
+<area shape="poly" id="edge38_Node000021_Node000017" title=" " alt="" coords="294,641,304,704,326,791,343,838,365,884,392,928,424,966,427,969,423,973,420,970,387,931,360,886,338,840,321,792,299,705,289,642"/>
+<area shape="rect" id="Node000022" href="$class_he___a_r_c_1_1rpg_1_1_interactable.html#a03a694e7ef4bb540d678952f25ff8f6b" title="Checks whether player can interact with object or not." alt="" coords="422,628,594,671"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="363,627,407,633,407,639,362,633"/>
+<area shape="rect" id="Node000023" href="$class_he___a_r_c_1_1rpg_1_1_game.html#a147c2c06b8563b3f6b99136266c521f4" title="Changes current hero." alt="" coords="434,746,582,788"/>
+<area shape="poly" id="edge24_Node000021_Node000023" title=" " alt="" coords="315,640,363,681,423,725,444,736,441,741,421,729,360,686,311,644"/>
+<area shape="rect" id="Node000024" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#af90057538b8f23456ddbae81ba6cc0fb" title=" " alt="" coords="663,811,804,854"/>
+<area shape="poly" id="edge32_Node000021_Node000024" title=" " alt="" coords="332,639,423,680,472,694,512,699,551,708,596,731,612,748,621,765,629,781,644,797,652,802,649,806,641,801,625,784,616,767,608,751,593,736,549,713,511,704,471,699,421,685,330,644"/>
+<area shape="rect" id="Node000026" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#aaea915d4ea2affd6151a57978434c492" title="Adds an IObject item to the stack." alt="" coords="652,144,815,187"/>
+<area shape="poly" id="edge34_Node000021_Node000026" title=" " alt="" coords="305,597,354,547,386,520,421,497,446,485,470,480,514,478,554,473,573,463,592,446,613,416,621,386,621,355,617,325,612,294,612,262,620,230,640,197,642,195,646,199,644,200,625,232,617,263,618,293,622,324,626,355,626,386,618,418,596,450,576,468,555,478,514,484,471,485,448,490,423,501,389,524,358,550,309,600"/>
+<area shape="rect" id="Node000027" href="$class_he___a_r_c_1_1rpg_1_1_interactable.html#a7b1118d2c3dd26c98bdf5db29047965f" title="Plays sfx associated to entity." alt="" coords="422,394,594,436"/>
+<area shape="poly" id="edge35_Node000021_Node000027" title=" " alt="" coords="304,597,369,513,420,453,437,442,440,446,424,457,373,517,308,600"/>
+<area shape="rect" id="Node000028" href="$class_he___a_r_c_1_1rpg_1_1_game.html#affeae01240bcc30ec481093d33a611af" title="Resizes current view according to aspect ratio." alt="" coords="434,914,582,956"/>
+<area shape="poly" id="edge36_Node000021_Node000028" title=" " alt="" coords="296,641,310,693,335,762,372,835,396,869,424,900,427,903,424,907,420,903,392,873,368,838,330,764,305,695,291,643"/>
+<area shape="rect" id="Node000029" href="$class_he___a_r_c_1_1rpg_1_1_game.html#ad5bf24d24c701f8e609a4e571c0ae952" title="Shows character interactions as well as events on terminal." alt="" coords="434,511,582,554"/>
+<area shape="poly" id="edge39_Node000021_Node000029" title=" " alt="" coords="343,596,438,557,440,562,345,601"/>
+<area shape="rect" id="Node000039" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#a672055bf82b4965cec3a2a30b4efb6f8" title="Removes an IObject item from the stack." alt="" coords="652,744,815,787"/>
+<area shape="poly" id="edge55_Node000021_Node000039" title=" " alt="" coords="359,596,414,585,476,581,538,589,568,599,596,614,610,627,618,641,623,671,627,701,633,716,644,730,648,733,644,737,640,734,628,719,622,703,618,672,613,643,606,630,593,618,566,604,537,594,475,586,414,590,360,601"/>
+<area shape="rect" id="Node000040" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a3b47e59deed58ff22b8c101484551d52" title=" " alt="" coords="425,863,591,890"/>
+<area shape="poly" id="edge56_Node000021_Node000040" title=" " alt="" coords="305,640,355,713,424,798,480,851,477,855,420,802,351,716,301,643"/>
+<area shape="poly" id="edge25_Node000023_Node000009" title=" " alt="" coords="572,787,596,805,609,822,616,838,620,870,625,900,632,915,644,930,652,937,649,941,640,934,627,918,620,902,615,871,610,840,604,824,592,809,569,791"/>
+<area shape="poly" id="edge27_Node000023_Node000016" title=" " alt="" coords="540,787,569,815,597,849,607,871,613,891,617,928,622,962,630,979,644,997,652,1004,649,1008,640,1001,626,982,617,964,611,929,608,892,602,873,592,852,565,818,536,791"/>
+<area shape="poly" id="edge26_Node000023_Node000024" title=" " alt="" coords="583,786,650,805,649,810,582,791"/>
+<area shape="rect" id="Node000025" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a4f8bb478d75786c8684c9c3f528cdff3" title="Sets whether to flip sprite or not." alt="" coords="663,878,804,920"/>
+<area shape="poly" id="edge28_Node000023_Node000025" title=" " alt="" coords="566,786,596,805,611,820,620,835,629,849,644,863,652,869,649,873,641,868,625,853,616,838,607,824,593,809,564,791"/>
+<area shape="poly" id="edge37_Node000028_Node000005" title=" " alt="" coords="583,955,596,966,615,997,623,1026,624,1056,621,1084,618,1112,618,1140,626,1168,644,1197,653,1205,649,1209,640,1201,621,1171,613,1141,612,1112,615,1083,619,1055,618,1027,611,999,592,970,580,959"/>
+<area shape="poly" id="edge43_Node000029_Node000006" title=" " alt="" coords="538,508,567,481,592,447,609,402,614,361,612,322,606,284,602,247,603,210,615,171,640,131,646,124,650,128,644,134,620,173,609,211,607,247,612,284,617,321,619,361,614,403,597,449,571,485,542,512"/>
+<area shape="poly" id="edge51_Node000029_Node000012" title=" " alt="" coords="538,508,568,481,592,447,611,393,616,342,612,295,604,250,598,205,598,160,610,113,623,89,640,64,642,62,646,65,644,67,627,92,615,115,603,161,603,205,609,249,617,295,621,342,616,394,597,449,572,485,542,512"/>
+<area shape="poly" id="edge52_Node000029_Node000026" title=" " alt="" coords="572,508,592,491,613,453,621,416,620,380,614,345,609,309,608,273,617,235,640,197,642,195,646,199,644,200,622,237,613,273,614,308,619,344,625,380,626,416,618,454,596,494,576,512"/>
+<area shape="rect" id="Node000030" href="$class_he___a_r_c_1_1rpg_1_1_wizard.html#a87efc42b5b0881ea236c51c4f76095f0" title="Basic wizard spell cast." alt="" coords="660,344,807,387"/>
+<area shape="poly" id="edge40_Node000029_Node000030" title=" " alt="" coords="567,508,592,490,609,467,615,444,622,421,640,397,646,393,649,397,644,401,627,423,620,446,613,469,596,494,570,513"/>
+<area shape="rect" id="Node000031" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html#a05372e7cef871a6339bff466e0ec0318" title=" " alt="" coords="657,411,810,454"/>
+<area shape="poly" id="edge41_Node000029_Node000031" title=" " alt="" coords="556,508,593,490,641,463,655,457,657,462,644,468,596,495,559,513"/>
+<area shape="rect" id="Node000032" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a155de3b4a07fcbec2ce28adbd80a7049" title=" " alt="" coords="663,478,804,520"/>
+<area shape="poly" id="edge42_Node000029_Node000032" title=" " alt="" coords="582,519,648,509,649,514,583,524"/>
+<area shape="rect" id="Node000033" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a94660b64092c71dc2e98e8b27c1c7efa" title=" " alt="" coords="663,544,804,587"/>
+<area shape="poly" id="edge44_Node000029_Node000033" title=" " alt="" coords="583,540,649,550,648,556,582,546"/>
+<area shape="rect" id="Node000034" href="$class_he___a_r_c_1_1rpg_1_1_rogue.html#ac0fd8ad481f57c6e8c0fb54d420b93f0" title="Rogue interaction with another hero." alt="" coords="662,678,805,720"/>
+<area shape="poly" id="edge45_Node000029_Node000034" title=" " alt="" coords="570,552,596,570,613,595,620,619,627,641,644,664,652,669,648,674,640,667,622,644,615,620,609,597,592,574,567,556"/>
+<area shape="rect" id="Node000036" href="$class_he___a_r_c_1_1rpg_1_1_warrior.html#a8a7254232f38d9f45820b896f22dcd68" title="Warrior interaction with another hero." alt="" coords="660,211,807,254"/>
+<area shape="poly" id="edge47_Node000029_Node000036" title=" " alt="" coords="571,508,592,490,610,461,617,433,617,406,614,378,612,350,613,322,621,293,640,264,646,258,650,262,644,267,626,295,618,323,617,350,620,378,623,405,622,434,614,463,596,494,575,512"/>
+<area shape="rect" id="Node000037" href="$class_he___a_r_c_1_1rpg_1_1_wizard.html#aedc50d175ec0b2600015a26f226b37f1" title="Wizard interaction with another hero." alt="" coords="660,611,807,654"/>
+<area shape="poly" id="edge49_Node000029_Node000037" title=" " alt="" coords="559,552,596,570,644,596,657,602,655,607,641,601,593,575,556,556"/>
+<area shape="rect" id="Node000038" href="$class_he___a_r_c_1_1rpg_1_1_necromancer.html#a10d0f5dac6a7670eb1eeaaecdfb977ea" title="Basic necromancer spell cast." alt="" coords="642,278,825,320"/>
+<area shape="poly" id="edge53_Node000029_Node000038" title=" " alt="" coords="570,508,592,490,606,470,613,451,615,411,618,372,625,351,640,330,643,328,647,331,644,334,630,354,623,373,620,412,618,452,611,473,596,494,574,512"/>
+<area shape="poly" id="edge54_Node000029_Node000039" title=" " alt="" coords="574,552,596,570,611,592,618,613,620,653,623,692,630,711,644,730,647,733,643,737,640,734,625,713,618,693,615,653,613,614,606,594,592,574,570,556"/>
+<area shape="rect" id="Node000035" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a06d47cdfb429e8f562c73dd94375ca7f" title=" " alt="" coords="873,611,1013,654"/>
+<area shape="poly" id="edge46_Node000034_Node000035" title=" " alt="" coords="802,674,859,656,861,661,803,680"/>
+<area shape="poly" id="edge48_Node000036_Node000035" title=" " alt="" coords="809,250,827,264,857,302,882,346,902,391,917,438,935,527,943,596,937,596,930,527,912,440,897,393,878,348,853,305,823,267,806,254"/>
+<area shape="poly" id="edge50_Node000037_Node000035" title=" " alt="" coords="807,630,858,630,858,635,807,635"/>
+<area shape="poly" id="edge57_Node000040_Node000009" title=" " alt="" coords="565,888,596,899,620,914,644,930,656,936,654,941,641,935,617,919,593,904,563,893"/>
+<area shape="poly" id="edge58_Node000040_Node000014" title=" " alt="" coords="580,888,596,900,612,920,620,942,622,983,623,1024,630,1044,644,1064,652,1071,649,1075,640,1067,625,1046,618,1025,616,983,615,943,607,923,592,903,577,892"/>
+<area shape="poly" id="edge59_Node000040_Node000016" title=" " alt="" coords="578,888,596,900,615,924,621,949,627,973,644,997,652,1003,649,1008,640,1001,622,976,616,950,610,926,593,903,575,892"/>
+</map>

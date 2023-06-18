@@ -1,0 +1,12 @@
+<map id="He_ARC::rpg::Backpack::pack" name="He_ARC::rpg::Backpack::pack">
+<area shape="rect" id="Node000001" title="Adds an IObject item to the stack." alt="" coords="809,35,972,77"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_game.html#ad5bf24d24c701f8e609a4e571c0ae952" title="Shows character interactions as well as events on terminal." alt="" coords="612,5,761,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="794,45,760,40,761,35,795,40"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_game.html#ab2d1832cd5b09d4108aa6e4794b94f21" title="SFML event handling." alt="" coords="416,35,564,77"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="794,62,761,63,612,63,565,61,565,56,612,57,761,57,794,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="598,43,565,48,564,42,597,37"/>
+<area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_game.html#a730db00277387c7907521dbebe60ee9d" title="General updates." alt="" coords="220,35,368,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="401,59,368,59,368,53,401,53"/>
+<area shape="rect" id="Node000005" href="$class_he___a_r_c_1_1rpg_1_1_game.html#a8797bd5df8bfa9307cef77c0ca10c4fa" title="Runs game loop." alt="" coords="5,43,172,69"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="205,59,172,59,172,53,205,53"/>
+</map>

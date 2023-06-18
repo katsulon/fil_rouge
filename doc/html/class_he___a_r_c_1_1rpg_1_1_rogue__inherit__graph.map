@@ -1,5 +1,5 @@
 <map id="He_ARC::rpg::Rogue" name="He_ARC::rpg::Rogue">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,672,193,859"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_hero.html" title=" " alt="" coords="13,5,185,624"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,638,102,672,97,672,97,638"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,1611,193,1797"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC." alt="" coords="13,5,185,1563"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,1577,102,1611,97,1611,97,1577"/>
 </map>

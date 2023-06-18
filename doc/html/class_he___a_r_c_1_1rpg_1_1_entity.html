@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="iconWizard.png"/></td>
   <td id="projectalign">
    <div id="projectname">Goloviatinski Fil Rouge
    </div>
@@ -71,24 +71,29 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>He_ARC</b></li><li class="navelem"><b>rpg</b></li><li class="navelem"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html">Entity</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespace_he___a_r_c.html">He_ARC</a></li><li class="navelem"><a class="el" href="namespace_he___a_r_c_1_1rpg.html">rpg</a></li><li class="navelem"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html">Entity</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_he___a_r_c_1_1rpg_1_1_entity-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">He_ARC::rpg::Entity Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_interactable_8h_source.html">Interactable.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for He_ARC::rpg::Entity:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_he___a_r_c_1_1rpg_1_1_entity__inherit__graph.png" border="0" usemap="#a_he___a_r_c_1_1rpg_1_1_entity_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_he___a_r_c_1_1rpg_1_1_entity_inherit__map" id="a_he___a_r_c_1_1rpg_1_1_entity_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,459,223,752"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_interactable.html" title=" " alt="" coords="19,5,209,411"/>
-<area shape="poly" title=" " alt="" coords="117,425,117,459,111,459,111,425"/>
+<area shape="rect" title=" " alt="" coords="5,613,220,1077"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_music_entity.html" title=" " alt="" coords="15,1125,211,1259"/>
+<area shape="poly" title=" " alt="" coords="115,1092,115,1126,110,1126,110,1092"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_interactable.html" title=" " alt="" coords="9,5,217,565"/>
+<area shape="poly" title=" " alt="" coords="115,580,115,614,110,614,110,580"/>
 </map>
 </div>
 <div class="dynheader">
@@ -96,73 +101,559 @@ Collaboration diagram for He_ARC::rpg::Entity:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_he___a_r_c_1_1rpg_1_1_entity__coll__graph.png" border="0" usemap="#a_he___a_r_c_1_1rpg_1_1_entity_coll__map" alt="Collaboration graph"/></div>
 <map name="a_he___a_r_c_1_1rpg_1_1_entity_coll__map" id="a_he___a_r_c_1_1rpg_1_1_entity_coll__map">
-<area shape="rect" title=" " alt="" coords="5,459,223,752"/>
-<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_interactable.html" title=" " alt="" coords="19,5,209,411"/>
-<area shape="poly" title=" " alt="" coords="117,425,117,459,111,459,111,425"/>
+<area shape="rect" title=" " alt="" coords="5,613,220,1077"/>
+<area shape="rect" href="class_he___a_r_c_1_1rpg_1_1_interactable.html" title=" " alt="" coords="9,5,217,565"/>
+<area shape="poly" title=" " alt="" coords="115,580,115,614,110,614,110,580"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad868b7551ee82471fed6cdae9664b341"><td class="memItemLeft" align="right" valign="top"><a id="ad868b7551ee82471fed6cdae9664b341" name="ad868b7551ee82471fed6cdae9664b341"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Entity</b> (int _gridX, int _gridY, int _tileWidth, string _src, bool _collision=false)</td></tr>
-<tr class="separator:ad868b7551ee82471fed6cdae9664b341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a564dc80f70228ac9f69c9b822b3e9035"><td class="memItemLeft" align="right" valign="top"><a id="a564dc80f70228ac9f69c9b822b3e9035" name="a564dc80f70228ac9f69c9b822b3e9035"></a>
-sf::Texture &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTexture</b> ()</td></tr>
+<tr class="memitem:a2cd003e30308d2106e5ed0f810fb76c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a2cd003e30308d2106e5ed0f810fb76c3">Entity</a> (int _gridX, int _gridY, int _tileWidth, string _texturesrc, bool _collision=false)</td></tr>
+<tr class="memdesc:a2cd003e30308d2106e5ed0f810fb76c3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html">Entity</a> standard parameterized constructor.  <br /></td></tr>
+<tr class="separator:a2cd003e30308d2106e5ed0f810fb76c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497dc90d9f4ac6f60a58c2046a949993"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a497dc90d9f4ac6f60a58c2046a949993">Entity</a> (int _gridX, int _gridY, int _tileWidth, string _texturesrc, string _soundfile, bool _collision=false)</td></tr>
+<tr class="memdesc:a497dc90d9f4ac6f60a58c2046a949993"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html">Entity</a> standard parameterized constructor with sfx.  <br /></td></tr>
+<tr class="separator:a497dc90d9f4ac6f60a58c2046a949993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a564dc80f70228ac9f69c9b822b3e9035"><td class="memItemLeft" align="right" valign="top">sf::Texture &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a564dc80f70228ac9f69c9b822b3e9035">getTexture</a> ()</td></tr>
+<tr class="memdesc:a564dc80f70228ac9f69c9b822b3e9035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current texture.  <br /></td></tr>
 <tr class="separator:a564dc80f70228ac9f69c9b822b3e9035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36255088049755926c4ea23a6c9992ca"><td class="memItemLeft" align="right" valign="top"><a id="a36255088049755926c4ea23a6c9992ca" name="a36255088049755926c4ea23a6c9992ca"></a>
-sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><b>getSprite</b> () const</td></tr>
+<tr class="memitem:a36255088049755926c4ea23a6c9992ca"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a36255088049755926c4ea23a6c9992ca">getSprite</a> () const</td></tr>
+<tr class="memdesc:a36255088049755926c4ea23a6c9992ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current sprite.  <br /></td></tr>
 <tr class="separator:a36255088049755926c4ea23a6c9992ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab21a12ee3edf983aceb7bcae9bc04b4e"><td class="memItemLeft" align="right" valign="top"><a id="ab21a12ee3edf983aceb7bcae9bc04b4e" name="ab21a12ee3edf983aceb7bcae9bc04b4e"></a>
-sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><b>getPos</b> () const</td></tr>
+<tr class="memitem:ab21a12ee3edf983aceb7bcae9bc04b4e"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#ab21a12ee3edf983aceb7bcae9bc04b4e">getPos</a> () const</td></tr>
+<tr class="memdesc:ab21a12ee3edf983aceb7bcae9bc04b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current position in float coordinates.  <br /></td></tr>
 <tr class="separator:ab21a12ee3edf983aceb7bcae9bc04b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53f591ce292269bbecbbdb0aa890fd01"><td class="memItemLeft" align="right" valign="top"><a id="a53f591ce292269bbecbbdb0aa890fd01" name="a53f591ce292269bbecbbdb0aa890fd01"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSpriteTexture</b> (sf::IntRect textureRect)</td></tr>
+<tr class="memitem:abfcbcde23d48a8f95496f5e9fa08dc25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#abfcbcde23d48a8f95496f5e9fa08dc25">setTexture</a> (string src)</td></tr>
+<tr class="memdesc:abfcbcde23d48a8f95496f5e9fa08dc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets texture to use for sprite.  <br /></td></tr>
+<tr class="separator:abfcbcde23d48a8f95496f5e9fa08dc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53f591ce292269bbecbbdb0aa890fd01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a53f591ce292269bbecbbdb0aa890fd01">setSpriteTexture</a> (sf::IntRect textureRect)</td></tr>
+<tr class="memdesc:a53f591ce292269bbecbbdb0aa890fd01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets part of texture to use for sprite.  <br /></td></tr>
 <tr class="separator:a53f591ce292269bbecbbdb0aa890fd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07781dd20272e324adaef5da565a5c8a"><td class="memItemLeft" align="right" valign="top"><a id="a07781dd20272e324adaef5da565a5c8a" name="a07781dd20272e324adaef5da565a5c8a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPos</b> (sf::Vector2f pos)</td></tr>
+<tr class="memitem:a07781dd20272e324adaef5da565a5c8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a07781dd20272e324adaef5da565a5c8a">setPos</a> (sf::Vector2f pos)</td></tr>
+<tr class="memdesc:a07781dd20272e324adaef5da565a5c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets new position in float coordinates.  <br /></td></tr>
 <tr class="separator:a07781dd20272e324adaef5da565a5c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e9f12c9d9599f8be02da1e28eda829a"><td class="memItemLeft" align="right" valign="top"><a id="a2e9f12c9d9599f8be02da1e28eda829a" name="a2e9f12c9d9599f8be02da1e28eda829a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setTilePos</b> (int gridX, int gridY)</td></tr>
+<tr class="memitem:a2e9f12c9d9599f8be02da1e28eda829a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a2e9f12c9d9599f8be02da1e28eda829a">setTilePos</a> (int <a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a317352e6b64093f002cf6c41fd0f39fe">gridX</a>, int <a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a16ed36f9ab9ebc458772cc68ef8564a5">gridY</a>)</td></tr>
+<tr class="memdesc:a2e9f12c9d9599f8be02da1e28eda829a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets new position in grid coordinates.  <br /></td></tr>
 <tr class="separator:a2e9f12c9d9599f8be02da1e28eda829a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html">He_ARC::rpg::Interactable</a></td></tr>
 <tr class="memitem:ab47476437ee6426d7a19a0de86cd8142 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#ab47476437ee6426d7a19a0de86cd8142">Interactable</a> (int _gridX, int _gridY, int _tileWidth, bool _collision=false)</td></tr>
+<tr class="memdesc:ab47476437ee6426d7a19a0de86cd8142 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html">Interactable</a> standard parameterized constructor.  <br /></td></tr>
 <tr class="separator:ab47476437ee6426d7a19a0de86cd8142 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d50b0c2a034194f8c6bae5282b456f2 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>getCollision</b> () const</td></tr>
+<tr class="memitem:a49b41ccfc38908ba96091c960bde35fc inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a49b41ccfc38908ba96091c960bde35fc">Interactable</a> (int _gridX, int _gridY, int _tileWidth, string soundfile, bool _collision=false)</td></tr>
+<tr class="memdesc:a49b41ccfc38908ba96091c960bde35fc inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html">Interactable</a> standard parameterized constructor.  <br /></td></tr>
+<tr class="separator:a49b41ccfc38908ba96091c960bde35fc inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d50b0c2a034194f8c6bae5282b456f2 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a0d50b0c2a034194f8c6bae5282b456f2">getCollision</a> () const</td></tr>
+<tr class="memdesc:a0d50b0c2a034194f8c6bae5282b456f2 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets current collision state.  <br /></td></tr>
 <tr class="separator:a0d50b0c2a034194f8c6bae5282b456f2 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eb0f8ec9f9b39a026ab489c661b3c43 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCollision</b> (bool condition)</td></tr>
+<tr class="memitem:a4d16243df7c26b19dad107ffb926e6b9 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a4d16243df7c26b19dad107ffb926e6b9">setSoundfile</a> (string src)</td></tr>
+<tr class="memdesc:a4d16243df7c26b19dad107ffb926e6b9 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes loaded soundfile.  <br /></td></tr>
+<tr class="separator:a4d16243df7c26b19dad107ffb926e6b9 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb0f8ec9f9b39a026ab489c661b3c43 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a2eb0f8ec9f9b39a026ab489c661b3c43">setCollision</a> (bool condition)</td></tr>
+<tr class="memdesc:a2eb0f8ec9f9b39a026ab489c661b3c43 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets current collision state.  <br /></td></tr>
 <tr class="separator:a2eb0f8ec9f9b39a026ab489c661b3c43 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03a694e7ef4bb540d678952f25ff8f6b inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>canInteract</b> (sf::FloatRect playerRect)</td></tr>
+<tr class="memitem:a03a694e7ef4bb540d678952f25ff8f6b inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a03a694e7ef4bb540d678952f25ff8f6b">canInteract</a> (sf::FloatRect playerRect)</td></tr>
+<tr class="memdesc:a03a694e7ef4bb540d678952f25ff8f6b inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether player can interact with object or not.  <br /></td></tr>
 <tr class="separator:a03a694e7ef4bb540d678952f25ff8f6b inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a1f87be9b012591dec2fbe15d16c49e inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><b>tileCollision</b> (sf::Vector2f gridPosition, sf::Vector2f previousPos, sf::FloatRect playerRect)</td></tr>
-<tr class="separator:a6a1f87be9b012591dec2fbe15d16c49e inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd792d00f0c66f2ed131d34725580b21 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#abd792d00f0c66f2ed131d34725580b21">tileCollision</a> (sf::Vector2i gridPosition, sf::Vector2f previousPos, sf::FloatRect playerRect)</td></tr>
+<tr class="memdesc:abd792d00f0c66f2ed131d34725580b21 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves collision with player.  <br /></td></tr>
+<tr class="separator:abd792d00f0c66f2ed131d34725580b21 inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b1118d2c3dd26c98bdf5db29047965f inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a7b1118d2c3dd26c98bdf5db29047965f">playSFX</a> ()</td></tr>
+<tr class="memdesc:a7b1118d2c3dd26c98bdf5db29047965f inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays sfx associated to entity.  <br /></td></tr>
+<tr class="separator:a7b1118d2c3dd26c98bdf5db29047965f inherit pub_methods_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a2c0e2161e6708b704821c12b7b20b77d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a2c0e2161e6708b704821c12b7b20b77d">texturesrc</a></td></tr>
+<tr class="separator:a2c0e2161e6708b704821c12b7b20b77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9e13084d5724d20aec1431829e7756a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#aa9e13084d5724d20aec1431829e7756a">soundfile</a></td></tr>
+<tr class="separator:aa9e13084d5724d20aec1431829e7756a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9617f9745432c0dc5a7ab1aa75e70247"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#a9617f9745432c0dc5a7ab1aa75e70247">texture</a></td></tr>
+<tr class="separator:a9617f9745432c0dc5a7ab1aa75e70247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af21cdf5ccccd5530398cca2cf4592910"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html#af21cdf5ccccd5530398cca2cf4592910">sprite</a></td></tr>
+<tr class="separator:af21cdf5ccccd5530398cca2cf4592910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html">He_ARC::rpg::Interactable</a></td></tr>
-<tr class="memitem:ae95256a1e700db4605ecae12c7ea4747 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>collision</b> = false</td></tr>
+<tr class="memitem:ae95256a1e700db4605ecae12c7ea4747 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#ae95256a1e700db4605ecae12c7ea4747">collision</a> = false</td></tr>
 <tr class="separator:ae95256a1e700db4605ecae12c7ea4747 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a317352e6b64093f002cf6c41fd0f39fe inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-int&#160;</td><td class="memItemRight" valign="bottom"><b>gridX</b></td></tr>
+<tr class="memitem:a317352e6b64093f002cf6c41fd0f39fe inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a317352e6b64093f002cf6c41fd0f39fe">gridX</a></td></tr>
 <tr class="separator:a317352e6b64093f002cf6c41fd0f39fe inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16ed36f9ab9ebc458772cc68ef8564a5 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-int&#160;</td><td class="memItemRight" valign="bottom"><b>gridY</b> = 0</td></tr>
+<tr class="memitem:a16ed36f9ab9ebc458772cc68ef8564a5 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a16ed36f9ab9ebc458772cc68ef8564a5">gridY</a> = 0</td></tr>
 <tr class="separator:a16ed36f9ab9ebc458772cc68ef8564a5 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3db7f9ac998aa7cd3bcb19f0b127c6d8 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-int&#160;</td><td class="memItemRight" valign="bottom"><b>tileWidth</b> = 16</td></tr>
+<tr class="memitem:a3db7f9ac998aa7cd3bcb19f0b127c6d8 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a3db7f9ac998aa7cd3bcb19f0b127c6d8">tileWidth</a> = 16</td></tr>
 <tr class="separator:a3db7f9ac998aa7cd3bcb19f0b127c6d8 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2867e2177101db2f822a9fc06dc8be3d inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-float&#160;</td><td class="memItemRight" valign="bottom"><b>interactionRadius</b> = 1</td></tr>
+<tr class="memitem:a2867e2177101db2f822a9fc06dc8be3d inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a2867e2177101db2f822a9fc06dc8be3d">interactionRadius</a> = 1</td></tr>
 <tr class="separator:a2867e2177101db2f822a9fc06dc8be3d inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ef34b208e7d62482cc9984cabb20de3 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">
-sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><b>interactionZone</b></td></tr>
+<tr class="memitem:a4ef34b208e7d62482cc9984cabb20de3 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">sf::FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a4ef34b208e7d62482cc9984cabb20de3">interactionZone</a></td></tr>
 <tr class="separator:a4ef34b208e7d62482cc9984cabb20de3 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624b7d32fb53d8d408ac076038f479c0 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">sf::SoundBuffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a624b7d32fb53d8d408ac076038f479c0">buffer</a></td></tr>
+<tr class="separator:a624b7d32fb53d8d408ac076038f479c0 inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bff902f5ad617c53069f5201c4ec26c inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memItemLeft" align="right" valign="top">sf::Sound&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html#a0bff902f5ad617c53069f5201c4ec26c">sfx</a></td></tr>
+<tr class="separator:a0bff902f5ad617c53069f5201c4ec26c inherit pro_attribs_class_he___a_r_c_1_1rpg_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class for entities. Derived from <a class="el" href="class_he___a_r_c_1_1rpg_1_1_interactable.html">Interactable</a> but includes textures and sfx </p><dl class="section author"><dt>Author</dt><dd>Elisa Goloviatinski </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2cd003e30308d2106e5ed0f810fb76c3" name="a2cd003e30308d2106e5ed0f810fb76c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cd003e30308d2106e5ed0f810fb76c3">&#9670;&#160;</a></span>Entity() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">He_ARC::rpg::Entity::Entity </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_gridX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_gridY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_tileWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>_texturesrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_collision</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html">Entity</a> standard parameterized constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_gridX</td><td>X-pos on map grid </td></tr>
+    <tr><td class="paramname">_gridY</td><td>Y-pos on map grid </td></tr>
+    <tr><td class="paramname">_tileWidth</td><td>Size of tile </td></tr>
+    <tr><td class="paramname">_texturesrc</td><td>Source of texture </td></tr>
+    <tr><td class="paramname">_collision</td><td>Whether <a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html">Entity</a> object has collision or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a497dc90d9f4ac6f60a58c2046a949993" name="a497dc90d9f4ac6f60a58c2046a949993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a497dc90d9f4ac6f60a58c2046a949993">&#9670;&#160;</a></span>Entity() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">He_ARC::rpg::Entity::Entity </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_gridX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_gridY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_tileWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>_texturesrc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>_soundfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_collision</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_he___a_r_c_1_1rpg_1_1_entity.html">Entity</a> standard parameterized constructor with sfx. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_gridX</td><td>X-pos on map grid </td></tr>
+    <tr><td class="paramname">_gridY</td><td>Y-pos on map grid </td></tr>
+    <tr><td class="paramname">_tileWidth</td><td>Size of tile </td></tr>
+    <tr><td class="paramname">_texturesrc</td><td>Source of texture </td></tr>
+    <tr><td class="paramname">_soundfile</td><td>Sfx associated to entity </td></tr>
+    <tr><td class="paramname">_collision</td><td>Whether object has collisions or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab21a12ee3edf983aceb7bcae9bc04b4e" name="ab21a12ee3edf983aceb7bcae9bc04b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab21a12ee3edf983aceb7bcae9bc04b4e">&#9670;&#160;</a></span>getPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f He_ARC::rpg::Entity::getPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets current position in float coordinates. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current position. </dd></dl>
+
+</div>
+</div>
+<a id="a36255088049755926c4ea23a6c9992ca" name="a36255088049755926c4ea23a6c9992ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36255088049755926c4ea23a6c9992ca">&#9670;&#160;</a></span>getSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite He_ARC::rpg::Entity::getSprite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets current sprite. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current sprite </dd></dl>
+
+</div>
+</div>
+<a id="a564dc80f70228ac9f69c9b822b3e9035" name="a564dc80f70228ac9f69c9b822b3e9035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a564dc80f70228ac9f69c9b822b3e9035">&#9670;&#160;</a></span>getTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture &amp; He_ARC::rpg::Entity::getTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets current texture. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current loaded texture. </dd></dl>
+
+</div>
+</div>
+<a id="a07781dd20272e324adaef5da565a5c8a" name="a07781dd20272e324adaef5da565a5c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07781dd20272e324adaef5da565a5c8a">&#9670;&#160;</a></span>setPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void He_ARC::rpg::Entity::setPos </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets new position in float coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>New position to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a53f591ce292269bbecbbdb0aa890fd01" name="a53f591ce292269bbecbbdb0aa890fd01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f591ce292269bbecbbdb0aa890fd01">&#9670;&#160;</a></span>setSpriteTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void He_ARC::rpg::Entity::setSpriteTexture </td>
+          <td>(</td>
+          <td class="paramtype">sf::IntRect&#160;</td>
+          <td class="paramname"><em>textureRect</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets part of texture to use for sprite. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textureRect</td><td>Size of cut texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abfcbcde23d48a8f95496f5e9fa08dc25" name="abfcbcde23d48a8f95496f5e9fa08dc25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfcbcde23d48a8f95496f5e9fa08dc25">&#9670;&#160;</a></span>setTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void He_ARC::rpg::Entity::setTexture </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets texture to use for sprite. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>Source of texture </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e9f12c9d9599f8be02da1e28eda829a" name="a2e9f12c9d9599f8be02da1e28eda829a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e9f12c9d9599f8be02da1e28eda829a">&#9670;&#160;</a></span>setTilePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void He_ARC::rpg::Entity::setTilePos </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gridX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gridY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets new position in grid coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gridX</td><td>X-pos on map grid. </td></tr>
+    <tr><td class="paramname">gridY</td><td>Y-pos on map grid. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa9e13084d5724d20aec1431829e7756a" name="aa9e13084d5724d20aec1431829e7756a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9e13084d5724d20aec1431829e7756a">&#9670;&#160;</a></span>soundfile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string He_ARC::rpg::Entity::soundfile</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af21cdf5ccccd5530398cca2cf4592910" name="af21cdf5ccccd5530398cca2cf4592910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af21cdf5ccccd5530398cca2cf4592910">&#9670;&#160;</a></span>sprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite He_ARC::rpg::Entity::sprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9617f9745432c0dc5a7ab1aa75e70247" name="a9617f9745432c0dc5a7ab1aa75e70247"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9617f9745432c0dc5a7ab1aa75e70247">&#9670;&#160;</a></span>texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture He_ARC::rpg::Entity::texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c0e2161e6708b704821c12b7b20b77d" name="a2c0e2161e6708b704821c12b7b20b77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c0e2161e6708b704821c12b7b20b77d">&#9670;&#160;</a></span>texturesrc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string He_ARC::rpg::Entity::texturesrc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>C:/env/Cpp/goloviatinski_fil_rouge/include/game/<a class="el" href="_interactable_8h_source.html">Interactable.h</a></li>
 </ul>

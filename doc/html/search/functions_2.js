@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['hero_0',['Hero',['../class_he___a_r_c_1_1rpg_1_1_hero.html#a926d6a4d36891d282e6dc7f1ac10b026',1,'He_ARC::rpg::Hero::Hero()=default'],['../class_he___a_r_c_1_1rpg_1_1_hero.html#ada644ed118027b660969c5a9352b4775',1,'He_ARC::rpg::Hero::Hero(int, int, int, int, Weapon *, IObject *, string)']]]
+  ['caninteract_0',['canInteract',['../class_he___a_r_c_1_1rpg_1_1_interactable.html#a03a694e7ef4bb540d678952f25ff8f6b',1,'He_ARC::rpg::Interactable']]],
+  ['castspell_1',['castSpell',['../class_he___a_r_c_1_1rpg_1_1_wizard.html#a87efc42b5b0881ea236c51c4f76095f0',1,'He_ARC::rpg::Wizard']]],
+  ['changecurrenthero_2',['changeCurrentHero',['../class_he___a_r_c_1_1rpg_1_1_game.html#a147c2c06b8563b3f6b99136266c521f4',1,'He_ARC::rpg::Game']]]
 ];

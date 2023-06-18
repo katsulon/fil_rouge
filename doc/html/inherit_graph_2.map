@@ -1,11 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_he___a_r_c_1_1rpg_1_1_hero.html" title=" " alt="" coords="5,56,138,83"/>
-<area shape="rect" id="Node000001" href="$class_he___a_r_c_1_1rpg_1_1_rogue.html" title=" " alt="" coords="188,5,331,32"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="137,49,206,30,208,35,138,54"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_warrior.html" title=" " alt="" coords="186,56,333,83"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="153,67,185,67,185,72,153,72"/>
-<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_wizard.html" title=" " alt="" coords="186,107,333,133"/>
-<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="138,85,208,103,206,109,137,90"/>
-<area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_necromancer.html" title=" " alt="" coords="381,107,563,133"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="348,117,381,117,381,123,348,123"/>
+<area shape="rect" id="Node000000" href="$class_he___a_r_c_1_1rpg_1_1_game.html" title=" " alt="" coords="5,5,146,32"/>
 </map>

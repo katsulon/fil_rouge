@@ -1,0 +1,18 @@
+<map id="He_ARC::rpg::Backpack::isNotEmpty" name="He_ARC::rpg::Backpack::isNotEmpty">
+<area shape="rect" id="Node000001" title="Checks whether the backpack is empty or not." alt="" coords="824,101,987,144"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#a5906387ab2147a5f3c6dcbfa84572e1e" title="Gets top item in backpack." alt="" coords="612,5,776,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="847,97,775,62,748,51,751,46,777,58,849,92"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_game.html#a730db00277387c7907521dbebe60ee9d" title="General updates." alt="" coords="220,68,368,111"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="809,133,626,139,520,136,416,125,362,114,363,109,416,120,521,131,626,134,809,128"/>
+<area shape="rect" id="Node000006" href="$class_he___a_r_c_1_1rpg_1_1_game.html#ad5bf24d24c701f8e609a4e571c0ae952" title="Shows character interactions as well as events on terminal." alt="" coords="620,72,768,115"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="808,112,768,106,769,101,809,107"/>
+<area shape="rect" id="Node000007" href="$class_he___a_r_c_1_1rpg_1_1_hero.html#a281ad269bbe13c780dc73a2402d0e1bf" title="Hero deconstructor. Deletes pointers to right hand weapon and left hand objet." alt="" coords="624,189,764,232"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="840,153,748,191,746,186,838,148"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="598,36,510,44,417,59,368,70,366,65,415,53,509,39,598,30"/>
+<area shape="rect" id="Node000005" href="$class_he___a_r_c_1_1rpg_1_1_game.html#ab2d1832cd5b09d4108aa6e4794b94f21" title="SFML event handling." alt="" coords="416,68,564,111"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="610,55,563,70,561,65,608,50"/>
+<area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_game.html#a8797bd5df8bfa9307cef77c0ca10c4fa" title="Runs game loop." alt="" coords="5,76,172,103"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="205,92,172,92,172,87,205,87"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="401,92,368,92,368,87,401,87"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="605,94,565,93,565,88,605,89"/>
+</map>

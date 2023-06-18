@@ -1,14 +1,14 @@
 <map id="He_ARC::rpg::Necromancer" name="He_ARC::rpg::Necromancer">
-<area shape="rect" id="Node000001" title=" " alt="" coords="129,1561,333,1748"/>
-<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_wizard.html" title=" " alt="" coords="129,1224,333,1512"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,1526,234,1561,229,1561,229,1526"/>
-<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_hero.html" title=" " alt="" coords="145,577,317,1175"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,1189,234,1224,229,1224,229,1189"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="129,2457,333,2644"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_wizard.html" title=" " alt="" coords="129,2120,333,2408"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,2422,234,2457,229,2457,229,2422"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_hero.html" title="Base class for playable characters and combat NPC." alt="" coords="145,577,317,2071"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,2084,234,2120,229,2120,229,2084"/>
 <area shape="rect" id="Node000004" href="$class_he___a_r_c_1_1rpg_1_1_weapon.html" title=" " alt="" coords="143,215,319,513"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="234,513,234,560,229,560,229,513"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="234,513,234,561,229,561,229,513"/>
 <area shape="rect" id="Node000005" href="$class_he___a_r_c_1_1rpg_1_1_i_object.html" title=" " alt="" coords="5,5,153,165"/>
-<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="71,165,65,239,62,327,65,420,78,513,105,607,141,698,136,700,100,609,73,514,60,421,57,327,60,239,66,165"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="76,165,71,326,72,420,78,513,106,728,145,939,139,940,101,729,73,514,67,420,66,326,71,165"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="132,177,152,214,148,216,127,179"/>
-<area shape="rect" id="Node000006" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html" title=" " alt="" coords="344,279,508,449"/>
-<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="397,450,326,635,321,633,392,448"/>
+<area shape="rect" id="Node000006" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html" title=" " alt="" coords="344,260,508,468"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="408,468,323,883,318,882,403,467"/>
 </map>

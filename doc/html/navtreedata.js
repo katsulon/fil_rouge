@@ -25,13 +25,27 @@
 var NAVTREE =
 [
   [ "Goloviatinski Fil Rouge", "index.html", [
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -42,7 +56,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_backpack_8h_source.html"
+"_backpack_8cpp.html",
+"class_he___a_r_c_1_1rpg_1_1_game.html#a8b93fc9a816d5a86ee460392172f4939",
+"class_he___a_r_c_1_1rpg_1_1_interactable.html#a624b7d32fb53d8d408ac076038f479c0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

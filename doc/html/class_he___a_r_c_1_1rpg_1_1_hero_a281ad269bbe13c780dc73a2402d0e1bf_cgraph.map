@@ -1,0 +1,7 @@
+<map id="He_ARC::rpg::Hero::~Hero" name="He_ARC::rpg::Hero::~Hero">
+<area shape="rect" id="Node000001" title="Hero deconstructor. Deletes pointers to right hand weapon and left hand objet." alt="" coords="5,39,146,81"/>
+<area shape="rect" id="Node000002" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#a6e69ab94460932776ab58b12984658ac" title="Checks whether the backpack is empty or not." alt="" coords="194,5,357,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,46,179,40,180,45,146,51"/>
+<area shape="rect" id="Node000003" href="$class_he___a_r_c_1_1rpg_1_1_backpack.html#a672055bf82b4965cec3a2a30b4efb6f8" title="Removes an IObject item from the stack." alt="" coords="194,72,357,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,69,180,75,179,80,145,74"/>
+</map>

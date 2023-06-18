@@ -1,0 +1,34 @@
+<map id="C:/env/Cpp/goloviatinski_fil_rouge/src/hero/class/wizard/Necromancer.cpp" name="C:/env/Cpp/goloviatinski_fil_rouge/src/hero/class/wizard/Necromancer.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="198,5,366,64"/>
+<area shape="rect" id="Node000002" href="$_necromancer_8h.html" title=" " alt="" coords="175,112,389,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="285,64,285,97,279,97,279,64"/>
+<area shape="rect" id="Node000003" href="$_wizard_8h.html" title=" " alt="" coords="213,187,351,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,139,285,172,279,172,279,139"/>
+<area shape="rect" id="Node000004" href="$_hero_8h.html" title=" " alt="" coords="238,261,326,288"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="285,214,285,246,279,246,279,214"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,336,143,363"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="247,291,125,333,123,328,245,286"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="249,560,320,587"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="258,291,230,310,208,337,206,349,209,362,222,415,239,465,274,546,269,548,234,467,216,416,203,363,201,349,204,335,226,306,254,286"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="218,336,279,363"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="279,290,263,324,258,322,274,287"/>
+<area shape="rect" id="Node000008" href="$_i_object_8h.html" title=" " alt="" coords="365,485,506,512"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="286,288,303,356,320,397,344,436,368,458,395,476,392,480,365,462,340,439,315,400,298,357,281,289"/>
+<area shape="rect" id="Node000009" href="$_i_object_impl_8h.html" title=" " alt="" coords="377,336,542,363"/>
+<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="314,286,416,327,414,332,312,291"/>
+<area shape="rect" id="Node000013" href="$_backpack_8h.html" title=" " alt="" coords="619,336,793,363"/>
+<area shape="poly" id="edge16_Node000004_Node000013" title=" " alt="" coords="327,281,618,330,617,336,326,286"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="410,515,325,555,323,551,408,510"/>
+<area shape="rect" id="Node000010" href="$_potion_8h.html" title=" " alt="" coords="354,411,423,437"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="449,365,413,402,409,398,445,361"/>
+<area shape="rect" id="Node000011" href="$_shield_8h.html" title=" " alt="" coords="448,411,516,437"/>
+<area shape="poly" id="edge12_Node000009_Node000011" title=" " alt="" coords="466,362,476,396,471,397,461,364"/>
+<area shape="rect" id="Node000012" href="$_weapon_8h.html" title=" " alt="" coords="541,411,669,437"/>
+<area shape="poly" id="edge14_Node000009_Node000012" title=" " alt="" coords="486,361,567,401,565,406,483,366"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="399,436,422,471,417,474,395,439"/>
+<area shape="poly" id="edge13_Node000011_Node000008" title=" " alt="" coords="476,439,453,474,449,471,472,436"/>
+<area shape="poly" id="edge15_Node000012_Node000008" title=" " alt="" coords="576,440,479,482,477,477,574,435"/>
+<area shape="poly" id="edge18_Node000013_Node000008" title=" " alt="" coords="709,364,703,401,696,421,682,439,656,455,616,469,521,488,520,483,614,463,654,450,679,435,691,419,698,399,703,363"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="743,411,797,437"/>
+<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="719,361,751,398,747,401,715,365"/>
+</map>
