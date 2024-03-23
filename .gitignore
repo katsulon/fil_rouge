@@ -58,6 +58,6 @@
 /build
 
 # Generated files
-*.txt
+log.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode,cmake
