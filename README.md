@@ -1,4 +1,5 @@
 # Fil Rouge
+<img width="1920" height="999" alt="image" src="https://github.com/user-attachments/assets/f44fb45f-3f92-48c8-83ff-bb9b8da2cc9e" />
 
 ## Description
 Mini project to apply concepts seen in class to an RPG written in C++.
